@@ -450,6 +450,29 @@
             padding: 20px;
             margin-bottom: 20px;
         }
+        
+            .bingo-placeholder {
+                background: rgba(0, 212, 255, 0.05);
+                border: 1px dashed rgba(0, 212, 255, 0.4);
+                border-radius: 14px;
+                padding: 32px 20px;
+                text-align: center;
+                color: rgba(240, 242, 245, 0.85);
+                max-width: 640px;
+                margin: 0 auto;
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            }
+        
+            .bingo-placeholder h3 {
+                font-size: 20px;
+                margin-bottom: 12px;
+                color: var(--primary);
+            }
+        
+            .bingo-placeholder p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
 
         .bingo-header {
             display: flex;
@@ -2543,35 +2566,20 @@
         }
 
         async function loadBingos() {
+            const container = document.getElementById('bingoContainer');
+            const placeholder = `
+                <div class="bingo-placeholder">
+                    <h3>🎰 Bingos temporariamente indisponíveis</h3>
+                    <p>Pedimos desculpas: mesmo com rodadas importantes acontecendo hoje, estamos recalibrando a matriz para trazer novas informações e bingos vencedores muito em breve.</p>
+                    <p>Atualize esta aba nas próximas horas para receber as combinações prontas com gestão de banca revisada.</p>
+                </div>
+            `;
             try {
-                const bingos = await loadJson('bingos');
-
-                if (bingos.length === 0) {
-                    document.getElementById('bingoContainer').innerHTML = '<p style="text-align: center; color: rgba(240, 242, 245, 0.5);">Nenhum bingo disponível.</p>';
-                    return;
-                }
-
-                let html = '';
-                bingos.forEach(bingo => {
-                    html += `
-                        <div class="bingo-card">
-                            <div class="bingo-header">
-                                <div class="bingo-title">🎯 ${bingo.name}</div>
-                                <div class="bingo-odds">@${bingo.odds.toFixed(2)}</div>
-                            </div>
-                            <div class="selections">
-                                ${bingo.selections.map(sel => `<div class="selection">✓ ${sel}</div>`).join('')}
-                            </div>
-                            <a href="${bingo.betano_link}" target="_blank" style="text-decoration: none;">
-                                <button class="bingo-link-btn">🎲 ACESSAR NA BETANO</button>
-                            </a>
-                        </div>
-                    `;
-                });
-                document.getElementById('bingoContainer').innerHTML = html;
+                container.classList.remove('loading');
+                container.innerHTML = placeholder;
             } catch (error) {
-                console.error('Erro ao carregar bingos:', error);
-                document.getElementById('bingoContainer').innerHTML = '<p style="color: var(--danger);">Erro ao carregar dados locais.</p>';
+                console.error('Erro ao exibir aviso de bingos:', error);
+                container.innerHTML = '<p style="color: var(--danger);">Erro ao carregar aviso.</p>';
             }
         }
 
