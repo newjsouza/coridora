@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Múltipla Rodada 33",
+    "selections": [
+      "Flamengo vence",
+      "Cruzeiro ou Empate",
+      "Over 2.5 em Bayern x Sporting"
+    ],
+    "odds": 13.41,
+    "betano_link": "https://www.betano.bet.br/bookingcode/GPCBUJRH"
+  },
+  {
+    "id": 2,
+    "name": "Combo Inglaterra",
+    "selections": [
+      "Arsenal +1 escanteio em cada tempo",
+      "Ambas marcam em Brentford",
+      "Saka finaliza ao gol"
+    ],
+    "odds": 9.85,
+    "betano_link": "https://www.betano.bet.br/bookingcode/ENGCOMBO1"
+  }
+]

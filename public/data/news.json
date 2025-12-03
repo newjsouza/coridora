@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Flamengo mira título antecipado",
+    "description": "Rubro-Negro precisa apenas de uma vitória para levantar a taça do Brasileirão.",
+    "source": "ge",
+    "apex_insight": "Pressão alta e elenco completo colocam o time com 78% de probabilidade de vitória.",
+    "impact": "+4 p.p. de confiança nas apostas pró-Flamengo"
+  },
+  {
+    "id": 2,
+    "title": "Manchester City mantém 100% na Champions",
+    "description": "Equipe de Guardiola segue dominante e deve poupar poucos titulares na rodada final.",
+    "source": "ESPN",
+    "apex_insight": "Controle de posse faz o City permitir apenas 0,6 gol por jogo como visitante.",
+    "impact": "+5 p.p. para mercados de vitória e clean sheet"
+  },
+  {
+    "id": 3,
+    "title": "Real Madrid lidera corrida em La Liga",
+    "description": "Merengues administram elenco e contam com retorno de Vini Jr.",
+    "source": "MARCA",
+    "apex_insight": "Time produz 2,4 xG por partida no Bernabéu e enfrenta defesa instável do Sevilla.",
+    "impact": "+3 p.p. em handicaps favoráveis ao Real"
+  }
+]

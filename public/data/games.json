@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "home_team": "Flamengo",
+    "away_team": "Ceará",
+    "league": "brasileirao",
+    "match_date": "2025-12-03T21:30:00-03:00",
+    "venue": "Maracanã (RJ)",
+    "context": "Flamengo pode definir o campeonato com apenas uma vitória. Com 75 pontos, cinco à frente do Palmeiras, basta um resultado positivo no Maracanã.",
+    "confidence": 92,
+    "tips": [
+      {
+        "market": "Escanteios",
+        "pick": "Mais de 9.5 (Over)",
+        "odds": null,
+        "explanation": "Flamengo e Ceará forçam muitos cruzamentos e os últimos quatro duelos passaram de 9 escanteios."
+      },
+      {
+        "market": "Goleador",
+        "pick": "Bruno Henrique marca a qualquer momento",
+        "odds": null,
+        "explanation": "Bruno Henrique marcou 4 gols nos últimos 3 jogos e encara defesa vulnerável pelo alto."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Flamengo",
+        "odds": null,
+        "explanation": "Líder do campeonato, o Flamengo venceu 5 das últimas 6 partidas e depende apenas de si para ser campeão."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "home_team": "Cruzeiro",
+    "away_team": "Botafogo",
+    "league": "brasileirao",
+    "match_date": "2025-12-04T19:30:00-03:00",
+    "venue": "Mineirão (BH)",
+    "context": "Jogo direto por vaga na Libertadores. Cruzeiro cresceu com o apoio do Mineirão e quer confirmar presença no G4.",
+    "confidence": 88,
+    "tips": [
+      {
+        "market": "1X2",
+        "pick": "Vitória do Cruzeiro",
+        "odds": null,
+        "explanation": "Cruzeiro tem 70% de aproveitamento em casa e não perde para o Botafogo no estádio há 9 anos."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": null,
+        "explanation": "As duas equipes têm média superior a 1 gol por jogo e precisam se expor pelo resultado."
+      },
+      {
+        "market": "Total de Gols",
+        "pick": "Menos de 2.5",
+        "odds": null,
+        "explanation": "Defesas sólidas indicam placar curto, mesmo com os dois times buscando o ataque."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "home_team": "Bayern",
+    "away_team": "Sporting",
+    "league": "champions",
+    "match_date": "2025-12-05T17:00:00-03:00",
+    "venue": "Allianz Arena",
+    "context": "Bayern decide vaga em casa com vantagem construída em Lisboa.",
+    "confidence": 86,
+    "tips": [
+      {
+        "market": "Resultado",
+        "pick": "Bayern vence",
+        "odds": 1.35,
+        "explanation": "Time alemão venceu 10 partidas seguidas em casa na Champions."
+      },
+      {
+        "market": "Handicap -1.5",
+        "pick": "Bayern",
+        "odds": 1.92,
+        "explanation": "Sporting sofreu derrotas por 2+ gols em 4 confrontos recentes contra gigantes europeus."
+      },
+      {
+        "market": "Over 2.5",
+        "pick": "Sim",
+        "odds": 1.60,
+        "explanation": "Jogos do Bayern no Allianz têm média de 3,1 gols nesta edição."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "home_team": "Arsenal",
+    "away_team": "Brentford",
+    "league": "premier",
+    "match_date": "2025-12-03T20:00:00-03:00",
+    "venue": "Emirates Stadium",
+    "context": "Arsenal mira liderança provisória contra adversário que sofre fora de casa.",
+    "confidence": 89,
+    "tips": [
+      {
+        "market": "Resultado",
+        "pick": "Arsenal vence",
+        "odds": 1.58,
+        "explanation": "Os Gunners somam 80% de aproveitamento como mandante na Premier."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.80,
+        "explanation": "Brentford marcou em 8 das últimas 9 partidas e costuma complicar os favoritos."
+      },
+      {
+        "market": "Over 1.5 HT",
+        "pick": "Sim",
+        "odds": 2.05,
+        "explanation": "Arsenal pressiona cedo e tem média de 1,6 gol no primeiro tempo em casa."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "home_team": "Real Madrid",
+    "away_team": "Sevilla",
+    "league": "laliga",
+    "match_date": "2025-12-04T22:00:00-03:00",
+    "venue": "Santiago Bernabéu",
+    "context": "Real Madrid quer manter invencibilidade no Bernabéu diante de rival em queda.",
+    "confidence": 82,
+    "tips": [
+      {
+        "market": "Resultado",
+        "pick": "Real Madrid vence",
+        "odds": 1.60,
+        "explanation": "Merengues seguem 100% em casa e sofreram só 6 gols diante da torcida."
+      },
+      {
+        "market": "Under 3.5",
+        "pick": "Sim",
+        "odds": 1.72,
+        "explanation": "Ancelotti costuma controlar o ritmo após abrir vantagem, mantendo jogos abaixo de 4 gols."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Não",
+        "odds": 1.95,
+        "explanation": "Sevilla finaliza pouco fora e enfrenta defesa sólida."
+      }
+    ]
+  }
+]
