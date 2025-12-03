@@ -158,25 +158,32 @@
         }
 
         .tab-btn {
-            padding: 12px 20px;
-            background: transparent;
-            border: none;
-            color: rgba(240, 242, 245, 0.6);
-            font-size: 14px;
+            padding: 14px 22px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
+            color: rgba(240, 242, 245, 0.7);
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
             white-space: nowrap;
+            border-radius: 12px 12px 0 0;
         }
 
         .tab-btn:hover {
             color: var(--primary);
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
         }
 
         .tab-btn.active {
             color: var(--primary);
-            border-bottom-color: var(--primary);
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
         }
 
         /* ===== CONTENT ===== */
