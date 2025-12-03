@@ -91,91 +91,271 @@
   },
   {
     "id": 4,
-    "home_team": "Bayern",
-    "away_team": "Sporting",
+    "home_team": "Real Madrid",
+    "away_team": "Manchester City",
     "league": "champions",
-    "match_date": "2025-12-05T17:00:00-03:00",
-    "venue": "Allianz Arena",
-    "context": "Bayern decide vaga em casa com vantagem construída em Lisboa.",
-    "confidence": 86,
+    "match_date": "2025-12-10T20:00:00Z",
+    "venue": "Santiago Bernabéu",
+    "context": "Clássico europeu valendo top-8: Real Madrid (12 pts) é 5º, City (10 pts) é 9º. Quem perder fica perto da eliminação.",
+    "confidence": 90,
     "tips": [
       {
-        "market": "Resultado",
-        "pick": "Bayern vence",
-        "odds": 1.35,
-        "explanation": "Time alemão venceu 10 partidas seguidas em casa na Champions."
+        "market": "1X2",
+        "pick": "Vitória do Real Madrid",
+        "odds": 2.32,
+        "explanation": "Odd justa 1.67 versus 2.32 na Betano (value +39,2%). Madrid tem 4 vitórias nos últimos 5 jogos no Bernabéu e marcou 19 gols nessa sequência; Mbappé em grande fase contra defesa do City que sofre 1.6 gol/jogo fora."
       },
       {
-        "market": "Handicap -1.5",
-        "pick": "Bayern",
-        "odds": 1.92,
-        "explanation": "Sporting sofreu derrotas por 2+ gols em 4 confrontos recentes contra gigantes europeus."
+        "market": "Goleador",
+        "pick": "Mbappé marca a qualquer momento",
+        "odds": 2.75,
+        "explanation": "Odd justa 2.38 comparada aos 2.75 da bet365 (value +15,5%). Mbappé soma 9 gols em 5 jogos de Champions e enfrenta defesa inglesa que sofreu gols nos últimos 4 jogos fora."
       },
       {
-        "market": "Over 2.5",
-        "pick": "Sim",
-        "odds": 1.60,
-        "explanation": "Jogos do Bayern no Allianz têm média de 3,1 gols nesta edição."
+        "market": "Escanteios",
+        "pick": "Mais de 11.5 (Over)",
+        "odds": 2.10,
+        "explanation": "Odd justa 1.47 (value +42,8%). Madrid força 10.4 cruzamentos por jogo e o City cede 7.1 escanteios; soma esperada de 17.5 cantos favorece linha 11.5."
       }
     ]
   },
   {
     "id": 5,
-    "home_team": "Arsenal",
-    "away_team": "Brentford",
-    "league": "premier",
-    "match_date": "2025-12-03T20:00:00-03:00",
-    "venue": "Emirates Stadium",
-    "context": "Arsenal mira liderança provisória contra adversário que sofre fora de casa.",
-    "confidence": 89,
+    "home_team": "Inter de Milão",
+    "away_team": "Liverpool",
+    "league": "champions",
+    "match_date": "2025-12-09T17:00:00Z",
+    "venue": "San Siro",
+    "context": "Inter lidera a fase com 4 vitórias seguidas e sem sofrer gols; Liverpool vive crise com derrotas na Premier e depende de Salah.",
+    "confidence": 88,
     "tips": [
       {
-        "market": "Resultado",
-        "pick": "Arsenal vence",
-        "odds": 1.58,
-        "explanation": "Os Gunners somam 80% de aproveitamento como mandante na Premier."
+        "market": "1X2",
+        "pick": "Vitória da Inter de Milão",
+        "odds": 2.37,
+        "explanation": "Odd justa 1.54 face a 2.37 na Betano (value +54,1%). Inter venceu 4 seguidas sem sofrer gol e tem defesa de 0.4 gol/jogo; Liverpool ganhou só 3 de 10 fora e sofre 1.8 gol/jogo."
       },
       {
         "market": "Ambas Marcam",
         "pick": "Sim",
-        "odds": 1.80,
-        "explanation": "Brentford marcou em 8 das últimas 9 partidas e costuma complicar os favoritos."
+        "odds": 2.20,
+        "explanation": "Odd justa 1.67 (value +32%). Inter é sólida, mas Liverpool marcou em 4/5 jogos fora e precisa atacar; chance estimada em 60%."
       },
       {
-        "market": "Over 1.5 HT",
-        "pick": "Sim",
-        "odds": 2.05,
-        "explanation": "Arsenal pressiona cedo e tem média de 1,6 gol no primeiro tempo em casa."
+        "market": "Goleador",
+        "pick": "Lautaro Martínez marca a qualquer momento",
+        "odds": 3.10,
+        "explanation": "Odd justa 2.63 comparada à bet365 3.10 (value +17,8%). Lautaro marcou em 4 jogos seguidos e explora a linha alta do Liverpool."
       }
     ]
   },
   {
     "id": 6,
-    "home_team": "Real Madrid",
-    "away_team": "Sevilla",
-    "league": "laliga",
-    "match_date": "2025-12-04T22:00:00-03:00",
-    "venue": "Santiago Bernabéu",
-    "context": "Real Madrid quer manter invencibilidade no Bernabéu diante de rival em queda.",
+    "home_team": "Barcelona",
+    "away_team": "Eintracht Frankfurt",
+    "league": "champions",
+    "match_date": "2025-12-09T16:45:00Z",
+    "venue": "Camp Nou",
+    "context": "Camp Nou reaberto, Barça precisa vencer para avançar; Frankfurt é 28º com 4 pontos e não venceu fora nesta fase.",
+    "confidence": 86,
+    "tips": [
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 2.85,
+        "explanation": "Odd justa 1.23 (value +130,8%). Barça marcou 21 gols em 5 jogos em casa e o Frankfurt busca gols por sobrevivência; probabilidade estimada de 81%."
+      },
+      {
+        "market": "Total de Gols",
+        "pick": "Mais de 3.5",
+        "odds": 2.45,
+        "explanation": "Odd justa 1.39 (value +76,4%). Barcelona tem média de 3.5 gols em casa e Frankfurt sofre 1.6; soma esperada 5.1 gols."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Barcelona",
+        "odds": 1.19,
+        "explanation": "Odd justa 2.00 (value -40,5%). Vitória catalã é provável, mas o preço é ruim; NÃO recomendado como aposta individual devido ao valor negativo. Só faz sentido combinada com outros mercados, se necessário."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "home_team": "Leeds United",
+    "away_team": "Liverpool",
+    "league": "premier",
+    "match_date": "2025-12-06T12:30:00Z",
+    "venue": "Anfield",
+    "context": "Liverpool tenta reagir rumo ao topo (21 pts em 13 jogos) contra um Leeds em queda com 11 pts e 5 derrotas nas últimas 7 rodadas.",
     "confidence": 82,
     "tips": [
       {
-        "market": "Resultado",
-        "pick": "Real Madrid vence",
-        "odds": 1.60,
-        "explanation": "Merengues seguem 100% em casa e sofreram só 6 gols diante da torcida."
-      },
-      {
-        "market": "Under 3.5",
-        "pick": "Sim",
-        "odds": 1.72,
-        "explanation": "Ancelotti costuma controlar o ritmo após abrir vantagem, mantendo jogos abaixo de 4 gols."
+        "market": "Total de Gols",
+        "pick": "Mais de 2.5",
+        "odds": 2.10,
+        "explanation": "Odd justa 1.48 (value +41,8%). Liverpool faz 1.8 gol/jogo e Leeds sofre 1.8; 67,5% dos confrontos recentes passaram de 2.5 gols e Leeds levou gol em 10 jogos seguidos."
       },
       {
         "market": "Ambas Marcam",
-        "pick": "Não",
+        "pick": "Sim",
+        "odds": 1.85,
+        "explanation": "Odd justa 1.74 (value +6,4%). Leeds marcou em 70% dos últimos jogos em casa e Liverpool sofreu em 40% dos últimos 6 jogos; probabilidade combinada ~57,5%."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Liverpool",
+        "odds": 1.75,
+        "explanation": "Odd justa 2.29 (value -23,7%). Reds são favoritos mas o preço não compensa; recomendada apenas se combinada a outros mercados."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "home_team": "Tottenham",
+    "away_team": "Liverpool",
+    "league": "premier",
+    "match_date": "2025-12-20T14:30:00Z",
+    "venue": "Tottenham Hotspur Stadium",
+    "context": "Clássico pós-Natal com ambos fora do top-4. Liverpool busca retomada e Tottenham tenta consolidar posição jogando em casa.",
+    "confidence": 85,
+    "tips": [
+      {
+        "market": "HT/FT",
+        "pick": "Liverpool vence HT/FT",
+        "odds": 3.25,
+        "explanation": "Odd justa 1.54 (value +111,3%). Liverpool costuma atacar cedo e venceu 5 dos últimos 7 clássicos, liderando no intervalo e confirmando no final em 65% dos casos."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Liverpool",
         "odds": 1.95,
-        "explanation": "Sevilla finaliza pouco fora e enfrenta defesa sólida."
+        "explanation": "Odd justa 1.67 (value +17%). Liverpool domina o confronto recente (3 vitórias nos últimos 4) e Tottenham oscila em casa nesse período."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.88,
+        "explanation": "Odd justa 2.04 (value -7,9%). Histórico mostra apenas 45% de ambas marcam; mercado está otimista demais, portanto aposta a evitar isoladamente."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "home_team": "Manchester City",
+    "away_team": "Sunderland",
+    "league": "premier",
+    "match_date": "2025-12-06T15:00:00Z",
+    "venue": "Etihad Stadium",
+    "context": "City (25 pts) recebe o 19º Sunderland (19 pts) em cenário de enorme desequilíbrio técnico.",
+    "confidence": 90,
+    "tips": [
+      {
+        "market": "Total de Gols",
+        "pick": "Mais de 3.5",
+        "odds": 2.15,
+        "explanation": "Odd justa 1.39 (value +54,8%). City marca 2.08 gols/jogo em casa e Sunderland sofre 1.38; jogos recentes dos Citizens em casa passaram de 3 gols."
+      },
+      {
+        "market": "Goleador",
+        "pick": "Haaland marca 2+ gols",
+        "odds": 3.40,
+        "explanation": "Odd justa 2.86 (value +19%). Haaland soma 14 gols em 13 jogos e já teve 6 jogos com 2+ gols contra defesas frágeis como a do Sunderland."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Manchester City",
+        "odds": 1.08,
+        "explanation": "Odd justa 1.25 (value -13,6%). City deve vencer, mas o preço é baixo demais para aposta simples; prefira combinar com outros mercados."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "home_team": "Athletic Bilbao",
+    "away_team": "Real Madrid",
+    "league": "laliga",
+    "match_date": "2025-12-03T15:00:00+01:00",
+    "venue": "San Mamés",
+    "context": "Real Madrid busca quebrar sequência de três empates para seguir na briga pelo título; Athletic (8º) tenta usar a fortaleza de San Mamés para mirar Champions.",
+    "confidence": 82,
+    "tips": [
+      {
+        "market": "Escanteios",
+        "pick": "Mais de 9.5",
+        "odds": 3.40,
+        "explanation": "Odd justa 1.47 (value +131,2%). Athletic gera 10.3 escanteios em casa e o Real Madrid sofre 8.2 como visitante, projetando 18.5 cantos e fazendo desta a melhor aposta da rodada."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.72,
+        "explanation": "Odd justa 1.67 (value +3,2%). Athletic marca em 70% dos jogos em casa e o Real cedeu gols em 8 dos últimos 10 jogos fora; use em múltiplas junto ao over de escanteios."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Real Madrid",
+        "odds": 1.78,
+        "explanation": "Odd justa 1.76 (value +1,1%). Madrid é favorito com 56,8% de probabilidade, mas o preço está praticamente alinhado; somente combine com outros mercados para extrair value."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "home_team": "Real Betis",
+    "away_team": "Barcelona",
+    "league": "laliga",
+    "match_date": "2025-12-06T12:30:00+01:00",
+    "venue": "Benito Villamarín",
+    "context": "Líder Barcelona (34 pts) encara o 5º Betis, forte em casa, num duelo que pode consolidar a liderança catalã na La Liga.",
+    "confidence": 88,
+    "tips": [
+      {
+        "market": "Total de Gols",
+        "pick": "Mais de 2.5",
+        "odds": 2.10,
+        "explanation": "Odd justa 1.28 (value +63,8%). Barça marca 3.5 gols fora e Betis sofre 1.0; 100% dos últimos 11 jogos do Barça passaram dessa linha."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.95,
+        "explanation": "Odd justa 1.61 (value +20,9%). Betis marcou em 8/10 jogos em casa e o Barcelona sofreu em 9 confrontos seguidos contra o rival."
+      },
+      {
+        "market": "1X2",
+        "pick": "Vitória do Barcelona",
+        "odds": 1.75,
+        "explanation": "Odd justa 1.54 (value +13,8%). Barça soma 11 vitórias em 14 jogos e mantém invencibilidade recente fora; aposta com risco baixo e retorno moderado."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "home_team": "Villarreal",
+    "away_team": "Getafe",
+    "league": "laliga",
+    "match_date": "2025-12-07T19:00:00+01:00",
+    "venue": "Estadio de la Cerámica",
+    "context": "Villarreal (3º, invicto em casa) recebe o 12º Getafe, que sofre longe de casa, em duelo importante para garantir vaga direta na Champions.",
+    "confidence": 86,
+    "tips": [
+      {
+        "market": "1X2",
+        "pick": "Vitória do Villarreal",
+        "odds": 1.63,
+        "explanation": "Odd justa 1.43 (value +14,1%). Submarino Amarelo soma 5 vitórias seguidas em casa com defesa que sofre menos de 1 gol/jogo; Getafe tem 1 vitória em 6 fora."
+      },
+      {
+        "market": "Total de Gols",
+        "pick": "Mais de 1.5",
+        "odds": 1.85,
+        "explanation": "Odd justa 1.39 (value +33,2%). Villarreal marca 2.1 gols em casa e Getafe sofre 1.07; 72% dos confrontos tiveram 2+ gols."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 2.10,
+        "explanation": "Odd justa 2.04 (value +2,9%). Getafe marca pouco fora e Villarreal quase não cede gols; só use em múltiplas de alto retorno."
       }
     ]
   }
