@@ -6,26 +6,26 @@
     "league": "brasileirao",
     "match_date": "2025-12-03T21:30:00-03:00",
     "venue": "Maracanã (RJ)",
-    "context": "Flamengo pode definir o campeonato com apenas uma vitória. Com 75 pontos, cinco à frente do Palmeiras, basta um resultado positivo no Maracanã.",
+    "context": "Flamengo pode definir o campeonato com apenas uma vitória. Lidera com 75 pontos, cinco à frente do Palmeiras, jogando em casa logo após conquistar a Libertadores.",
     "confidence": 92,
     "tips": [
       {
         "market": "Escanteios",
         "pick": "Mais de 9.5 (Over)",
-        "odds": null,
-        "explanation": "Flamengo e Ceará forçam muitos cruzamentos e os últimos quatro duelos passaram de 9 escanteios."
-      },
-      {
-        "market": "Goleador",
-        "pick": "Bruno Henrique marca a qualquer momento",
-        "odds": null,
-        "explanation": "Bruno Henrique marcou 4 gols nos últimos 3 jogos e encara defesa vulnerável pelo alto."
+        "odds": 1.72,
+        "explanation": "Odd justa 1.28 versus 1.72 na BetMGM (value +34,2%). Flamengo tem média de 10.08 escanteios e o Ceará 10.00; os últimos 4 confrontos superaram 9.5. Laterais Ayrton Lucas e Emerson Royal empilham cruzamentos e 4 de 5 jogos recentes de ambos os clubes passaram essa linha."
       },
       {
         "market": "1X2",
         "pick": "Vitória do Flamengo",
-        "odds": null,
-        "explanation": "Líder do campeonato, o Flamengo venceu 5 das últimas 6 partidas e depende apenas de si para ser campeão."
+        "odds": 1.25,
+        "explanation": "Odd justa 1.18 contra 1.25 na Betnacional (value +6,2%). Flamengo tem 78% de aproveitamento no Maracanã e conquistou 44 de 75 pontos em casa; Ceará fez só 17 como visitante e não vence o Rubro-Negro há 5 partidas. Probabilidade estimada de 85% torna a aposta segura."
+      },
+      {
+        "market": "Escanteios",
+        "pick": "Mais de 10.5 (Over)",
+        "odds": 1.90,
+        "explanation": "Odd justa 1.45 com mercado 1.90 na BR4Bet (value +31%). Soma das médias chega a 20.08 escanteios e o Flamengo bateu 6.5 escanteios em 6 dos últimos 11 jogos. Ceará sofre 11.78 finalizações por jogo e recua bastante, elevando o potencial de cantos acima de 10.5."
       }
     ]
   },
@@ -36,31 +36,61 @@
     "league": "brasileirao",
     "match_date": "2025-12-04T19:30:00-03:00",
     "venue": "Mineirão (BH)",
-    "context": "Jogo direto por vaga na Libertadores. Cruzeiro cresceu com o apoio do Mineirão e quer confirmar presença no G4.",
+    "context": "Confronto direto pela Libertadores: Cruzeiro (68 pts) é o 3º e Botafogo (58 pts) o 6º, com histórico de 65% de aproveitamento mineiro no Mineirão.",
     "confidence": 88,
     "tips": [
       {
         "market": "1X2",
         "pick": "Vitória do Cruzeiro",
-        "odds": null,
-        "explanation": "Cruzeiro tem 70% de aproveitamento em casa e não perde para o Botafogo no estádio há 9 anos."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": null,
-        "explanation": "As duas equipes têm média superior a 1 gol por jogo e precisam se expor pelo resultado."
+        "odds": 2.10,
+        "explanation": "Odd justa 1.92 vs 2.10 na BetMGM (value +9,2%). Cruzeiro soma 13-3-2 em casa, não perde para o Botafogo há quase 10 anos (6V,8E) e mantém 65% de aproveitamento histórico no Mineirão."
       },
       {
         "market": "Total de Gols",
         "pick": "Menos de 2.5",
-        "odds": null,
-        "explanation": "Defesas sólidas indicam placar curto, mesmo com os dois times buscando o ataque."
+        "odds": 1.75,
+        "explanation": "Odd justa 1.54 com mercado 1.75 na Novibet (value +13,8%). Três dos últimos 4 confrontos ficaram abaixo de 2.5, Cruzeiro sofre 0.50 gol em casa e Botafogo marca 0.88 fora, sustentando cenário de placar curto."
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.80,
+        "explanation": "Odd justa 1.82 (value -1%). Cruzeiro marcou 52 gols e Botafogo 50; jogos recentes de ambos tiveram gols dos dois lados, mas o mercado não oferece vantagem clara. Recomendado apenas para múltiplas."
       }
     ]
   },
   {
     "id": 3,
+    "home_team": "Fortaleza",
+    "away_team": "Corinthians",
+    "league": "brasileirao",
+    "match_date": "2025-12-03T19:00:00-03:00",
+    "venue": "Castelão (CE)",
+    "context": "Mata-mata de rebaixamento: Fortaleza é o 18º com 40 pontos e vem de 8 jogos invicto; precisa vencer para deixar o Z-4 contra um Corinthians inconsistente.",
+    "confidence": 84,
+    "tips": [
+      {
+        "market": "1X2",
+        "pick": "Vitória do Fortaleza",
+        "odds": 1.95,
+        "explanation": "Odd justa 1.92 e mercado 1.95 na bet365 (value +1,4%). Fortaleza está invicto há 8 jogos, venceu as últimas 4 em casa contra o Corinthians, que sofreu gols nos últimos 5 jogos e ganhou só 4 de 18 fora." 
+      },
+      {
+        "market": "Ambas Marcam",
+        "pick": "Sim",
+        "odds": 1.95,
+        "explanation": "Odd justa 1.47 ante 1.95 na bet365 (value +32,6%). Fortaleza teve ambas marcam em 8/10 jogos recentes e o Corinthians balançou redes em 8 das últimas 10 atuações como visitante." 
+      },
+      {
+        "market": "Escanteios",
+        "pick": "Mais de 10.5 (Over)",
+        "odds": 2.02,
+        "explanation": "Odd justa 1.61 contra 2.02 na Betsson (value +25,2%). Fortaleza tem média de 11 escanteios (5.63 a favor, 5.36 contra) e Corinthians 9.19, além de liderar em cartões, o que gera mais bolas paradas." 
+      }
+    ]
+  },
+  {
+    "id": 4,
     "home_team": "Bayern",
     "away_team": "Sporting",
     "league": "champions",
@@ -90,7 +120,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "home_team": "Arsenal",
     "away_team": "Brentford",
     "league": "premier",
@@ -120,7 +150,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "home_team": "Real Madrid",
     "away_team": "Sevilla",
     "league": "laliga",
