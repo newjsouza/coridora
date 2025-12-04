@@ -1,0 +1,127 @@
+{
+    "cabecalho": {
+        "titulo": "🏆 Rodada 37 - Brasileirão 2025",
+        "destaque": "⭐ FLAMENGO CAMPEÃO BRASILEIRO 2025 ⭐",
+        "info_rodada": "Rodada disputada em 03/12/2025 - Título decidido antecipadamente",
+        "contexto": "Resultados oficiais confirmados; rodada 38 acontece dia 07/12 às 16:00"
+    },
+    "rodada": 37,
+    "jogos": [
+        {
+            "id": 1,
+            "titulo": "Flamengo 1x0 Ceará — Gol de Samuel Lino garante título antecipado",
+            "mandante": "Flamengo",
+            "visitante": "Ceará",
+            "resultado": "1-0",
+            "data": "03/12/25",
+            "horario": "21h30",
+            "local": "Maracanã (RJ)",
+            "status": "GREEN",
+            "destaques": "🏆 Flamengo campeão brasileiro 2025 com 78 pontos",
+            "analise": "Vitória magra mas suficiente. Samuel Lino marcou aos 34' do primeiro tempo. Maracanã lotado com mais de 60 mil torcedores.",
+            "impacto": "Título garantido com uma rodada de antecedência. Palmeiras não alcança mais."
+        },
+        {
+            "id": 2,
+            "titulo": "RB Bragantino 2x0 Atlético-MG — Massa Bruta vence sem sustos",
+            "mandante": "Red Bull Bragantino",
+            "visitante": "Atlético-MG",
+            "resultado": "2-0",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Bragantino dominou desde o início; Galo desfalcado não reagiu."
+        },
+        {
+            "id": 3,
+            "titulo": "Palmeiras 3x0 Vitória — Verdão goleia mas perde título",
+            "mandante": "Palmeiras",
+            "visitante": "Vitória",
+            "resultado": "3-0",
+            "data": "03/12/25",
+            "status": "AMBER",
+            "analise": "Vitória fácil porém insuficiente para seguir vivo na briga."
+        },
+        {
+            "id": 4,
+            "titulo": "Vasco 0x2 Mirassol — Cruzmaltino se livra do rebaixamento",
+            "mandante": "Vasco",
+            "visitante": "Mirassol",
+            "resultado": "0-2",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Mesmo derrotado, Vasco chegou a 45 pontos e escapou do Z4."
+        },
+        {
+            "id": 5,
+            "titulo": "Grêmio 1x2 Fluminense — Tricolor carioca respira",
+            "mandante": "Grêmio",
+            "visitante": "Fluminense",
+            "resultado": "1-2",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Vitória fora de casa dá moral ao Flu para a rodada final."
+        },
+        {
+            "id": 6,
+            "titulo": "Fortaleza 2x1 Corinthians — Leão segue no G6",
+            "mandante": "Fortaleza",
+            "visitante": "Corinthians",
+            "resultado": "2-1",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Superioridade técnica cearense garantiu triunfo importante."
+        },
+        {
+            "id": 7,
+            "titulo": "Juventude 0x3 Santos — Peixe perto da elite",
+            "mandante": "Juventude",
+            "visitante": "Santos",
+            "resultado": "0-3",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Santos dominante e praticamente garantido na Série A 2026."
+        },
+        {
+            "id": 8,
+            "titulo": "São Paulo 3x0 Internacional — Colorado afunda no Z4",
+            "mandante": "São Paulo",
+            "visitante": "Internacional",
+            "resultado": "3-0",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Derrota pesada deixa Inter em situação crítica na tabela."
+        },
+        {
+            "id": 9,
+            "titulo": "Bahia 2x0 Sport — Tricolor vence com tranquilidade",
+            "mandante": "Bahia",
+            "visitante": "Sport",
+            "resultado": "2-0",
+            "data": "03/12/25",
+            "status": "GREEN",
+            "analise": "Bahia controlou a partida inteira; Sport segue no Z4."
+        },
+        {
+            "id": 10,
+            "titulo": "Cruzeiro 2x1 Botafogo — jogo atrasado da rodada 37",
+            "mandante": "Cruzeiro",
+            "visitante": "Botafogo",
+            "resultado": "2-1",
+            "data": "04/12/25",
+            "horario": "19h30",
+            "status": "GREEN",
+            "analise": "Cruzeiro chega a 69 pontos e ainda sonha com vice-campeonato."
+        }
+    ],
+    "proxima_rodada": {
+        "titulo": "📅 Próxima Rodada (38ª - Final)",
+        "data": "07/12/2025 às 16:00 (todos os jogos)",
+        "contexto": "Rodada de encerramento. Flamengo já campeão; vice, G6 e rebaixamento ainda em disputa.",
+        "pendencias": [
+            "🥈 Vice-campeonato: Palmeiras 73 pts x Cruzeiro 69 pts",
+            "📉 Rebaixamento: Internacional (18º) depende de combinação",
+            "🎫 Vagas continentais abertas para G6/G8"
+        ],
+        "alerta": "⚠️ Mirassol x Flamengo é protocolo. Flamengo cogita usar time misto visando Copa Intercontinental (10/12)."
+    }
+}

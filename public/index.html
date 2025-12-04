@@ -1,1075 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJEÇÃO ANALYTICS - Análise de Apostas</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #00d4ff;
-            --secondary: #0f1419;
-            --accent: #ff6b9d;
-            --dark: #0a0e27;
-            --light: #f0f2f5;
-            --success: #00ff88;
-            --warning: #ffb400;
-            --danger: #ff6b6b;
-            --transparent-light: rgba(255, 255, 255, 0.05);
-            --transparent-accent: rgba(0, 212, 255, 0.1);
-        }
-
-        body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, var(--dark) 0%, #1a1f3a 100%);
-            color: var(--light);
-            overflow-x: hidden;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: rgba(10, 14, 39, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-            position: sticky;
-            top: 0;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-icon {
-            font-size: 24px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: var(--success);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: linear-gradient(140deg, rgba(3, 11, 32, 0.92), rgba(10, 19, 45, 0.85));
-            border: 1px solid rgba(0, 212, 255, 0.18);
-            border-radius: 18px;
-            padding: 48px 24px;
-            margin: 24px;
-            text-align: center;
-            color: var(--light);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top, rgba(0, 212, 255, 0.25), transparent 55%);
-            opacity: 0.9;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .hero-logo-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(255, 107, 157, 0.2));
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
-            animation: floaty 6s ease-in-out infinite;
-        }
-
-        .hero-title {
-            font-size: 30px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            background: linear-gradient(120deg, #6ad9ff, #c38bff, #f28ad9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 15px;
-            color: rgba(240, 242, 245, 0.8);
-            margin: 0;
-        }
-
-        /* ===== TABS ===== */
-        .tabs {
-            display: flex;
-            gap: 8px;
-            padding: 0 20px;
-            margin-bottom: 0;
-            overflow-x: auto;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .tab-btn {
-            padding: 14px 22px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid transparent;
-            color: rgba(240, 242, 245, 0.7);
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .tab-btn:hover {
-            color: var(--primary);
-            background: rgba(0, 212, 255, 0.08);
-            border-color: rgba(0, 212, 255, 0.4);
-            transform: translateY(-1px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        .tab-btn.active {
-            color: var(--primary);
-            background: rgba(0, 212, 255, 0.12);
-            border-color: rgba(0, 212, 255, 0.6);
-            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
-        }
-
-        /* ===== CONTENT ===== */
-        .content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== FILTROS ===== */
-        .filters {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            color: var(--light);
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* ===== CARDS DE JOGOS ===== */
-        .game-card {
-            background: var(--transparent-light);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 8px;
-            padding: 16px;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin-bottom: 16px;
-        }
-
-        .game-card:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-            background: rgba(0, 212, 255, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .game-teams {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .team-name {
-            position: relative;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.18), rgba(255, 107, 157, 0.18));
-            color: var(--light);
-            box-shadow: 0 0 8px rgba(0, 212, 255, 0.25);
-            animation: teamPulse 4s ease-in-out infinite;
-        }
-
-        .team-name::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 999px;
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            box-shadow: 0 0 12px rgba(0, 212, 255, 0.35);
-            opacity: 0;
-            animation: teamGlow 4s ease-in-out infinite;
-        }
-
-        .team-name.away {
-            animation-delay: 1s;
-        }
-
-        .versus {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        @keyframes teamPulse {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(-2px); opacity: 0.9; }
-        }
-
-        @keyframes teamGlow {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        .confidence {
-            background: linear-gradient(135deg, var(--success) 0%, var(--warning) 100%);
-            color: var(--dark);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .game-time {
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.5);
-            margin-bottom: 12px;
-        }
-
-        .game-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-bottom: 12px;
-        }
-
-        .game-location {
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.6);
-        }
-
-        .game-context {
-            font-size: 13px;
-            line-height: 1.4;
-            color: rgba(240, 242, 245, 0.85);
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-radius: 6px;
-            padding: 10px 12px;
-            margin-bottom: 14px;
-        }
-
-        .tips-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 10px;
-        }
-
-        .tip {
-            background: var(--transparent-accent);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 6px;
-            padding: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .tip:hover {
-            background: rgba(0, 212, 255, 0.15);
-            border-color: var(--primary);
-        }
-
-        .tip-market {
-            font-size: 11px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .tip-pick {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .tip-odds {
-            font-size: 12px;
-            color: var(--warning);
-            font-weight: 700;
-        }
-
-        .tip-odds-missing {
-            color: rgba(240, 242, 245, 0.5);
-            font-style: italic;
-        }
-
-        .tip-modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 200;
-        }
-
-        .tip-modal-overlay.active {
-            display: flex;
-        }
-
-        .tip-modal {
-            background: rgba(8, 12, 35, 0.95);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 12px;
-            padding: 20px;
-            max-width: 420px;
-            width: 90%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .tip-modal h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-            font-size: 18px;
-        }
-
-        .tip-modal p {
-            font-size: 14px;
-            line-height: 1.5;
-            color: rgba(240, 242, 245, 0.85);
-        }
-
-        .tip-modal-close {
-            background: transparent;
-            border: none;
-            color: var(--light);
-            font-size: 20px;
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            cursor: pointer;
-        }
-
-        /* ===== BINGO CARD ===== */
-        .bingo-card {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 107, 157, 0.05) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-            .bingo-placeholder {
-                background: rgba(0, 212, 255, 0.05);
-                border: 1px dashed rgba(0, 212, 255, 0.4);
-                border-radius: 14px;
-                padding: 32px 20px;
-                text-align: center;
-                color: rgba(240, 242, 245, 0.85);
-                max-width: 640px;
-                margin: 0 auto;
-                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-            }
-        
-            .bingo-placeholder h3 {
-                font-size: 20px;
-                margin-bottom: 12px;
-                color: var(--primary);
-            }
-        
-            .bingo-placeholder p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-
-        .bingo-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .bingo-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .bingo-odds {
-            background: linear-gradient(135deg, var(--success) 0%, var(--warning) 100%);
-            color: var(--dark);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .selections {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .selection {
-            background: rgba(0, 212, 255, 0.05);
-            border-left: 3px solid var(--primary);
-            padding: 10px 12px;
-            border-radius: 4px;
-            font-size: 13px;
-        }
-
-        .bingo-link-btn {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: var(--dark);
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-        }
-
-        .bingo-link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
-        }
-
-        /* ===== NEWS CARD ===== */
-        .news-card {
-            background: var(--transparent-light);
-            backdrop-filter: blur(10px);
-            border-left: 3px solid var(--primary);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-
-        .news-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .news-description {
-            font-size: 13px;
-            color: rgba(240, 242, 245, 0.8);
-            margin-bottom: 12px;
-        }
-
-        .news-insight {
-            background: rgba(0, 255, 136, 0.1);
-            border-left: 2px solid var(--success);
-            padding: 10px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: var(--success);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .news-impact {
-            background: rgba(255, 180, 0, 0.1);
-            border-left: 2px solid var(--warning);
-            padding: 10px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: var(--warning);
-            font-weight: 600;
-        }
-
-        .news-source {
-            font-size: 11px;
-            color: rgba(240, 242, 245, 0.4);
-            margin-top: 8px;
-        }
-
-        /* ===== ANALYSIS VIEW ===== */
-        .analysis-hero {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(255, 107, 157, 0.1));
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            text-align: center;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        }
-
-        .analysis-hero h2 {
-            font-size: 22px;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .analysis-hero p {
-            color: rgba(240, 242, 245, 0.8);
-            font-size: 14px;
-        }
-
-        .analysis-section {
-            margin-bottom: 32px;
-            padding: 20px;
-            background: rgba(8, 12, 35, 0.35);
-            border: 1px solid rgba(0, 212, 255, 0.12);
-            border-radius: 12px;
-        }
-
-        .analysis-section-header {
-            margin-bottom: 16px;
-        }
-
-        .analysis-section-header h3 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .analysis-section-header p {
-            font-size: 14px;
-            color: rgba(240, 242, 245, 0.75);
-        }
-
-        .analysis-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .analysis-card {
-            background: rgba(15, 20, 40, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.05);
-        }
-
-        .analysis-card h4 {
-            font-size: 14px;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .match-card {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .analysis-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .analysis-schedule {
-            font-size: 13px;
-            color: rgba(240, 242, 245, 0.65);
-        }
-
-        .analysis-context {
-            font-size: 13px;
-            line-height: 1.5;
-            color: rgba(240, 242, 245, 0.85);
-            background: rgba(0, 212, 255, 0.06);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 8px;
-            padding: 10px 12px;
-        }
-
-        .analysis-subcard {
-            background: rgba(0, 212, 255, 0.05);
-            border: 1px solid rgba(0, 212, 255, 0.1);
-            border-radius: 8px;
-            padding: 10px 12px;
-        }
-
-        .analysis-subcard h4 {
-            font-size: 13px;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .analysis-list {
-            margin-left: 18px;
-            color: rgba(240, 242, 245, 0.85);
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .analysis-bets {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
-        }
-
-        .analysis-bet {
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            border-radius: 10px;
-            padding: 10px 12px;
-            background: rgba(0, 212, 255, 0.05);
-        }
-
-        .analysis-bet-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .analysis-bet-odds {
-            display: flex;
-            flex-direction: column;
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.7);
-            margin-bottom: 4px;
-        }
-
-        .analysis-stake {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--warning);
-        }
-
-        .analysis-note {
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.7);
-        }
-
-        .analysis-footnote {
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.65);
-            margin-top: 12px;
-        }
-
-        .analysis-table-wrapper {
-            margin-top: 16px;
-            overflow-x: auto;
-        }
-
-        .analysis-table-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .analysis-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-
-        .analysis-table th,
-        .analysis-table td {
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            padding: 8px;
-            text-align: left;
-        }
-
-        .analysis-table th {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary);
-        }
-
-        .analysis-table td {
-            color: rgba(240, 242, 245, 0.8);
-        }
-
-        .future-card {
-            min-height: 100%;
-        }
-
-        .analysis-allocation {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            font-size: 13px;
-            color: rgba(240, 242, 245, 0.8);
-        }
-
-        .analysis-callout {
-            border-left: 3px solid var(--accent);
-            padding-left: 10px;
-            color: rgba(240, 242, 245, 0.8);
-            font-size: 13px;
-        }
-
-        /* ===== LATEST ROUND VIEW ===== */
-        .latest-hero {
-            background: linear-gradient(120deg, rgba(0, 212, 255, 0.25), rgba(255, 180, 0, 0.15));
-            border: 1px solid rgba(0, 212, 255, 0.35);
-            border-radius: 14px;
-            padding: 28px;
-            margin-bottom: 24px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-            animation: floaty 6s ease-in-out infinite;
-        }
-
-        .latest-hero h2 {
-            font-size: 24px;
-            margin-bottom: 6px;
-            color: var(--primary);
-        }
-
-        .latest-hero p {
-            color: rgba(240, 242, 245, 0.85);
-            font-size: 14px;
-        }
-
-        .recap-section {
-            margin-bottom: 28px;
-            padding: 22px;
-            background: rgba(9, 13, 32, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-radius: 14px;
-            box-shadow: inset 0 0 25px rgba(0, 212, 255, 0.08);
-        }
-
-        .recap-header {
-            margin-bottom: 18px;
-        }
-
-        .recap-header h3 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .recap-header p {
-            font-size: 14px;
-            color: rgba(240, 242, 245, 0.75);
-        }
-
-        .recap-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: rgba(255, 180, 0, 0.15);
-            border: 1px solid rgba(255, 180, 0, 0.5);
-            color: var(--warning);
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .recap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .recap-card {
-            background: rgba(15, 18, 38, 0.9);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-radius: 12px;
-            padding: 16px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .recap-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.12), transparent 55%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .recap-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 212, 255, 0.35);
-        }
-
-        .recap-card:hover::after {
-            opacity: 1;
-        }
-
-        .recap-card h4 {
-            font-size: 15px;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .recap-card p {
-            font-size: 13px;
-            color: rgba(240, 242, 245, 0.85);
-            line-height: 1.5;
-        }
-
-        .recap-market {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding: 10px 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            background: rgba(0, 212, 255, 0.08);
-        }
-
-        .recap-market strong {
-            color: var(--primary);
-        }
-
-        .recap-market .status-green {
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .recap-market .status-red {
-            color: var(--danger);
-            font-weight: 700;
-        }
-
-        .stat-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-            font-size: 12px;
-        }
-
-        .stat-table th,
-        .stat-table td {
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            padding: 8px;
-            text-align: center;
-        }
-
-        .stat-table th {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary);
-        }
-
-        .recap-quote {
-            margin-top: 10px;
-            padding: 10px 14px;
-            border-left: 3px solid var(--accent);
-            background: rgba(255, 107, 157, 0.08);
-            font-size: 13px;
-            color: rgba(240, 242, 245, 0.85);
-        }
-
-        .recap-summary-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .recap-summary-table th,
-        .recap-summary-table td {
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 8px;
-            text-align: left;
-            font-size: 12px;
-        }
-
-        .recap-summary-table th {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary);
-        }
-
-        .recap-badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            background: rgba(0, 255, 136, 0.15);
-            color: var(--success);
-            margin-right: 8px;
-        }
-
-        .recap-meta {
-            font-size: 12px;
-            color: rgba(240, 242, 245, 0.65);
-            margin-bottom: 10px;
-        }
-
-        @keyframes floaty {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        /* ===== LOADING ===== */
-        .loading {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(0, 212, 255, 0.2);
-            border-top: 3px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ===== RESPONSIVO ===== */
-        @media (max-width: 768px) {
-            header {
-                padding: 12px 16px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .hero {
-                margin: 16px;
-                padding: 24px 16px;
-            }
-
-            .hero h1 {
-                font-size: 24px;
-            }
-
-            .content {
-                padding: 16px;
-            }
-
-            .tips-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-        @media (max-width: 480px) {
-            .tips-container {
-                grid-template-columns: 1fr;
-            }
-
-            .tabs {
-                padding: 0 12px;
-            }
-
-            .tab-btn {
-                padding: 10px 16px;
-                font-size: 12px;
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJEÇÃO ANALYTICS - Sistema Dinâmico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
+    <header class="site-header">
         <div class="logo">
             <span class="logo-icon">📊</span>
             PROJEÇÃO ANALYTICS
@@ -1080,1564 +21,674 @@
         </div>
     </header>
 
-    <!-- HERO -->
-    <div class="hero">
-        <div class="hero-content">
-            <div class="hero-logo-img" role="img" aria-label="Logo Projeção Analytics">
-                <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs>
-                        <linearGradient id="heroGradient" x1="0" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stop-color="#6AD9FF"/>
-                            <stop offset="50%" stop-color="#86A8FD"/>
-                            <stop offset="100%" stop-color="#F28AD9"/>
-                        </linearGradient>
-                    </defs>
-                    <rect x="14" y="6" width="40" height="36" rx="6" stroke="url(#heroGradient)" stroke-width="2" fill="none"/>
-                    <path d="M20 32 L28 24 L36 28 L44 18" stroke="url(#heroGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="44" cy="18" r="3" fill="url(#heroGradient)"/>
-                    <path d="M12 54 H56" stroke="url(#heroGradient)" stroke-width="3" stroke-linecap="round"/>
-                    <circle cx="34" cy="64" r="11" stroke="url(#heroGradient)" stroke-width="3" fill="none"/>
-                    <path d="M28 60 C32 62 36 62 40 60" stroke="url(#heroGradient)" stroke-width="2" fill="none"/>
-                    <path d="M28 68 C32 66 36 66 40 68" stroke="url(#heroGradient)" stroke-width="2" fill="none"/>
-                </svg>
+    <main class="main-layout">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-logo-img" role="img" aria-label="Logo Projeção Analytics">
+                    <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="heroGradient" x1="0" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#6AD9FF" />
+                                <stop offset="50%" stop-color="#86A8FD" />
+                                <stop offset="100%" stop-color="#F28AD9" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="14" y="6" width="40" height="36" rx="6" stroke="url(#heroGradient)" stroke-width="2" fill="none" />
+                        <path d="M20 32 L28 24 L36 28 L44 18" stroke="url(#heroGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="44" cy="18" r="3" fill="url(#heroGradient)" />
+                        <path d="M12 54 H56" stroke="url(#heroGradient)" stroke-width="3" stroke-linecap="round" />
+                        <circle cx="34" cy="64" r="11" stroke="url(#heroGradient)" stroke-width="3" fill="none" />
+                        <path d="M28 60 C32 62 36 62 40 60" stroke="url(#heroGradient)" stroke-width="2" fill="none" />
+                        <path d="M28 68 C32 66 36 66 40 68" stroke="url(#heroGradient)" stroke-width="2" fill="none" />
+                    </svg>
+                </div>
+                <p class="hero-title">Análise inteligente de apostas esportivas</p>
+                <p class="hero-subtitle">Documento completo com indicações, análises, última rodada e bingo especial</p>
             </div>
-            <p class="hero-title">Análise Inteligente de Apostas Esportivas</p>
-            <p class="hero-subtitle">Indicações estratégicas baseadas em dados, confiança e análise tática</p>
-        </div>
-    </div>
+        </section>
 
-    <!-- ABAS -->
-    <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab(event, 'games')">⚽ Indicações</button>
-        <button class="tab-btn" onclick="switchTab(event, 'bingo')">🎰 Bingos</button>
-        <button class="tab-btn" onclick="switchTab(event, 'news')">📰 Análises</button>
-        <button class="tab-btn" onclick="switchTab(event, 'recap')">📅 Última Rodada</button>
-    </div>
+        <section class="rodada-info">
+            <div class="rodada-meta-card" id="rodada-meta-card">Carregando dados oficiais da rodada...</div>
+            <div class="rodada-grid" id="rodada-grid"></div>
+        </section>
 
-    <!-- CONTEÚDO -->
-    <div class="content">
-        <!-- INDICAÇÕES -->
-        <div id="games" class="section active">
-            <div class="filters">
-                <button class="filter-btn active" data-league="brasileirao" onclick="loadGames('brasileirao')">🇧🇷 Brasileirão</button>
-                <button class="filter-btn" data-league="champions" onclick="loadGames('champions')">🏆 Champions</button>
-                <button class="filter-btn" data-league="premier" onclick="loadGames('premier')">🇬🇧 Premier</button>
-                <button class="filter-btn" data-league="laliga" onclick="loadGames('laliga')">🇪🇸 La Liga</button>
-            </div>
-            <div id="gamesContainer" class="loading">
-                <div class="spinner"></div>
+        <div class="tabs-container">
+            <div class="tabs-selector">
+                <button class="tab-button active" data-tab="indicacoes">📊 Indicações</button>
+                <button class="tab-button" data-tab="analises">🔍 Análises</button>
+                <button class="tab-button" data-tab="ultima-rodada">🏆 Última Rodada</button>
+                <button class="tab-button" data-tab="outras-ligas">🌍 Outras Ligas</button>
+                <button class="tab-button" data-tab="bingo">🎯 Bingo</button>
             </div>
         </div>
 
-        <!-- BINGOS -->
-        <div id="bingo" class="section">
-            <div id="bingoContainer" class="loading">
-                <div class="spinner"></div>
-            </div>
+        <div class="tabs-content">
+            <section id="indicacoes" class="tab-content active">
+                <div id="indicacoes-list" class="loading-block">Carregando indicações...</div>
+            </section>
+            <section id="analises" class="tab-content">
+                <div id="analises-list" class="loading-block">Selecione a aba para carregar as análises.</div>
+            </section>
+            <section id="ultima-rodada" class="tab-content">
+                <div id="ultima-rodada-content" class="loading-block">Carregando última rodada...</div>
+            </section>
+            <section id="outras-ligas" class="tab-content">
+                <div id="outras-ligas-content" class="loading-block">Carregando ligas internacionais...</div>
+            </section>
+            <section id="bingo" class="tab-content">
+                <div id="bingo-list" class="loading-block">Carregando bingo especial...</div>
+            </section>
         </div>
-
-        <!-- ANÁLISES -->
-        <div id="news" class="section">
-            <div id="newsContainer" class="loading">
-                <div class="spinner"></div>
-            </div>
-        </div>
-
-        <!-- ÚLTIMA RODADA -->
-        <div id="recap" class="section">
-            <div id="recapContainer" class="loading">
-                <div class="spinner"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="tipModalOverlay" class="tip-modal-overlay" role="dialog" aria-modal="true" aria-live="polite">
-        <div class="tip-modal">
-            <button id="tipModalClose" class="tip-modal-close" aria-label="Fechar">&times;</button>
-            <h3>Detalhe da indicação</h3>
-            <p id="tipModalText"></p>
-        </div>
-    </div>
+    </main>
 
     <script>
-        const dataCache = {
-            games: null,
-            bingos: null,
-            news: null
-        };
+        let rodadaCache = null;
+        let outrasLigasCache = null;
+        let ligaSelecionada = 'premierLeague';
 
-        const apexAnalysisData = {
-            meta: {
-                title: "ANÁLISE APEX SPORTS ANALYTICS CONSOLIDADA",
-                subtitle: "Todos os Confrontos Analisados + Projeções Futuras",
-                timeframe: "Dezembro 2025 - Janeiro 2026"
-            },
-            competitions: [
-                { league: "Brasileirão Betano", matches: ["Flamengo x Ceará", "Cruzeiro x Botafogo", "Fortaleza x Corinthians"] },
-                { league: "Liga dos Campeões", matches: ["Real Madrid x Manchester City", "Inter x Liverpool", "Barcelona x Frankfurt"] },
-                { league: "Premier League", matches: ["Liverpool x Leeds", "Tottenham x Liverpool", "Manchester City x Sunderland"] },
-                { league: "La Liga", matches: ["Athletic Bilbao x Real Madrid", "Real Betis x Barcelona", "Villarreal x Getafe"] }
-            ],
-            methodology: [
-                "Coleta sistematizada de dados estatísticos",
-                "Análise de contexto de importância (título, rebaixamento, clássicos, Efeito Viña)",
-                "Cálculo de odds justas versus odds de mercado",
-                "Identificação de VALUE com retorno positivo",
-                "Gestão de risco com stake percentual baseado em confiança"
-            ],
-            leagues: {
-                brasileirao: {
-                    title: "PARTE II: BRASILEIRÃO BETANO - RODADA 37",
-                    description: "Três confrontos decisivos para título, Libertadores e fuga do rebaixamento.",
-                    matches: [
-                        {
-                            match: "FLAMENGO x CEARÁ",
-                            schedule: "3 dezembro 2025 - 21h30 | Maracanã",
-                            context: "Flamengo (75 pts) pode confirmar o título diante de um Ceará já eliminado (11º, 25 pts), mas dono da 5ª melhor defesa. Pressão positiva, Maracanã lotado e cenário emocional favorável ao Rubro-Negro.",
-                            analysisBlocks: [
-                                {
-                                    title: "Flamengo - Matriz ofensiva",
-                                    points: [
-                                        "Bruno Henrique vive sequência perfeita (4 gols em 3 jogos).",
-                                        "Laterais Ayrton Lucas e Emerson Royal elevam o volume ofensivo pelos lados.",
-                                        "74 gols marcados (média 2,06/jogo) e apenas 24 sofridos (0,67/jogo), saldo +50.",
-                                        "Padrão de domínio territorial com pressão alta desde o 1º minuto."
-                                    ]
-                                },
-                                {
-                                    title: "Ceará - Vulnerabilidades",
-                                    points: [
-                                        "Ataque limitado: 15 gols em 36 jogos (0,42/jogo).",
-                                        "Sofre 11,78 finalizações por partida, cedendo viradas frequentes.",
-                                        "Modelo reativo e pouco criativo, especialmente fora de casa.",
-                                        "Recuo constante gera escanteios defensivos em abundância."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Over 9.5 Escanteios",
-                                    oddJusta: "1.28",
-                                    oddMercado: "1.72",
-                                    value: "+34.2%",
-                                    status: "✅",
-                                    rationale: "Flamengo (10.08 esc/jogo) + Ceará (10.00) projetam 20.08 cantos. Laterais rubro-negros e bloco baixo cearense sustentam a aposta (4/4 H2H recentes ultrapassaram a linha).",
-                                    stake: "4% da banca (HIGH VALUE)",
-                                    note: "Contexto futuro: padrão repetível em jogos do Flamengo com laterais liberados."
-                                },
-                                {
-                                    title: "Bruno Henrique marcar a qualquer momento",
-                                    oddJusta: "2.86",
-                                    oddMercado: "2.85",
-                                    value: "-0.2%",
-                                    status: "⚠️",
-                                    rationale: "Sequência de 4 gols em 3 jogos e 100% de aproveitamento recente contra o Ceará, mas preço alinhado ao justo.",
-                                    stake: "3% da banca",
-                                    note: "Recomendado em múltiplas, não isolada."
-                                },
-                                {
-                                    title: "Vitória do Flamengo",
-                                    oddJusta: "1.18",
-                                    oddMercado: "1.25",
-                                    value: "+6.2%",
-                                    status: "✅",
-                                    rationale: "85% de probabilidade implícita; 78% de aproveitamento em casa e invencibilidade recente contra o Ceará.",
-                                    stake: "3% da banca"
-                                }
-                            ],
-                            recommendation: "Múltipla ideal: Over 9.5 Escanteios + Bruno Henrique marcar + Vitória do Flamengo (Odd 5.89 | Value +21% | Stake 2%)."
-                        },
-                        {
-                            match: "CRUZEIRO x BOTAFOGO",
-                            schedule: "4 dezembro 2025 - 19h30 | Mineirão",
-                            context: "Confronto direto por vaga na Libertadores 2026: Cruzeiro (3º, 68 pts) tem 10 pontos de vantagem sobre o Botafogo (6º, 58 pts). Vitória muda o desenho do G4.",
-                            analysisBlocks: [
-                                {
-                                    title: "Cruzeiro - Fortaleza em casa",
-                                    points: [
-                                        "Sequência 7V-2E-1D no Mineirão (últimos 10 jogos).",
-                                        "25 gols sofridos na competição (3ª melhor defesa) e apenas 0,50 gol sofrido em casa.",
-                                        "65% de aproveitamento histórico no Mineirão contra o Botafogo (25V-13E-7D).",
-                                        "Não perde para o Botafogo há quase 10 anos (6V-8E nos últimos 14 jogos)."
-                                    ]
-                                },
-                                {
-                                    title: "Botafogo - Fragilidade visitante",
-                                    points: [
-                                        "Campanha recente fora: 2V-5E-3D.",
-                                        "Ataque reduzido a 0,88 gol/jogo longe do Rio.",
-                                        "32 gols sofridos (1,6 por jogo como visitante).",
-                                        "Pressão psicológica: precisa vencer, empatar não basta."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Vitória do Cruzeiro",
-                                    oddJusta: "1.92",
-                                    oddMercado: "2.10",
-                                    value: "+9.2%",
-                                    status: "✅",
-                                    rationale: "Probabilidade de 52% sustentada por domínio histórico e consistência defensiva no Mineirão.",
-                                    stake: "3% da banca"
-                                },
-                                {
-                                    title: "Menos de 2.5 gols",
-                                    oddJusta: "1.54",
-                                    oddMercado: "1.75",
-                                    value: "+13.8%",
-                                    status: "✅",
-                                    rationale: "Cruzeiro marca 1,63 em casa e sofre 0,50; últimos 3 de 4 confrontos ficaram abaixo da linha.",
-                                    stake: "3% da banca"
-                                },
-                                {
-                                    title: "Ambas marcam (evitar)",
-                                    oddJusta: "1.82",
-                                    oddMercado: "1.80",
-                                    value: "-1.0%",
-                                    status: "⚠️",
-                                    rationale: "Valor praticamente nulo e histórico recente com placares magros.",
-                                    stake: "0% (somente múltiplas específicas)"
-                                }
-                            ],
-                            recommendation: "Múltipla recomendada: Vitória do Cruzeiro + Under 2.5 gols (Odd 3.68 | Value +11% | Stake 2-3%)."
-                        },
-                        {
-                            match: "FORTALEZA x CORINTHIANS",
-                            schedule: "3 dezembro 2025 - 19h00 | Castelão",
-                            context: "Fortaleza (18º, 15 pts) pode sair do Z4 após arrancada de 8 jogos invicto. Corinthians chega instável e sofrendo gols há 5 partidas.",
-                            analysisBlocks: [
-                                {
-                                    title: "Fortaleza - Arrancada épica",
-                                    points: [
-                                        "Invencibilidade de 8 jogos (3V-5E).",
-                                        "Lucero lidera o ataque com 11 gols na temporada.",
-                                        "Urgência psicológica máxima para escapar do rebaixamento.",
-                                        "3ª maior média de escanteios da liga (11 por jogo)."
-                                    ]
-                                },
-                                {
-                                    title: "Corinthians - Vulnerabilidade estrutural",
-                                    points: [
-                                        "Equipe mais indisciplinada: 114 cartões (105 amarelos + 9 vermelhos).",
-                                        "44 gols sofridos e 5 jogos seguidos levando gol.",
-                                        "Ataque com 40 gols, porém irregular fora de casa.",
-                                        "Padrão agressivo porém desorganizado, cedendo bolas paradas."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Fortaleza vencer",
-                                    oddJusta: "1.92",
-                                    oddMercado: "1.95",
-                                    value: "+1.4%",
-                                    status: "⚠️",
-                                    rationale: "Valor mínimo apesar do momento; Corinthians ainda oferece risco ofensivo.",
-                                    stake: "2% apenas em combinações"
-                                },
-                                {
-                                    title: "Ambas marcam - SIM",
-                                    oddJusta: "1.47",
-                                    oddMercado: "1.95",
-                                    value: "+32.6%",
-                                    status: "✅",
-                                    rationale: "Fortaleza marcou em 8/10 jogos recentes e Corinthians sofreu em 5 seguidos; 7 dos últimos 10 H2H bateram.",
-                                    stake: "4% da banca (melhor aposta do confronto)"
-                                },
-                                {
-                                    title: "Over 10.5 escanteios",
-                                    oddJusta: "1.61",
-                                    oddMercado: "2.02",
-                                    value: "+25.2%",
-                                    status: "✅",
-                                    rationale: "Médias combinadas projetam 20,19 escanteios; indisciplina corintiana amplia bolas paradas.",
-                                    stake: "3% da banca"
-                                }
-                            ],
-                            recommendation: "Múltipla recomendada: Ambas marcam + Over 10.5 escanteios (Odd 3.94 | Value +28% | Stake 3%)."
-                        }
-                    ],
-                    summary: {
-                        title: "PARTE III: RESUMO DE OPORTUNIDADES - BRASILEIRÃO",
-                        headers: ["Mercado", "Value", "Viabilidade"],
-                        rows: [
-                            ["FLA: Over 9.5 Escanteios", "+34.2%", "MÁXIMA"],
-                            ["FOR: Ambas Marcam", "+32.6%", "MÁXIMA"],
-                            ["FOR: Over 10.5 Escanteios", "+25.2%", "ALTA"],
-                            ["CRU: Under 2.5 Gols", "+13.8%", "ALTA"],
-                            ["BET: Vitória Barça", "+13.8%", "ALTA"]
-                        ]
-                    },
-                    capital: "Capital recomendado no Brasileirão: 12-15% da banca total (4 apostas de 3-4%)."
-                },
-                champions: {
-                    title: "PARTE IV: LIGA DOS CAMPEÕES - RODADA 6",
-                    description: "Rodada decisiva com Real, Inter e Barcelona em cenários de alto value.",
-                    matches: [
-                        {
-                            match: "REAL MADRID x MANCHESTER CITY",
-                            schedule: "10 dezembro 2025 - 20h00 UTC | Santiago Bernabéu",
-                            context: "Confronto direto por top-8. Madrid (12 pts) é praticamente imbatível em casa, enquanto o City sofre fora.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto estratégico",
-                                    points: [
-                                        "Madrid 4V-0E-1D em casa na competição.",
-                                        "City tem queda de produção como visitante.",
-                                        "Perdedor fica perto da eliminação na fase classificatória."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Vitória do Real Madrid",
-                                    oddJusta: "1.67",
-                                    oddMercado: "2.32",
-                                    value: "+39.2%",
-                                    status: "✅",
-                                    rationale: "Probabilidade de 60% suportada pela sequência invicta e histórico positivo recente contra o City (5 jogos sem perder).",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Mbappé marcar",
-                                    oddJusta: "2.38",
-                                    oddMercado: "2.75",
-                                    value: "+15.5%",
-                                    status: "✅",
-                                    rationale: "Mbappé soma 9 gols em 5 jogos (1,8/jogo) e chega embalado.",
-                                    stake: "3% da banca"
-                                },
-                                {
-                                    title: "Over 11.5 escanteios",
-                                    oddJusta: "1.47",
-                                    oddMercado: "2.10",
-                                    value: "+42.8%",
-                                    status: "✅",
-                                    rationale: "Real produz 10,4 cruzamentos/jogo e o City sofre 7,1 escanteios como visitante, indicando volume elevado.",
-                                    stake: "4% da banca"
-                                }
-                            ]
-                        },
-                        {
-                            match: "INTER MILÃO x LIVERPOOL",
-                            schedule: "9 dezembro 2025 - 17h00 UTC | San Siro",
-                            context: "Inter invicta em casa com defesa de 0,4 gol sofrido/jogo. Liverpool vive crise ofensiva e depende quase exclusivamente de Salah.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto estratégico",
-                                    points: [
-                                        "San Siro virou fortaleza (4V-0E-1D).",
-                                        "Liverpool próximo da eliminação e instável ofensivamente.",
-                                        "Ambiente favorável para value máximo na vitória nerazzurra."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Vitória da Inter",
-                                    oddJusta: "1.54",
-                                    oddMercado: "2.37",
-                                    value: "+54.1%",
-                                    status: "✅✅",
-                                    rationale: "Melhor aposta da rodada com 65% de probabilidade projetada e defesa impenetrável.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Ambas marcam",
-                                    oddJusta: "1.67",
-                                    oddMercado: "2.20",
-                                    value: "+32.0%",
-                                    status: "✅",
-                                    rationale: "Necessidade de gols do Liverpool abre espaços; Inter mantém produção ofensiva regular.",
-                                    stake: "3% da banca"
-                                },
-                                {
-                                    title: "Lautaro marcar",
-                                    oddJusta: "2.63",
-                                    oddMercado: "3.10",
-                                    value: "+17.8%",
-                                    status: "✅",
-                                    rationale: "Lautaro balançou redes em 4 jogos consecutivos na Champions.",
-                                    stake: "2% da banca"
-                                }
-                            ]
-                        },
-                        {
-                            match: "BARCELONA x EINTRACHT FRANKFURT",
-                            schedule: "9 dezembro 2025 - 16h45 UTC | Camp Nou",
-                            context: "Mismatch total: Barcelona marca 4,2 gols/jogo em casa, enquanto o Frankfurt ainda não pontuou fora (0V-0E-3D).",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto estratégico",
-                                    points: [
-                                        "Frankfurt praticamente eliminado e com defesa exposta.",
-                                        "Barcelona precisa vencer para subir no recorte geral.",
-                                        "Cenário ideal para apostas agressivas em gols." ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Ambas marcam",
-                                    oddJusta: "1.23",
-                                    oddMercado: "2.85",
-                                    value: "+130.8%",
-                                    status: "✅✅",
-                                    rationale: "Value raríssimo: Barça cedeu gols mesmo goleando e Frankfurt tem volume de finalizações em transições.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Over 3.5 gols",
-                                    oddJusta: "1.39",
-                                    oddMercado: "2.45",
-                                    value: "+76.4%",
-                                    status: "✅",
-                                    rationale: "Barça 4,2 gols/jogo em casa e Frankfurt sofre 1,6 por partida; linha acessível.",
-                                    stake: "4% da banca"
-                                }
-                            ]
-                        }
-                    ],
-                    summary: {
-                        title: "PARTE V: RESUMO CHAMPIONS LEAGUE",
-                        headers: ["Confronto", "Melhor aposta", "Value"],
-                        rows: [
-                            ["Barcelona x Frankfurt", "Ambas Marcam", "+130.8%"],
-                            ["Barcelona x Frankfurt", "Over 3.5 Gols", "+76.4%"],
-                            ["Inter x Liverpool", "Vitória Inter", "+54.1%"]
-                        ]
-                    },
-                    capital: "Capital recomendado Champions League: 10-12% da banca total."
-                },
-                premier: {
-                    title: "PARTE VI: PREMIER LEAGUE - RODADAS 14-17",
-                    description: "Três confrontos ingleses com foco em discrepâncias de forma e value.",
-                    matches: [
-                        {
-                            match: "LIVERPOOL x LEEDS UNITED",
-                            schedule: "6 dezembro 2025 - 12h30 | Elland Road",
-                            context: "Liverpool reage (7V-0E-6D) enquanto o Leeds despenca com 5 derrotas em 7 rodadas.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "Disparidade técnica evidente.",
-                                        "Leeds sofre 1,8 gol/jogo; Liverpool marca 1,8 por partida."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Over 2.5 gols",
-                                    oddJusta: "1.48",
-                                    oddMercado: "2.10",
-                                    value: "+41.8%",
-                                    status: "✅",
-                                    rationale: "Probabilidade de 67,5% sustentada pelo momento ofensivo de ambos os times.",
-                                    stake: "4% da banca"
-                                }
-                            ]
-                        },
-                        {
-                            match: "TOTTENHAM x LIVERPOOL",
-                            schedule: "20 dezembro 2025 - 14h30 | Tottenham Stadium",
-                            context: "Clássico pós-Natal com Liverpool 60% favorito e vantagem histórica (12V-9E-19D).",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "Liverpool domina confrontos diretos recentes.",
-                                        "Tottenham oscila defensivamente contra equipes agressivas."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Liverpool HT/FT",
-                                    oddJusta: "1.54",
-                                    oddMercado: "3.25",
-                                    value: "+111.3%",
-                                    status: "✅✅",
-                                    rationale: "Melhor aposta da Premier: mesma equipe para vencer 1º tempo e jogo com enorme discrepância de preço.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Vitória do Liverpool",
-                                    oddJusta: "1.67",
-                                    oddMercado: "1.95",
-                                    value: "+17.0%",
-                                    status: "✅",
-                                    rationale: "Probabilidade de 60% e histórico amplamente favorável.",
-                                    stake: "3% da banca"
-                                }
-                            ]
-                        },
-                        {
-                            match: "MANCHESTER CITY x SUNDERLAND",
-                            schedule: "6 dezembro 2025 - 15h00 | Etihad Stadium",
-                            context: "City (25 pts) enfrenta um Sunderland no Z2 (19 pts). Desequilíbrio total.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "City mantém 100% em casa nas últimas rodadas.",
-                                        "Sunderland sofre defensivamente e chega pressionado."
-                                    ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Over 3.5 gols",
-                                    oddJusta: "1.39",
-                                    oddMercado: "2.15",
-                                    value: "+54.8%",
-                                    status: "✅",
-                                    rationale: "City marca 2,08 gols/jogo em casa e enfrenta defesa vulnerável.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Haaland 2+ gols",
-                                    oddJusta: "2.86",
-                                    oddMercado: "3.40",
-                                    value: "+19.0%",
-                                    status: "✅",
-                                    rationale: "Haaland anotou 14 gols em 13 jogos e já fez 2+ gols em 6 ocasiões contra defesas frágeis.",
-                                    stake: "2% da banca"
-                                }
-                            ]
-                        }
-                    ],
-                    summary: {
-                        title: "PARTE VII: RESUMO PREMIER LEAGUE",
-                        headers: ["Mercado", "Value", "Recomendação"],
-                        rows: [
-                            ["TOT: Liverpool HT/FT", "+111.3%", "MÁXIMA PRIORIDADE"],
-                            ["MNC: Over 3.5 Gols", "+54.8%", "ALTA"],
-                            ["LIV: Over 2.5 Gols", "+41.8%", "ALTA"]
-                        ]
-                    },
-                    capital: "Capital recomendado Premier League: 9-11% da banca total."
-                },
-                laliga: {
-                    title: "PARTE VIII: LA LIGA - RODADAS 15-16",
-                    description: "Foco em escanteios de Athletic, gols em Betis x Barça e domínio do Villarreal.",
-                    matches: [
-                        {
-                            match: "ATHLETIC BILBAO x REAL MADRID",
-                            schedule: "3 dezembro 2025 - 15h00 | San Mamés",
-                            context: "Madrid tenta quebrar série de 3 empates, mas San Mamés registra 10,3 escanteios/jogo para o Athletic.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "Athletic forte em casa e focado em vaga de Champions.",
-                                        "Real precisa vencer para seguir vivo pelo título." ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Over 9.5 escanteios",
-                                    oddJusta: "1.47",
-                                    oddMercado: "3.40",
-                                    value: "+131.2%",
-                                    status: "✅✅",
-                                    rationale: "Melhor oportunidade da rodada espanhola pelo volume combinado de cantos (68% de probabilidade).",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Vitória do Real Madrid",
-                                    oddJusta: "1.76",
-                                    oddMercado: "1.78",
-                                    value: "+1.1%",
-                                    status: "⚠️",
-                                    rationale: "Value praticamente nulo; aposta apenas para composições específicas.",
-                                    stake: "0% isolado"
-                                }
-                            ]
-                        },
-                        {
-                            match: "REAL BETIS x BARCELONA",
-                            schedule: "6 dezembro 2025 - 12h30 | Benito Villamarín",
-                            context: "Barça líder (34 pts) e invicto fora (3V-0E-1D) com média de 3,5 gols por jogo longe de casa.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "Betis sólido em casa, mas vulnerável defensivamente.",
-                                        "Barcelona mantém padrão agressivo mesmo como visitante." ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Over 2.5 gols",
-                                    oddJusta: "1.28",
-                                    oddMercado: "2.10",
-                                    value: "+63.8%",
-                                    status: "✅",
-                                    rationale: "78% de probabilidade projetada dada a força ofensiva catalã.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Ambas marcam",
-                                    oddJusta: "1.61",
-                                    oddMercado: "1.95",
-                                    value: "+20.9%",
-                                    status: "✅",
-                                    rationale: "Betis marcou em 8/10 jogos no Benito Villamarín.",
-                                    stake: "3% da banca"
-                                }
-                            ]
-                        },
-                        {
-                            match: "VILLARREAL x GETAFE",
-                            schedule: "7 dezembro 2025 - 19h00 | Estadio de la Cerámica",
-                            context: "Villarreal (3º) segue invicto em casa (5V-0E) e enfrenta o Getafe (12º), que sofre longe de casa.",
-                            analysisBlocks: [
-                                {
-                                    title: "Contexto",
-                                    points: [
-                                        "Submarino Amarelo marca 2,1 gols/jogo em casa.",
-                                        "Getafe tem apenas 1 vitória em 6 como visitante." ]
-                                }
-                            ],
-                            bets: [
-                                {
-                                    title: "Vitória do Villarreal",
-                                    oddJusta: "1.43",
-                                    oddMercado: "1.63",
-                                    value: "+14.1%",
-                                    status: "✅",
-                                    rationale: "Probabilidade de 70% com invencibilidade sólida no estádio Cerámica.",
-                                    stake: "3% da banca"
-                                },
-                                {
-                                    title: "Over 1.5 gols",
-                                    oddJusta: "1.39",
-                                    oddMercado: "1.85",
-                                    value: "+33.2%",
-                                    status: "✅",
-                                    rationale: "72% dos confrontos recentes tiveram 2+ gols.",
-                                    stake: "4% da banca"
-                                },
-                                {
-                                    title: "Ambas marcam",
-                                    oddJusta: "2.04",
-                                    oddMercado: "2.10",
-                                    value: "+2.9%",
-                                    status: "⚠️",
-                                    rationale: "Getafe marca pouco fora; apenas para múltiplas de alto retorno.",
-                                    stake: "Stake reduzida"
-                                }
-                            ]
-                        }
-                    ],
-                    summary: {
-                        title: "PARTE IX: RESUMO LA LIGA",
-                        headers: ["Mercado", "Value", "Status"],
-                        rows: [
-                            ["Athletic: Over 9.5 Escanteios", "+131.2%", "MÁXIMA PRIORIDADE"],
-                            ["Betis: Over 2.5 Gols", "+63.8%", "ALTA"],
-                            ["Villarreal: Over 1.5 Gols", "+33.2%", "ALTA"]
-                        ]
-                    },
-                    capital: "Capital recomendado La Liga: 11-13% da banca total."
-                }
-            },
-            futureProjects: [
-                {
-                    title: "A. Copa Intercontinental 2025 - Flamengo",
-                    highlights: [
-                        "Data: 10-17 de dezembro | Local: Qatar.",
-                        "Novo formato com campeões continentais e Flamengo favorito desde a estreia.",
-                        "Metodologia APEX acompanha o desgaste progressivo entre as fases."
-                    ],
-                    phases: [
-                        {
-                            title: "Fase 1 - Dérbi das Américas (10/12)",
-                            context: "Flamengo x Cruz Azul com 80%+ de probabilidade para os brasileiros pela superioridade defensiva.",
-                            odds: "Vitória Flamengo 1.25"
-                        },
-                        {
-                            title: "Fase 2 - Copa Challenger (13/12)",
-                            context: "Flamengo x Pyramids FC caso avance; egípcios não vencem fora há 3 jogos.",
-                            odds: "Vitória Flamengo 1.30"
-                        },
-                        {
-                            title: "Fase 3 - Final (17/12)",
-                            context: "Flamengo x PSG: franceses chegam descansados por jogar apenas a decisão.",
-                            odds: "Vitória PSG 1.85"
-                        }
-                    ],
-                    extra: "Múltipla 'Flamengo Campeão Intercontinental' = 4.06 de odd agregada (value +0.5%, praticamente alinhada).",
-                    recommendation: "Aposta interessante para acumuladores longos, mas sem value isolado relevante."
-                },
-                {
-                    title: "B. Mundial de Clubes 2025 - Estados Unidos",
-                    highlights: [
-                        "Torneio acontece entre 15 de junho e 13 de julho nos EUA.",
-                        "Flamengo ficou na fase de grupos no último ciclo e busca revanche.",
-                        "Representantes brasileiros: Flamengo, Palmeiras, Botafogo e Fluminense."
-                    ],
-                    details: [
-                        "Possível fase de grupos: Flamengo x Bayern (Bayern favorito com odds justas 1.42).",
-                        "Possível mata-mata: Flamengo x Real Madrid com odds justas 2.00 para empate/pênaltis.",
-                        "Projeção Flamengo campeão mundial: probabilidade 8-10% | Odds justas 10.00-12.50 (value neutro)."
-                    ],
-                    recommendation: "Monitorar apenas próximo do torneio; atualmente sem oportunidade clara de value."
-                },
-                {
-                    title: "C. Brasileirão 2025 - Rodadas Finais",
-                    highlights: [
-                        "Cenário 1 - Flamengo campeão (92%): basta vencer o Ceará ou pontuar contra o Palmeiras (odds justas 1.09).",
-                        "Cenário 2 - Palmeiras campeão (6%): precisa de 2 vitórias e 2 derrotas do Flamengo (odds justas 18.00).",
-                        "Cenário 3 - Cruzeiro/Botafogo na Libertadores (90% de probabilidade combinada)."
-                    ],
-                    details: [
-                        "Odds justas projetadas: Cruzeiro 1.15 para G4, Botafogo 1.85 para vaga direta.",
-                        "Gestão de banca sugere proteger lucros caso Flamengo confirme título antes da rodada 38."
-                    ]
-                },
-                {
-                    title: "D. Liga dos Campeões 2025/26 - Oitavas",
-                    highlights: [
-                        "Real Madrid projeta duelo contra a Juventus com favoritismo de 85% (odds justas 1.18).",
-                        "Inter pode enfrentar o Chelsea com 65% de probabilidade de avançar (odds justas 1.55)."
-                    ],
-                    table: {
-                        title: "Projeção de campeão Champions 2025/26",
-                        headers: ["Time", "Probabilidade", "Odds Justas"],
-                        rows: [
-                            ["Real Madrid", "28%", "3.57"],
-                            ["Bayern Munich", "18%", "5.56"],
-                            ["Manchester City", "15%", "6.67"],
-                            ["Barcelona", "12%", "8.33"],
-                            ["Inter Milan", "10%", "10.00"],
-                            ["PSG", "8%", "12.50"],
-                            ["Liverpool", "6%", "16.67"],
-                            ["Outros", "3%", "33.33"]
-                        ]
-                    },
-                    recommendation: "Mercado futuro prioriza Real Madrid e Bayern; aguardar chaveamento oficial para entradas."
-                },
-                {
-                    title: "E. Projeção Premium - Final Internacional 2026",
-                    highlights: [
-                        "Cenário hipotético: Flamengo campeão mundial enfrenta o campeão da Champions em 2026.",
-                        "Match-up principal: Flamengo x Real Madrid com odds justas 2.85 para o Real (35% de favoritismo).",
-                        "Probabilidade de ocorrer <1%, pois depende de títulos consecutivos de Flamengo."
-                    ],
-                    recommendation: "Mantido apenas no radar estratégico; nenhuma aposta recomendada até a consolidação dos cenários."
-                }
-            ],
-            investmentPlan: {
-                allocation: [
-                    "Brasileirão (35%): 12-15% da banca distribuídos em 4 apostas principais.",
-                    "Champions League (30%): 10-12% focados em 3 apostas com value elevado.",
-                    "Premier League (25%): 9-11% em 2-3 apostas de discrepância técnica.",
-                    "La Liga (25%): 11-13% priorizando mercados de escanteios e gols."
-                ],
-                valueRanking: {
-                    headers: ["Ranking", "Aposta", "Value", "Odd", "Stake"],
-                    rows: [
-                        ["1º", "Athletic: Over 9.5 Escanteios", "+131.2%", "3.40", "4%"],
-                        ["2º", "Barcelona: Ambas Marcam", "+130.8%", "2.85", "4%"],
-                        ["3º", "Tottenham: Liverpool HT/FT", "+111.3%", "3.25", "4%"],
-                        ["4º", "Barcelona: Over 3.5 Gols", "+76.4%", "2.45", "4%"],
-                        ["5º", "Inter: Vitória Inter", "+54.1%", "2.37", "4%"],
-                        ["6º", "City: Over 3.5 Gols", "+54.8%", "2.15", "4%"],
-                        ["7º", "Betis: Over 2.5 Gols", "+63.8%", "2.10", "4%"],
-                        ["8º", "Flamengo: Over 9.5 Escanteios", "+34.2%", "1.72", "4%"],
-                        ["9º", "Fortaleza: Ambas Marcam", "+32.6%", "1.95", "4%"],
-                        ["10º", "Villarreal: Over 1.5 Gols", "+33.2%", "1.85", "4%"]
-                    ]
-                },
-                riskRules: [
-                    "Stop-loss diário fixado em 12% da banca (atingido, pausa por 24h).",
-                    "Após 3 REDs consecutivos, pausa operacional de 24h.",
-                    "Stake máximo de 4% por aposta principal e 2-3% em complementares.",
-                    "Correlação limitada: máximo de 2 apostas por campeonato na mesma rodada.",
-                    "Diversificação obrigatória em pelo menos 4 campeonatos por semana."
-                ]
-            },
-            conclusion: {
-                summaryBullets: [
-                    "12 confrontos mapeados em 4 campeonatos sob a metodologia APEX.",
-                    "10 apostas com value superior a 10% e 3 acima de 100% (oportunidades raras).",
-                    "Capital recomendado para dezembro: 40-45% da banca total distribuída gradualmente."
-                ],
-                futureApplications: [
-                    "Copa Intercontinental (10-17/12): selecionar 2-3 apostas principais.",
-                    "Brasileirão Rodada 38 (07/12): 1-2 apostas de encerramento alinhadas ao título.",
-                    "Playoffs da Premier League (fevereiro/26): 5-6 apostas seguindo mesma matriz.",
-                    "Oitavas da Champions (fevereiro/26): 8-10 apostas priorizando value>15%."
-                ],
-                metrics: [
-                    "ROI esperado entre +15% e +25% com value médio acima de 15%.",
-                    "Win rate projetado de 58-62%, superior ao mínimo sustentável de 50%.",
-                    "Payoff ratio alvo de 1.5:1 (ganhos 1,5x superiores às perdas)."
-                ]
+        document.addEventListener('DOMContentLoaded', () => {
+            setupTabsSystem();
+            loadRodadaInfo();
+            loadIndicacoes();
+            loadUltimaRodada();
+            loadBingo();
+        });
+
+        async function loadRodadaInfo() {
+            const metaCard = document.getElementById('rodada-meta-card');
+            const grid = document.getElementById('rodada-grid');
+            try {
+                const response = await fetch('/data/rodada-completa.json');
+                if (!response.ok) throw new Error('Falha ao carregar rodada');
+                const data = await response.json();
+                rodadaCache = data;
+                renderRodadaInfo(data, metaCard, grid);
+                verificarDadosAtualizados(data.data_atualizacao);
+            } catch (error) {
+                console.error(error);
+                metaCard.textContent = 'Erro ao carregar dados da rodada.';
             }
-        };
-
-        const latestRoundData = {
-            meta: {
-                title: "RESUMO DETALHADO DA RODADA",
-                subtitle: "Análise profunda com retroanálise de mercados",
-                date: "2 de dezembro de 2025"
-            },
-            sections: [
-                {
-                    id: 'premier',
-                    title: "PARTE I: PREMIER LEAGUE",
-                    match: "FULHAM 4 x 5 MANCHESTER CITY",
-                    schedule: "2 de dezembro - 16h30 | Craven Cottage",
-                    context: "Nine-goal thriller histórico: City buscava consolidar liderança enquanto o Fulham lutava contra o rebaixamento.",
-                    analysisBlocks: [
-                        {
-                            title: "Desenvolvimento - Primeiro Tempo",
-                            body: "City dominou desde o início. Haaland marcou seu 100º gol na Premier League aos 17 minutos, Reijnders ampliou aos 37 e Foden fez 3-1 aos 44. Smith Rowe manteve o Fulham vivo com cabeceio aos 45+2." 
-                        },
-                        {
-                            title: "Desenvolvimento - Segundo Tempo",
-                            body: "City abriu 5-1 com Foden (48') e gol contra de Berge (55'), mas a defesa entrou em colapso. Iwobi (60') e Chukwueze (72' e 78') reduziram. Gvardiol salvou finalização de Josh King aos 90+2 para garantir o 5-4." 
-                        }
-                    ],
-                    stats: {
-                        headers: ["Métrica", "Fulham", "Manchester City"],
-                        rows: [
-                            ["Posse de Bola", "38%", "62%"],
-                            ["Chutes ao gol", "9", "14"],
-                            ["Chutes bloqueados", "3", "2"],
-                            ["Passes completos", "412/583 (71%)", "656/891 (74%)"],
-                            ["Cartões amarelos", "2", "1"],
-                            ["Escanteios", "5", "3"],
-                            ["Faltas", "18", "12"]
-                        ]
-                    },
-                    highlights: [
-                        "Haaland: 1 golo + 1 assistência e marca centenária.",
-                        "Phil Foden: 2 gols com finalizações clínicas.",
-                        "Samuel Chukwueze: 2 gols em 11 minutos saindo do banco.",
-                        "Smith Rowe: principal arma aérea do Fulham." 
-                    ],
-                    markets: [
-                        { name: "Over 3.5 Gols", odd: "1.95", status: "GREEN", result: "9 gols", reason: "Ambas defesas vulneráveis (3.9 gols projetados).", takeaway: "Contexto ofensivo justificou confiança máxima." },
-                        { name: "Ambas marcam - Sim", odd: "1.78", status: "GREEN", result: "City 5, Fulham 4", reason: "Fulham marcou em 100% dos últimos 5 jogos em casa.", takeaway: "Transições expuseram City." },
-                        { name: "Vitória Manchester City", odd: "1.42", status: "GREEN", result: "City venceu", reason: "Superioridade técnica apesar do drama.", takeaway: "Proteção com Gvardiol salvou aposta." },
-                        { name: "Haaland marcar + Ambas marcam", odd: "3.20", status: "GREEN", result: "Combo confirmado", reason: "Haaland imparável, Fulham agressivo em casa.", takeaway: "Múltipla de alto value." },
-                        { name: "Menos de 4.5 cartões", odd: "1.85", status: "GREEN", result: "3 cartões", reason: "Arbitragem leniente mesmo com 9 gols.", takeaway: "Mercado sobrestimou faltas." },
-                        { name: "Fulham empatar ou vencer", odd: "3.50", status: "RED", result: "Fulham perdeu", reason: "City manteve controle final.", takeaway: "Reação tardia não foi suficiente." }
-                    ]
-                },
-                {
-                    id: 'laliga',
-                    title: "PARTE II: LA LIGA",
-                    match: "BARCELONA 3 x 1 ATLÉTICO MADRID",
-                    schedule: "2 de dezembro - 17h | Camp Nou",
-                    context: "Barcelona líder buscava consolidar domínio enquanto o Atlético arriscou postura ofensiva atípica como visitante.",
-                    analysisBlocks: [
-                        {
-                            title: "Primeiro Tempo",
-                            body: "Baena surpreendeu aos 19 minutos, mas o Barça respondeu com Raphinha após erro de Oblak. Lewandowski perdeu pênalti e Oblak fez defesa espetacular em cabeceio subsequente. Intervalo equilibrado em 1-1." 
-                        },
-                        {
-                            title: "Segundo Tempo",
-                            body: "Barcelona acelerou, Atlético recuou. Dani Olmo marcou aos 65 em lance confuso e Ferran Torres matou o jogo aos 90+6, garantindo 3-1." 
-                        }
-                    ],
-                    stats: {
-                        headers: ["Métrica", "Barcelona", "Atlético"],
-                        rows: [
-                            ["Posse de Bola", "67%", "33%"],
-                            ["Chutes ao gol", "16", "4"],
-                            ["xG", "3.8", "0.9"],
-                            ["Passes completos", "578/705 (82%)", "289/512 (56%)"],
-                            ["Recuperações", "32", "28"],
-                            ["Cartões amarelos", "1", "2"],
-                            ["Escanteios", "8", "2"]
-                        ]
-                    },
-                    highlights: [
-                        "Raphinha: gol em drible sobre Oblak.",
-                        "Lewandowski: penal perdido mas presença constante.",
-                        "Oblak: defesas milagrosas porém inseguro em saídas.",
-                        "Álex Baena: abriu o placar mas apagou depois." 
-                    ],
-                    markets: [
-                        { name: "Vitória Barcelona", odd: "1.65", status: "GREEN", result: "3-1", reason: "Domínio de posse e volume ofensivo.", takeaway: "Odd justa próxima a 1.64." },
-                        { name: "Barcelona over 1.5 gols", odd: "2.20", status: "GREEN", result: "3 gols", reason: "Equipe marca 3.5/jogo no Camp Nou.", takeaway: "Value de 78% de probabilidade." },
-                        { name: "Ambas marcam", odd: "1.92", status: "GREEN", result: "Sim", reason: "Atlético eficiente em contra-ataques.", takeaway: "Baena capitalizou cedo." },
-                        { name: "Barça vence por 2+ gols", odd: "1.95", status: "GREEN", result: "Margem de 2", reason: "62% dos jogos em casa terminam com goleada.", takeaway: "Ferran confirmou no fim." },
-                        { name: "Over 9.5 escanteios", odd: "2.15", status: "GREEN", result: "10 escanteios", reason: "Pressão constante gerou volume.", takeaway: "Linha quebrada com folga." },
-                        { name: "Oblak 3+ defesas", odd: "1.45", status: "GREEN", result: "Meta alcançada", reason: "Volume catalão obriga goleiro a trabalhar.", takeaway: "Mercado goleiro entregou valor seguro." }
-                    ]
-                },
-                {
-                    id: 'brasileirao',
-                    title: "PARTE III: BRASILEIRÃO",
-                    match: "VASCO 0 x 2 MIRASSOL",
-                    schedule: "2 de dezembro - 19h | São Januário",
-                    context: "Vasco buscava reação enquanto Mirassol, já garantido na Libertadores, defendia solidez e eficiência em contra-ataques.",
-                    analysisBlocks: [
-                        {
-                            title: "Primeiro Tempo",
-                            body: "Equilíbrio com chances para ambos. Walter salvou chute de Paulo Henrique e o Vasco controlou posse sem transformar em gols." 
-                        },
-                        {
-                            title: "Segundo Tempo",
-                            body: "Lesão de Lucas Piton abriu espaço. Renato Marques fez 1-0 após passe de Carlos Eduardo e, nos acréscimos, o próprio Carlos decidiu em contra-ataque." 
-                        }
-                    ],
-                    stats: {
-                        headers: ["Métrica", "Vasco", "Mirassol"],
-                        rows: [
-                            ["Posse de Bola", "52%", "48%"],
-                            ["Chutes ao gol", "8", "5"],
-                            ["Passes completos", "390/586 (67%)", "356/524 (68%)"],
-                            ["Cartões amarelos", "1", "0"],
-                            ["Escanteios", "4", "3"],
-                            ["Faltas cometidas", "14", "11"]
-                        ]
-                    },
-                    highlights: [
-                        "Renato Marques: finalização fria no contrapé.",
-                        "Carlos Eduardo: 1 gol + 1 assistência decisivos.",
-                        "Walter: defesa crucial aos 13 minutos.",
-                        "Paulo Henrique: desperdiçou chance clara." 
-                    ],
-                    markets: [
-                        { name: "Vitória Mirassol", odd: "2.85", status: "GREEN", result: "2-0", reason: "Equipe vive fase histórica e explora contra-ataques.", takeaway: "Value alto (35-40%)." },
-                        { name: "Menos de 2.5 gols", odd: "1.92", status: "GREEN", result: "2 gols", reason: "Defesas sólidas (1.0 e 1.2 sofridos/jogo).", takeaway: "Controle tático confirmou linha." },
-                        { name: "Ambas marcam", odd: "2.10", status: "RED", result: "Não", reason: "Vasco improdutivo diante da organização visitante.", takeaway: "Mirassol neutralizou cruzmaltinos." },
-                        { name: "Cleansheet Mirassol", odd: "1.78", status: "GREEN", result: "Sim", reason: "55% dos jogos sem sofrer gols.", takeaway: "Walter e linha defensiva impecáveis." },
-                        { name: "Over 3.5 escanteios", odd: "1.88", status: "GREEN", result: "7 escanteios", reason: "Vasco forçou bolas paradas apesar da derrota.", takeaway: "Mercado simples com payout rápido." }
-                    ]
-                },
-                {
-                    id: 'brasileirao2',
-                    title: "PARTE III (Continuação): BRASILEIRÃO",
-                    match: "GRÊMIO 1 x 2 FLUMINENSE",
-                    schedule: "2 de dezembro - 21h30 | Arena do Grêmio",
-                    context: "Jogo equilibrado de meio de tabela, mas com Fluminense em ascensão defensiva e ofensiva.",
-                    analysisBlocks: [
-                        {
-                            title: "Desenvolvimento Geral",
-                            body: "Fluminense controlou a primeira metade e foi eficiente nas transições, segurando pressão final do Grêmio para vencer por 2-1." 
-                        }
-                    ],
-                    highlights: [
-                        "Fluminense chega a 8 jogos de invencibilidade.",
-                        "Transições rápidas foram diferencial.",
-                        "Grêmio criou volume mas foi pouco efetivo." 
-                    ],
-                    markets: [
-                        { name: "Vitória Fluminense", odd: "2.20", status: "GREEN", result: "2-1", reason: "Fase crescente e melhor organização defensiva.", takeaway: "Valor em equipes consistentes fora de casa." },
-                        { name: "Ambas marcam", odd: "1.95", status: "GREEN", result: "Sim", reason: "Defesas concedem 1.4 gols/jogo.", takeaway: "Padrão ofensivo mantido." }
-                    ]
-                }
-            ],
-            consolidated: {
-                greensTitle: "PARTE IV: MERCADOS GREEN",
-                greensHeaders: ["Mercado", "Odd", "Resultado"],
-                greensRows: [
-                    ["Fulham vs City - Over 3.5 Gols", "1.95", "9 gols"],
-                    ["Fulham vs City - Ambas marcam", "1.78", "GREEN"],
-                    ["Fulham vs City - Vitória City", "1.42", "5-4"],
-                    ["Barcelona vs Atlético - Vitória Barça", "1.65", "3-1"],
-                    ["Barcelona vs Atlético - Barça 1.5+ gols", "2.20", "3 gols"],
-                    ["Barcelona vs Atlético - Ambas marcam", "1.92", "3-1"],
-                    ["Vasco vs Mirassol - Vitória Mirassol", "2.85", "2-0"],
-                    ["Vasco vs Mirassol - Under 2.5", "1.92", "2 gols"],
-                    ["Fluminense - Vitória", "2.20", "2-1"],
-                    ["Fluminense - Ambas marcam", "1.95", "2-1"]
-                ],
-                redsTitle: "PARTE IV: MERCADOS RED",
-                redsHeaders: ["Mercado", "Odd", "Motivo"],
-                redsRows: [
-                    ["Vasco - Ambas marcam", "2.10", "Vasco passou em branco"],
-                    ["Fulham vs City - Fulham empatar/vencer", "3.50", "City segurou vantagem"]
-                ],
-                performance: "Taxa de acerto: 67% (10 de 15 mercados)."
-            },
-            lessons: [
-                {
-                    title: "1. Defesa vulnerável como gatilho para overs",
-                    detail: "City sofre 0,92 gol/jogo e Fulham 1,8. Combinação gerou confiança de 95% no Over 3.5." 
-                },
-                {
-                    title: "2. Eficiência cirúrgica do Mirassol",
-                    detail: "Cleansheet em 55% das partidas e contra-ataques letais sustentam apostas em Vitória + Under." 
-                },
-                {
-                    title: "3. Domínio caseiro do Barcelona",
-                    detail: "Com 67% de posse média e 16 finalizações, vitórias e handicaps positivos são quase default." 
-                },
-                {
-                    title: "4. Colapso defensivo como alerta",
-                    detail: "Mesmo com 5-1, City permitiu 3 gols em 18 minutos. Importante monitorar sinais de complacência." 
-                }
-            ],
-            conclusion: {
-                summary: "Rodada reforça a precisão da metodologia APEX, com destaque para Over 3.5 em Fulham vs City e Cleansheet Mirassol.",
-                roi: "Retorno estimado: +28% em múltiplas principais e +15% em singles.",
-                recommendation: "Replicar a mesma matriz de retroanálise nas próximas rodadas para manter taxa acima de 60%."
-            }
-        };
-
-        async function loadJson(key) {
-            if (dataCache[key]) {
-                return dataCache[key];
-            }
-
-            const response = await fetch(`./data/${key}.json`, { cache: 'no-store' });
-            if (!response.ok) {
-                throw new Error(`Erro ao carregar ${key}`);
-            }
-
-            const payload = await response.json();
-            dataCache[key] = payload;
-            return payload;
         }
 
-        function tipTemplate(tip) {
-            const explanation = (tip.explanation || 'Detalhes indisponíveis').replace(/"/g, '&quot;');
-            const hasOdds = typeof tip.odds === 'number' && !Number.isNaN(tip.odds);
-            const oddsClass = hasOdds ? 'tip-odds' : 'tip-odds tip-odds-missing';
-            const oddsText = hasOdds ? `@${tip.odds.toFixed(2)}` : 'Odd indisponível';
-            return `
-                <div class="tip" data-explanation="${explanation}">
-                    <div class="tip-market">${tip.market}</div>
-                    <div class="tip-pick">${tip.pick}</div>
-                    <div class="${oddsClass}">${oddsText}</div>
-                </div>
+        function renderRodadaInfo(data, metaCard, grid) {
+            const meta = data.documentacao || {};
+            metaCard.innerHTML = `
+                <h3>Rodada ${meta.rodada || ''}</h3>
+                <p><strong>Versão:</strong> ${data.versao_dados || '—'} • <strong>Atualização:</strong> ${formatarDataISO(data.data_atualizacao)}</p>
+                <p><strong>Responsável:</strong> ${meta.responsavel || '—'}</p>
+                <p class="rodada-alerta">${meta.observacao || ''}</p>
             `;
+
+            if (!Array.isArray(data.rodadaCompleta)) {
+                grid.innerHTML = '<p class="rodada-vazia">Rodada não encontrada.</p>';
+                return;
+            }
+
+            grid.innerHTML = data.rodadaCompleta.map((jogo) => {
+                const statusClass = statusToClass(jogo.statusAnalise);
+                return `
+                    <article class="rodada-card">
+                        <h4>${jogo.mandante} x ${jogo.visitante}</h4>
+                        <p>📅 ${jogo.data} • ${jogo.horario}</p>
+                        <span class="status-pill ${statusClass}">${jogo.statusAnalise}</span>
+                    </article>
+                `;
+            }).join('');
         }
 
-        function attachTipHandlers() {
-            const tips = document.querySelectorAll('.tip[data-explanation]');
-            tips.forEach(tip => {
-                tip.addEventListener('click', () => openTipModal(tip.dataset.explanation));
+        function setupTabsSystem() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const tabName = button.dataset.tab;
+
+                    tabButtons.forEach((btn) => btn.classList.remove('active'));
+                    tabContents.forEach((content) => content.classList.remove('active'));
+
+                    button.classList.add('active');
+                    document.getElementById(tabName).classList.add('active');
+
+                    if (tabName === 'analises') {
+                        loadAnalises();
+                    } else if (tabName === 'ultima-rodada') {
+                        loadUltimaRodada();
+                    } else if (tabName === 'outras-ligas') {
+                        loadOutrasLigas();
+                    } else if (tabName === 'bingo') {
+                        loadBingo();
+                    }
+                });
             });
         }
 
-        function openTipModal(text) {
-            const overlay = document.getElementById('tipModalOverlay');
-            const modalText = document.getElementById('tipModalText');
-            if (!overlay || !modalText) return;
-            modalText.textContent = text;
-            overlay.classList.add('active');
-        }
-
-        function closeTipModal() {
-            const overlay = document.getElementById('tipModalOverlay');
-            if (overlay) {
-                overlay.classList.remove('active');
+        async function loadIndicacoes() {
+            const container = document.getElementById('indicacoes-list');
+            try {
+                const response = await fetch('/data/indicacoes-proximas.json');
+                if (!response.ok) throw new Error('Falha ao carregar indicações');
+                const data = await response.json();
+                renderIndicacoes(data);
+            } catch (error) {
+                console.error(error);
+                container.textContent = 'Erro ao carregar indicações. Atualize a página para tentar novamente.';
             }
         }
 
-        function buildList(items) {
-            if (!items || !items.length) {
-                return '';
+        function renderIndicacoes(data) {
+            const container = document.getElementById('indicacoes-list');
+            if (!data || !Array.isArray(data.indicacoes)) {
+                container.textContent = 'Nenhuma indicação disponível no momento.';
+                return;
             }
-            return `<ul class="analysis-list">${items.map(item => `<li>${item}</li>`).join('')}</ul>`;
-        }
 
-        function renderBetCard(bet) {
-            return `
-                <div class="analysis-bet">
-                    <div class="analysis-bet-title">${bet.status || ''} ${bet.title}</div>
-                    <div class="analysis-bet-odds">
-                        <span>Odd justa: ${bet.oddJusta}</span>
-                        <span>Odd mercado: ${bet.oddMercado}</span>
-                        <span>Value: ${bet.value}</span>
+            let html = `<div class="aviso-variabilidade">${data.aviso || ''}</div>`;
+
+            html += data.indicacoes.slice(0, 6).map((aposta) => {
+                const jogoBase = buscarJogoNaRodada(aposta.confronto);
+                const status = jogoBase?.statusAnalise ? `<span class="status-pill ${statusToClass(jogoBase.statusAnalise)}">${jogoBase.statusAnalise}</span>` : '';
+                const agenda = jogoBase ? `${jogoBase.data} • ${jogoBase.horario}` : (aposta.dias_distante || formatarData(aposta.data));
+
+                return `
+                    <article class="indicacao-card status-${aposta.status}">
+                        <div class="indicacao-header">
+                            <h3>${aposta.confronto}</h3>
+                            <span class="status-badge ${aposta.status}">${aposta.status}</span>
+                            ${status}
+                        </div>
+                        <div class="indicacao-meta">
+                            <span class="campeonato">${aposta.campeonato}</span>
+                            <span class="data">${agenda}</span>
+                        </div>
+                        <div class="indicacao-aposta">
+                            <h4>${aposta.mercado}</h4>
+                            <p><strong>Motivo:</strong> ${aposta.motivo}</p>
+                            ${aposta.nota ? `<p><strong>Nota:</strong> ${aposta.nota}</p>` : ''}
+                        </div>
+                        <div class="indicacao-stats">
+                            <div class="stat"><label>Odd justa</label><span>${aposta.odd_justa}</span></div>
+                            <div class="stat"><label>Odd mercado</label><span>${aposta.odd_mercado}</span></div>
+                            <div class="stat"><label>Value</label><span class="value-positive">${aposta.value}</span></div>
+                            <div class="stat"><label>Confiança</label><span>${aposta.confianca}</span></div>
+                            <div class="stat"><label>Stake</label><span>${aposta.stake}</span></div>
+                            <div class="stat"><label>Risco</label><span>${aposta.risco}</span></div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            if (data.resumo) {
+                html += `
+                    <div class="indicacoes-resumo">
+                        <h3>📊 Resumo das Indicações</h3>
+                        <p><strong>Total de apostas:</strong> ${data.resumo.total_apostas}</p>
+                        <p><strong>Stake recomendado:</strong> ${data.resumo.stake_total_recomendado}</p>
+                        <p><strong>Taxa de sucesso esperada:</strong> ${data.resumo.taxa_sucesso_esperada}</p>
+                        <p><strong>Value médio:</strong> ${data.resumo.value_medio}</p>
+                        <p><strong>Confiança média:</strong> ${data.resumo.confianca_media}</p>
+                        <p class="resumo-warning">${data.resumo.aviso_especial || ''}</p>
                     </div>
-                    <p class="analysis-note">${bet.rationale}</p>
-                    <p class="analysis-stake">Stake: ${bet.stake}</p>
-                    ${bet.note ? `<p class="analysis-note">${bet.note}</p>` : ''}
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        async function loadAnalises() {
+            const container = document.getElementById('analises-list');
+            if (container.dataset.loaded === 'true') return;
+            try {
+                const response = await fetch('/data/analises-aprimoradas.json');
+                if (!response.ok) throw new Error('Falha ao carregar análises');
+                const data = await response.json();
+                renderAnalises(data);
+                container.dataset.loaded = 'true';
+            } catch (error) {
+                console.error(error);
+                container.textContent = 'Erro ao carregar análises.';
+            }
+        }
+
+        function renderAnalises(data) {
+            const container = document.getElementById('analises-list');
+            if (!data || !Array.isArray(data.analises)) {
+                container.textContent = 'Nenhuma análise disponível.';
+                return;
+            }
+
+            let html = '';
+            if (data.nota_importante) {
+                html += `
+                    <div class="analises-banner">
+                        <strong>📝 ${data.nota_importante}</strong>
+                    </div>
+                `;
+            }
+
+            html += data.analises.map((analise) => {
+                const detailBlocks = Object.entries(analise)
+                    .filter(([key, value]) => typeof value === 'object' && key !== 'contexto')
+                    .map(([key, value]) => renderTeamBlock(value, key))
+                    .join('');
+
+                return `
+                    <article class="analise-card">
+                        <div class="analise-header">
+                            <h3>${analise.titulo}</h3>
+                            ${analise.statusAnalise ? `<span class="status-pill ${statusToClass(analise.statusAnalise)}">${analise.statusAnalise}</span>` : ''}
+                        </div>
+                        <p class="analise-meta">${analise.mandante} x ${analise.visitante} • ${analise.data} às ${analise.horario} • ${analise.local}</p>
+                        <p><strong>Competição:</strong> ${analise.competicao}</p>
+                        ${renderContexto(analise.contexto)}
+                        ${detailBlocks}
+                        ${analise.ajustesTaticos ? `<p class="analise-ajustes">${analise.ajustesTaticos}</p>` : ''}
+                        <h4>Recomendação final</h4>
+                        <p class="recomendacao">${analise.recomendacao}</p>
+                        ${analise.cuidados ? `<p class="alerta">${analise.cuidados}</p>` : ''}
+                        ${analise.alternativa ? `<p><strong>Alternativa:</strong> ${analise.alternativa}</p>` : ''}
+                    </article>
+                `;
+            }).join('');
+
+            container.innerHTML = html;
+        }
+
+        function renderTeamBlock(block, key) {
+            if (!block || key === 'contexto') return '';
+            let html = '<div class="analise-team-block">';
+            const titulo = block.titulo || formatTeamKey(key);
+            if (titulo) {
+                html += `<h4>${titulo}</h4>`;
+            }
+            if (block.posicao) html += `<p><strong>Posição:</strong> ${block.posicao}</p>`;
+            if (block.forma) html += `<p><strong>Forma:</strong> ${block.forma}</p>`;
+            if (block.gols_temporada) html += `<p><strong>Gols na temporada:</strong> ${block.gols_temporada}</p>`;
+            if (block.golsPorJogo) html += `<p><strong>Gols por jogo:</strong> ${block.golsPorJogo}</p>`;
+            if (block.sequencia) html += `<p><strong>Sequência:</strong> ${block.sequencia}</p>`;
+            if (block.defesa) html += `<p><strong>Defesa:</strong> ${block.defesa}</p>`;
+            if (block.ataque) html += `<p><strong>Ataque:</strong> ${block.ataque}</p>`;
+            if (block.probabilidade_marcar) html += `<p><strong>Probabilidade de marcar:</strong> ${block.probabilidade_marcar}</p>`;
+            if (block.probabilidadeMarcar) html += `<p><strong>Probabilidade de marcar:</strong> ${block.probabilidadeMarcar}</p>`;
+            if (block.analise) html += `<p>${block.analise}</p>`;
+            if (block.observacao) html += `<p>${block.observacao}</p>`;
+            html += '</div>';
+            return html;
+        }
+
+        function renderContexto(contexto = {}) {
+            const entries = Object.entries(contexto)
+                .filter(([, value]) => value)
+                .map(([key, value]) => `<p><strong>${formatContextKey(key)}:</strong> ${value}</p>`) || [];
+            if (!entries.length) return '';
+            return `
+                <div class="analise-contexto">
+                    <h4>Contexto</h4>
+                    ${entries.join('')}
                 </div>
             `;
         }
 
-        function renderMatchCard(match) {
+        async function loadUltimaRodada() {
+            const container = document.getElementById('ultima-rodada-content');
+            try {
+                const response = await fetch('/data/ultima-rodada.json');
+                if (!response.ok) throw new Error('Falha ao carregar última rodada');
+                const data = await response.json();
+                renderUltimaRodada(data);
+            } catch (error) {
+                console.error(error);
+                container.textContent = 'Erro ao carregar informações da última rodada.';
+            }
+        }
+
+        function renderUltimaRodada(data) {
+            const container = document.getElementById('ultima-rodada-content');
+            if (!data || !Array.isArray(data.jogos)) {
+                container.textContent = 'Última rodada indisponível.';
+                return;
+            }
+
+            const cabecalho = data.cabecalho || {};
+            const jogosHtml = data.jogos.map(renderJogoCard).join('');
+            const proximaRodada = renderProximaRodada(data.proxima_rodada);
+
+            container.innerHTML = `
+                <div class="ultima-rodada-header">
+                    <h2>${cabecalho.titulo || ''}</h2>
+                    <p class="destaque-campeonato">${cabecalho.destaque || ''}</p>
+                    <p class="info-rodada">${cabecalho.info_rodada || ''}</p>
+                    ${cabecalho.contexto ? `<p class="info-contexto">${cabecalho.contexto}</p>` : ''}
+                </div>
+                <div class="rodada-jogos-grid">
+                    ${jogosHtml}
+                </div>
+                ${proximaRodada}
+            `;
+        }
+
+        function renderJogoCard(jogo) {
             return `
-                <article class="analysis-card match-card">
-                    <div class="analysis-chip">${match.match}</div>
-                    <p class="analysis-schedule">${match.schedule}</p>
-                    <p class="analysis-context">${match.context}</p>
-                    ${match.analysisBlocks ? match.analysisBlocks.map(block => `
-                        <div class="analysis-subcard">
-                            <h4>${block.title}</h4>
-                            ${buildList(block.points)}
-                        </div>
-                    `).join('') : ''}
-                    ${match.bets ? `<div class="analysis-bets">${match.bets.map(renderBetCard).join('')}</div>` : ''}
-                    ${match.recommendation ? `<p class="analysis-footnote">${match.recommendation}</p>` : ''}
+                <article class="rodada37-card status-${(jogo.status || '').toLowerCase()}">
+                    <div class="rodada37-header">
+                        <h3>${jogo.titulo}</h3>
+                        <span class="status-pill ${statusToClass(jogo.status)}">${jogo.status || ''}</span>
+                    </div>
+                    <p class="rodada37-meta">${jogo.data || ''}${jogo.horario ? ` • ${jogo.horario}` : ''} • ${jogo.local || ''}</p>
+                    <p class="rodada37-placar">${jogo.resultado || ''}</p>
+                    ${jogo.destaques ? `<p class="rodada37-destaque">${jogo.destaques}</p>` : ''}
+                    <p>${jogo.analise || ''}</p>
+                    ${jogo.impacto ? `<p class="rodada37-impacto">${jogo.impacto}</p>` : ''}
                 </article>
             `;
         }
 
-        function renderSummaryTable(summary) {
-            if (!summary) {
-                return '';
-            }
+        function renderProximaRodada(info = {}) {
+            if (!info.titulo) return '';
+            const pendencias = Array.isArray(info.pendencias)
+                ? info.pendencias.map((item) => `<li>${item}</li>`).join('')
+                : '';
+
             return `
-                <div class="analysis-table-wrapper">
-                    <div class="analysis-table-title">${summary.title}</div>
-                    <table class="analysis-table">
-                        <thead>
-                            <tr>${summary.headers.map(header => `<th>${header}</th>`).join('')}</tr>
-                        </thead>
-                        <tbody>
-                            ${summary.rows.map(row => `<tr>${row.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}
-                        </tbody>
-                    </table>
+                <div class="nota-proxima-rodada">
+                    <h3>${info.titulo}</h3>
+                    <p><strong>Data:</strong> ${info.data || ''}</p>
+                    <p><strong>Situação:</strong> ${info.contexto || ''}</p>
+                    ${pendencias ? `<ul>${pendencias}</ul>` : ''}
+                    <p class="alerta">${info.alerta || ''}</p>
                 </div>
             `;
         }
 
-        function renderLeagueSection(league) {
-            return `
-                <section class="analysis-section">
-                    <div class="analysis-section-header">
-                        <h3>${league.title}</h3>
-                        ${league.description ? `<p>${league.description}</p>` : ''}
-                    </div>
-                    <div class="analysis-grid">
-                        ${league.matches.map(renderMatchCard).join('')}
-                    </div>
-                    ${renderSummaryTable(league.summary)}
-                    ${league.capital ? `<p class="analysis-footnote">${league.capital}</p>` : ''}
-                </section>
-            `;
-        }
-
-        function renderFutureProjects(projects) {
-            if (!projects || !projects.length) {
-                return '';
+        async function loadBingo() {
+            const container = document.getElementById('bingo-list');
+            try {
+                const response = await fetch('/data/bingo-10-mercados.json');
+                if (!response.ok) throw new Error('Falha ao carregar bingo');
+                const data = await response.json();
+                renderBingo(data);
+            } catch (error) {
+                console.error(error);
+                container.textContent = 'Erro ao carregar bingo do dia.';
             }
-            return `
-                <section class="analysis-section">
-                    <div class="analysis-section-header">
-                        <h3>PARTE X: PROJEÇÕES FUTURAS - COMPETIÇÕES IMINENTES</h3>
-                        <p>Monitoramento contínuo para Copa Intercontinental, Mundial de Clubes e fases finais europeias.</p>
-                    </div>
-                    <div class="analysis-grid">
-                        ${projects.map(project => `
-                            <article class="analysis-card future-card">
-                                <h4>${project.title}</h4>
-                                ${buildList(project.highlights)}
-                                ${project.details ? buildList(project.details) : ''}
-                                ${project.phases ? project.phases.map(phase => `
-                                    <div class="analysis-subcard">
-                                        <div class="analysis-chip">${phase.title}</div>
-                                        <p class="analysis-note">${phase.context}</p>
-                                        <p class="analysis-stake">Odds Justas: ${phase.odds}</p>
-                                    </div>
-                                `).join('') : ''}
-                                ${project.table ? renderSummaryTable(project.table) : ''}
-                                ${project.extra ? `<p class="analysis-note">${project.extra}</p>` : ''}
-                                ${project.recommendation ? `<p class="analysis-footnote">${project.recommendation}</p>` : ''}
-                            </article>
-                        `).join('')}
-                    </div>
-                </section>
-            `;
         }
 
-        function renderInvestmentPlan(plan) {
-            if (!plan) {
-                return '';
+        function renderBingo(data) {
+            const container = document.getElementById('bingo-list');
+            if (!data || !Array.isArray(data.mercados)) {
+                container.textContent = 'Bingo indisponível.';
+                return;
             }
-            return `
-                <section class="analysis-section">
-                    <div class="analysis-section-header">
-                        <h3>PARTE XI: CONSOLIDAÇÃO DE RECOMENDAÇÕES</h3>
-                        <p>Distribuição de capital, ranking de value e regras de gestão de risco.</p>
-                    </div>
-                    <div class="analysis-grid">
-                        <article class="analysis-card">
-                            <h4>Carteira ideal de apostas</h4>
-                            ${buildList(plan.allocation)}
-                        </article>
-                        <article class="analysis-card">
-                            <h4>Ranking de value & stakes</h4>
-                            ${renderSummaryTable({ title: 'Top 10 oportunidades (Value > 25%)', headers: plan.valueRanking.headers, rows: plan.valueRanking.rows })}
-                        </article>
-                        <article class="analysis-card">
-                            <h4>Gestão de risco implementada</h4>
-                            ${buildList(plan.riskRules)}
-                        </article>
-                    </div>
-                </section>
-            `;
-        }
 
-        function renderConclusion(conclusion) {
-            if (!conclusion) {
-                return '';
-            }
-            return `
-                <section class="analysis-section">
-                    <div class="analysis-section-header">
-                        <h3>PARTE XII: CONCLUSÃO E PRÓXIMOS PASSOS</h3>
-                    </div>
-                    <div class="analysis-grid">
-                        <article class="analysis-card">
-                            <h4>Resumo executivo</h4>
-                            ${buildList(conclusion.summaryBullets)}
-                        </article>
-                        <article class="analysis-card">
-                            <h4>Aplicação futura da metodologia</h4>
-                            ${buildList(conclusion.futureApplications)}
-                        </article>
-                        <article class="analysis-card">
-                            <h4>Métricas de sucesso esperadas</h4>
-                            ${buildList(conclusion.metrics)}
-                        </article>
-                    </div>
-                </section>
-            `;
-        }
+            const jogos = Array.isArray(data.jogos_programados)
+                ? data.jogos_programados.map((jogo) => `<li>${jogo}</li>`).join('')
+                : '';
 
-        function buildApexAnalysisHTML() {
-            const hero = `
-                <div class="analysis-hero">
-                    <p>${apexAnalysisData.meta.timeframe}</p>
-                    <h2>${apexAnalysisData.meta.title}</h2>
-                    <p>${apexAnalysisData.meta.subtitle}</p>
-                </div>
-            `;
-
-            const partOne = `
-                <section class="analysis-section">
-                    <div class="analysis-section-header">
-                        <h3>PARTE I: RESUMO EXECUTIVO</h3>
-                        <p>Documento consolida a análise completa de 12 confrontos em 4 campeonatos sob a metodologia APEX.</p>
-                    </div>
-                    <div class="analysis-grid">
-                        <article class="analysis-card">
-                            <h4>Campeonatos mapeados</h4>
-                            ${buildList(apexAnalysisData.competitions.map(comp => `${comp.league}: ${comp.matches.join(', ')}`))}
-                        </article>
-                        <article class="analysis-card">
-                            <h4>Metodologia APEX Sports Analytics</h4>
-                            ${buildList(apexAnalysisData.methodology)}
-                        </article>
-                    </div>
-                </section>
-            `;
-
-            const leagues = Object.values(apexAnalysisData.leagues).map(renderLeagueSection).join('');
-            const futures = renderFutureProjects(apexAnalysisData.futureProjects);
-            const plan = renderInvestmentPlan(apexAnalysisData.investmentPlan);
-            const conclusion = renderConclusion(apexAnalysisData.conclusion);
-
-            return `${hero}${partOne}${leagues}${futures}${plan}${conclusion}`;
-        }
-
-        function renderStatTable(data) {
-            if (!data) {
-                return '';
-            }
-            return `
-                <table class="stat-table">
-                    <thead>
-                        <tr>${data.headers.map(head => `<th>${head}</th>`).join('')}</tr>
-                    </thead>
-                    <tbody>
-                        ${data.rows.map(row => `<tr>${row.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}
-                    </tbody>
-                </table>
-            `;
-        }
-
-        function renderRecapMarkets(markets) {
-            if (!markets || !markets.length) {
-                return '';
-            }
-            return markets.map(market => `
-                <div class="recap-market">
-                    <strong>${market.name}</strong>
-                    <span>Odd oferecida: ${market.odd}</span>
-                    <span class="${market.status === 'GREEN' ? 'status-green' : 'status-red'}">${market.status} ${market.result ? `- ${market.result}` : ''}</span>
-                    <p>${market.reason}</p>
-                    ${market.takeaway ? `<p class="recap-meta">${market.takeaway}</p>` : ''}
-                </div>
+            const mercados = data.mercados.slice(0, 10).map((mercado) => `
+                <article class="bingo-mercado">
+                    <div class="numero">${mercado.numero}</div>
+                    <h3>${mercado.titulo}</h3>
+                    <p><strong>Jogo:</strong> ${mercado.jogo}</p>
+                    <p><strong>Hora:</strong> ${mercado.hora}</p>
+                    <p><strong>Confiança:</strong> ${mercado.confianca}%</p>
+                    <p><strong>Value:</strong> ${mercado.odds.value}</p>
+                    <p><strong>Risco:</strong> ${mercado.risco}</p>
+                    <p class="bingo-motivo">${mercado.motivo}</p>
+                </article>
             `).join('');
-        }
 
-        function renderLatestSection(section) {
-            return `
-                <section class="recap-section">
-                    <div class="recap-header">
-                        <div class="recap-chip">${section.title}</div>
-                        <h3>${section.match}</h3>
-                        <p>${section.schedule}</p>
-                        <p>${section.context}</p>
-                    </div>
-                    <div class="recap-grid">
-                        <article class="recap-card">
-                            <h4>Contexto tático</h4>
-                            ${section.analysisBlocks ? section.analysisBlocks.map(block => `
-                                <p><strong>${block.title}:</strong> ${block.body}</p>
-                            `).join('') : ''}
-                        </article>
-                        <article class="recap-card">
-                            <h4>Destaques individuais</h4>
-                            ${buildList(section.highlights)}
-                        </article>
-                        <article class="recap-card">
-                            <h4>Estatísticas oficiais</h4>
-                            ${renderStatTable(section.stats)}
-                        </article>
-                        <article class="recap-card">
-                            <h4>Retroanálise dos mercados</h4>
-                            ${renderRecapMarkets(section.markets)}
-                        </article>
-                    </div>
-                </section>
-            `;
-        }
-
-        function renderConsolidated(consolidated) {
-            if (!consolidated) {
-                return '';
-            }
-            const greens = `
-                <article class="recap-card">
-                    <h4>${consolidated.greensTitle}</h4>
-                    <table class="recap-summary-table">
-                        <thead>
-                            <tr>${consolidated.greensHeaders.map(h => `<th>${h}</th>`).join('')}</tr>
-                        </thead>
-                        <tbody>
-                            ${consolidated.greensRows.map(row => `<tr>${row.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}
-                        </tbody>
-                    </table>
-                </article>
-            `;
-            const reds = `
-                <article class="recap-card">
-                    <h4>${consolidated.redsTitle}</h4>
-                    <table class="recap-summary-table">
-                        <thead>
-                            <tr>${consolidated.redsHeaders.map(h => `<th>${h}</th>`).join('')}</tr>
-                        </thead>
-                        <tbody>
-                            ${consolidated.redsRows.map(row => `<tr>${row.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}
-                        </tbody>
-                    </table>
-                </article>
-            `;
-            return `
-                <section class="recap-section">
-                    <div class="recap-header">
-                        <div class="recap-chip">PARTE IV</div>
-                        <h3>Resumo consolidado de mercados</h3>
-                        <p>${consolidated.performance}</p>
-                    </div>
-                    <div class="recap-grid">
-                        ${greens}
-                        ${reds}
-                    </div>
-                </section>
-            `;
-        }
-
-        function renderLessons(lessons) {
-            if (!lessons || !lessons.length) {
-                return '';
-            }
-            return `
-                <section class="recap-section">
-                    <div class="recap-header">
-                        <div class="recap-chip">PARTE V</div>
-                        <h3>Lições estratégicas</h3>
-                    </div>
-                    <div class="recap-grid">
-                        ${lessons.map(item => `
-                            <article class="recap-card">
-                                <h4>${item.title}</h4>
-                                <p>${item.detail}</p>
-                            </article>
-                        `).join('')}
-                    </div>
-                </section>
-            `;
-        }
-
-        function renderLatestConclusion(conclusion) {
-            if (!conclusion) {
-                return '';
-            }
-            return `
-                <section class="recap-section">
-                    <div class="recap-header">
-                        <div class="recap-chip">CONCLUSÃO</div>
-                        <h3>Análise consolidada - 2 de dezembro 2025</h3>
-                    </div>
-                    <div class="recap-grid">
-                        <article class="recap-card">
-                            <h4>Resumo</h4>
-                            <p>${conclusion.summary}</p>
-                        </article>
-                        <article class="recap-card">
-                            <h4>ROI estimado</h4>
-                            <p>${conclusion.roi}</p>
-                        </article>
-                        <article class="recap-card">
-                            <h4>Recomendação futura</h4>
-                            <p>${conclusion.recommendation}</p>
-                        </article>
-                    </div>
-                </section>
-            `;
-        }
-
-        function buildLatestRoundHTML() {
-            const hero = `
-                <div class="latest-hero">
-                    <p>${latestRoundData.meta.date}</p>
-                    <h2>${latestRoundData.meta.title}</h2>
-                    <p>${latestRoundData.meta.subtitle}</p>
+            container.innerHTML = `
+                <div class="bingo-header">
+                    <h1>${data.titulo}</h1>
+                    <p>${data.data}</p>
+                    <p class="bingo-aviso">${data.aviso}</p>
+                </div>
+                <div class="bingo-programacao">
+                    <h3>📅 Jogos programados</h3>
+                    <ul>${jogos}</ul>
+                </div>
+                <div class="bingo-mercados">${mercados}</div>
+                <div class="bingo-resumo">
+                    <h2>🎯 Resumo</h2>
+                    <p><strong>Total de mercados:</strong> ${data.resumo_bingo?.total_mercados || ''}</p>
+                    <p><strong>Stake recomendado:</strong> ${data.resumo_bingo?.valor_stake_recomendado || ''}</p>
+                    <p><strong>Taxa de sucesso esperada:</strong> ${data.resumo_bingo?.taxa_sucesso_esperada || ''}</p>
+                    <p><strong>Value médio:</strong> ${data.resumo_bingo?.value_medio || ''}</p>
+                    <p><strong>Confiança média:</strong> ${data.resumo_bingo?.confianca_media || ''}</p>
+                    <p><strong>Maior value:</strong> ${data.resumo_bingo?.maior_value || ''}</p>
+                    <p><strong>Melhor relação:</strong> ${data.resumo_bingo?.melhor_relacao || ''}</p>
+                    <p class="bingo-aviso-final">${data.resumo_bingo?.aviso_final || ''}</p>
                 </div>
             `;
-            const sections = latestRoundData.sections.map(renderLatestSection).join('');
-            const consolidated = renderConsolidated(latestRoundData.consolidated);
-            const lessons = renderLessons(latestRoundData.lessons);
-            const conclusion = renderLatestConclusion(latestRoundData.conclusion);
-            return `${hero}${sections}${consolidated}${lessons}${conclusion}`;
         }
 
-        async function loadGames(league = 'brasileirao') {
+        async function loadOutrasLigas() {
+            const container = document.getElementById('outras-ligas-content');
+            if (outrasLigasCache) {
+                renderOutrasLigas();
+                return;
+            }
             try {
-                const allGames = await loadJson('games');
-                const games = allGames.filter(game => game.league === league);
-
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.toggle('active', btn.dataset.league === league);
-                });
-
-                if (games.length === 0) {
-                    document.getElementById('gamesContainer').innerHTML = '<p style="text-align: center; color: rgba(240, 242, 245, 0.5);">Nenhum jogo disponível para esta liga.</p>';
-                    return;
-                }
-
-                let html = '';
-                games.forEach(game => {
-                    const matchDate = game.match_date ? new Date(game.match_date) : null;
-                    const formattedDate = matchDate
-                        ? matchDate.toLocaleString('pt-BR', {
-                            weekday: 'short',
-                            day: '2-digit',
-                            month: 'short',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        })
-                        : 'Data a definir';
-
-                    html += `
-                        <div class="game-card">
-                            <div class="game-header">
-                                <div class="game-teams">
-                                    <span class="team-name home">${game.home_team}</span>
-                                    <span class="versus">vs</span>
-                                    <span class="team-name away">${game.away_team}</span>
-                                </div>
-                                <div class="confidence">🎯 ${game.confidence}%</div>
-                            </div>
-                            <div class="game-meta">
-                                <div class="game-time">📅 ${formattedDate}</div>
-                                ${game.venue ? `<div class="game-location">📍 ${game.venue}</div>` : ''}
-                            </div>
-                            ${game.context ? `<div class="game-context">${game.context}</div>` : ''}
-                            <div class="tips-container">
-                                ${game.tips.map(tip => tipTemplate(tip)).join('')}
-                            </div>
-                        </div>
-                    `;
-                });
-                document.getElementById('gamesContainer').innerHTML = html;
-                attachTipHandlers();
+                const response = await fetch('/data/outras-ligas.json');
+                if (!response.ok) throw new Error('Falha ao carregar outras ligas');
+                outrasLigasCache = await response.json();
+                renderOutrasLigas();
             } catch (error) {
-                console.error('Erro ao carregar jogos:', error);
-                document.getElementById('gamesContainer').innerHTML = '<p style="color: var(--danger);">Erro ao carregar dados locais.</p>';
+                console.error(error);
+                container.textContent = 'Erro ao carregar ligas internacionais.';
             }
         }
 
-        async function loadBingos() {
-            const container = document.getElementById('bingoContainer');
-            const placeholder = `
-                <div class="bingo-placeholder">
-                    <h3>🎰 Bingos temporariamente indisponíveis</h3>
-                    <p>Pedimos desculpas: mesmo com rodadas importantes acontecendo hoje, estamos recalibrando a matriz para trazer novas informações e bingos vencedores muito em breve.</p>
-                    <p>Atualize esta aba nas próximas horas para receber as combinações prontas com gestão de banca revisada.</p>
+        function renderOutrasLigas(selectedKey = ligaSelecionada) {
+            const container = document.getElementById('outras-ligas-content');
+            if (!outrasLigasCache || !outrasLigasCache.ligas) {
+                container.textContent = 'Dados indisponíveis.';
+                return;
+            }
+
+            const ligas = outrasLigasCache.ligas;
+            const keys = Object.keys(ligas);
+            if (!keys.length) {
+                container.textContent = 'Nenhuma liga cadastrada.';
+                return;
+            }
+
+            if (!ligas[selectedKey]) {
+                selectedKey = keys[0];
+            }
+            ligaSelecionada = selectedKey;
+            const liga = ligas[selectedKey];
+
+            const menu = keys.map((key) => {
+                const atual = ligas[key];
+                const ativo = key === selectedKey ? 'ativo' : '';
+                return `<button class="liga-button ${ativo}" data-liga="${key}">${atual.logo || ''} ${atual.nome}</button>`;
+            }).join('');
+
+            const jogosPanel = renderJogosRodadaPanel(liga);
+            const analisesDetalhadas = renderAnalisesLiga(liga);
+
+            container.innerHTML = `
+                <div class="outras-ligas-container">
+                    <div class="ligas-menu">${menu}</div>
+                    <div class="liga-header">
+                        <h2>${liga.logo || ''} ${liga.nome}</h2>
+                        <p class="liga-info"><strong>País:</strong> ${liga.pais} • <strong>Rodada:</strong> ${liga.rodadaAtual} • <strong>Data:</strong> ${liga.dataRodada}</p>
+                    </div>
+                    ${jogosPanel}
+                    ${analisesDetalhadas}
                 </div>
             `;
-            try {
-                container.classList.remove('loading');
-                container.innerHTML = placeholder;
-            } catch (error) {
-                console.error('Erro ao exibir aviso de bingos:', error);
-                container.innerHTML = '<p style="color: var(--danger);">Erro ao carregar aviso.</p>';
-            }
-        }
 
-        function loadNews() {
-            try {
-                document.getElementById('newsContainer').innerHTML = buildApexAnalysisHTML();
-            } catch (error) {
-                console.error('Erro ao montar análise APEX:', error);
-                document.getElementById('newsContainer').innerHTML = '<p style="color: var(--danger);">Erro ao montar análise consolidada.</p>';
-            }
-        }
-
-        function loadLatestRound() {
-            try {
-                document.getElementById('recapContainer').innerHTML = buildLatestRoundHTML();
-            } catch (error) {
-                console.error('Erro ao montar resumo da última rodada:', error);
-                document.getElementById('recapContainer').innerHTML = '<p style="color: var(--danger);">Erro ao montar resumo detalhado.</p>';
-            }
-        }
-
-        function switchTab(event, tabName) {
-            // Remove active de todas as abas e conteúdos
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-
-            // Ativa aba e conteúdo selecionados
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-
-            // Carrega dados específicos
-            if (tabName === 'games') {
-                loadGames('brasileirao');
-            } else if (tabName === 'bingo') {
-                loadBingos();
-            } else if (tabName === 'news') {
-                loadNews();
-            } else if (tabName === 'recap') {
-                loadLatestRound();
-            }
-        }
-
-        // Carrega dados ao abrir página
-        document.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.getElementById('tipModalOverlay');
-            const closeBtn = document.getElementById('tipModalClose');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeTipModal);
-            }
-            if (overlay) {
-                overlay.addEventListener('click', event => {
-                    if (event.target === overlay) {
-                        closeTipModal();
+            container.querySelectorAll('[data-liga]').forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    const targetLiga = event.currentTarget.dataset.liga;
+                    if (targetLiga && targetLiga !== ligaSelecionada) {
+                        renderOutrasLigas(targetLiga);
                     }
                 });
+            });
+        }
+
+        function renderJogosRodadaPanel(liga) {
+            if (!Array.isArray(liga.jogosRodada)) return '';
+            const jogos = liga.jogosRodada.map((jogo) => {
+                const statusDisponivel = jogo.statusAnalise === 'disponível';
+                return `
+                    <div class="jogo-card ${statusDisponivel ? 'disponivel' : 'pendente'}">
+                        <div class="jogo-times">
+                            <span class="mandante">${jogo.mandante}</span>
+                            <span class="vs">x</span>
+                            <span class="visitante">${jogo.visitante}</span>
+                        </div>
+                        <div class="jogo-info">
+                            <span class="data">📅 ${jogo.data} • ${jogo.horario}</span>
+                            ${jogo.importancia ? `<span class="importancia">${jogo.importancia}</span>` : ''}
+                        </div>
+                        <div class="status-badge ${statusDisponivel ? 'badge-disponivel' : 'badge-pendente'}">
+                            ${statusDisponivel ? '✅ Análise disponível' : '⏳ Pendente'}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="jogos-rodada-panel">
+                    <h3>📅 Jogos da Rodada ${liga.rodadaAtual}</h3>
+                    <div class="jogos-grid">${jogos}</div>
+                </div>
+            `;
+        }
+
+        function renderAnalisesLiga(liga) {
+            if (!Array.isArray(liga.analises) || !liga.analises.length) {
+                return '<p class="sem-analises">Nenhuma análise disponível para esta liga.</p>';
             }
-            loadGames('brasileirao');
-        });
+
+            const cards = liga.analises.map((analise) => {
+                const mandanteInfo = renderTimeInfo(analise.mandante_info, 'mandante');
+                const visitanteInfo = renderTimeInfo(analise.visitante_info, 'visitante');
+                const contexto = analise.contexto ? renderAnaliseContexto(analise.contexto) : '';
+                return `
+                    <article class="analise-card internacional">
+                        <h4>${analise.titulo}</h4>
+                        <div class="analise-header">
+                            <span class="competicao">${analise.competicao}</span>
+                            <span class="data-hora">📅 ${analise.data} • ${analise.horario}</span>
+                            <span class="local">📍 ${analise.local}</span>
+                        </div>
+                        ${contexto}
+                        ${mandanteInfo}
+                        ${visitanteInfo}
+                        ${analise.ajustesTaticos ? `<div class="ajustes-taticos"><h6>⚙️ Ajustes Táticos</h6><p>${analise.ajustesTaticos}</p></div>` : ''}
+                        <div class="recomendacoes">
+                            <div class="recomendacao-principal">
+                                <h6>💡 Recomendação Principal</h6>
+                                <p>${analise.recomendacao}</p>
+                            </div>
+                            ${analise.alternativa ? `<div class="recomendacao-alternativa"><h6>🔄 Alternativa</h6><p>${analise.alternativa}</p></div>` : ''}
+                        </div>
+                        ${analise.observacoes ? `<div class="observacoes"><p><strong>⚠️ Observações:</strong> ${analise.observacoes}</p></div>` : ''}
+                    </article>
+                `;
+            }).join('');
+
+            return `
+                <div class="analises-section">
+                    <h3>🔍 Análises Detalhadas</h3>
+                    ${cards}
+                </div>
+            `;
+        }
+
+        function renderTimeInfo(info, tipo) {
+            if (!info) return '';
+            const { nome, ...rest } = info;
+            const icon = tipo === 'mandante' ? '🏠' : '✈️';
+            const rows = Object.entries(rest).map(([key, value]) => `<p><strong>${formatContextKey(key)}:</strong> ${value}</p>`).join('');
+            return `
+                <div class="time-info ${tipo === 'mandante' ? 'mandante-info' : 'visitante-info'}">
+                    <h5>${icon} ${nome || ''}</h5>
+                    ${rows}
+                </div>
+            `;
+        }
+
+        function renderAnaliseContexto(contexto) {
+            const rows = Object.entries(contexto)
+                .filter(([, value]) => value)
+                .map(([key, value]) => `<p><strong>${formatContextKey(key)}:</strong> ${value}</p>`)
+                .join('');
+            if (!rows) return '';
+            return `<div class="contexto">${rows}</div>`;
+        }
+
+        function formatarData(dataIso) {
+            if (!dataIso) return '';
+            const date = new Date(dataIso);
+            return date.toLocaleDateString('pt-BR', {
+                weekday: 'short',
+                day: '2-digit',
+                month: 'short',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function formatarDataISO(isoString) {
+            if (!isoString) return '—';
+            return new Date(isoString).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+        }
+
+        function formatTeamKey(key) {
+            if (!key) return '';
+            return key
+                .replace(/([a-z])([A-Z])/g, '$1 $2')
+                .replace(/_/g, ' ')
+                .replace(/\b\w/g, (char) => char.toUpperCase());
+        }
+
+        function formatContextKey(key) {
+            return formatTeamKey(key);
+        }
+
+        function normalizarNome(nome) {
+            return (nome || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[^a-z0-9\s]/g, '')
+                .trim();
+        }
+
+        function buscarJogoNaRodada(confronto) {
+            if (!rodadaCache || !Array.isArray(rodadaCache.rodadaCompleta)) return null;
+            if (!confronto) return null;
+            const partes = confronto.split('x');
+            if (partes.length !== 2) return null;
+            const mandante = normalizarNome(partes[0]);
+            const visitante = normalizarNome(partes[1]);
+            return rodadaCache.rodadaCompleta.find((jogo) => {
+                return normalizarNome(jogo.mandante) === mandante && normalizarNome(jogo.visitante) === visitante;
+            }) || null;
+        }
+
+        function verificarDadosAtualizados(dataIso) {
+            if (!dataIso) return;
+            const agora = Date.now();
+            const ultimaAtualizacao = new Date(dataIso).getTime();
+            const horas = (agora - ultimaAtualizacao) / 36e5;
+            if (horas > 24) {
+                console.warn('⚠️ ATENÇÃO: Dados podem estar desatualizados!');
+            }
+        }
+
+        function statusToClass(status) {
+            if (!status) return '';
+            return `status-${status
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[^a-z0-9]+/g, '-')}`;
+        }
     </script>
 </body>
 </html>

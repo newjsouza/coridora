@@ -1,0 +1,803 @@
+{
+    "atualizacao": "2025-12-07T10:19:00-03:00",
+    "ligas": {
+        "premierLeague": {
+            "nome": "Premier League",
+            "pais": "Inglaterra",
+            "logo": "🏴",
+            "rodadaAtual": 15,
+            "dataRodada": "07-08/12/2025",
+            "jogosRodada": [
+                {
+                    "id": 1,
+                    "mandante": "Manchester City",
+                    "visitante": "Liverpool",
+                    "data": "07/12/25",
+                    "horario": "14:30",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐⭐ Confronto pela liderança"
+                },
+                {
+                    "id": 2,
+                    "mandante": "Arsenal",
+                    "visitante": "Chelsea",
+                    "data": "07/12/25",
+                    "horario": "12:00",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐ Derby londrino"
+                },
+                {
+                    "id": 3,
+                    "mandante": "Manchester United",
+                    "visitante": "Nottingham Forest",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 4,
+                    "mandante": "Tottenham",
+                    "visitante": "Bournemouth",
+                    "data": "08/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 5,
+                    "mandante": "Newcastle",
+                    "visitante": "Brentford",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 6,
+                    "mandante": "Aston Villa",
+                    "visitante": "Southampton",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 7,
+                    "mandante": "Everton",
+                    "visitante": "Wolverhampton",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 8,
+                    "mandante": "Fulham",
+                    "visitante": "Brighton",
+                    "data": "08/12/25",
+                    "horario": "13:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 9,
+                    "mandante": "Leicester City",
+                    "visitante": "West Ham",
+                    "data": "08/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 10,
+                    "mandante": "Crystal Palace",
+                    "visitante": "Ipswich Town",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                }
+            ],
+            "analises": [
+                {
+                    "titulo": "Manchester City x Liverpool — duelo decisivo",
+                    "competicao": "Premier League",
+                    "data": "07/12/25",
+                    "horario": "14:30",
+                    "local": "Etihad Stadium",
+                    "contexto": {
+                        "importancia": "⭐⭐⭐ Disputa direta pela liderança",
+                        "clima": "Possível chuva leve, temperatura baixa"
+                    },
+                    "mandante_info": {
+                        "nome": "Manchester City",
+                        "posicao": "2º colocado",
+                        "pontos": 32,
+                        "forma": "3V-1E-1D",
+                        "gols_por_jogo": "2.4 gols em casa",
+                        "sequencia": "12 jogos invicto no Etihad",
+                        "ataque": "Haaland em fase artilheira, De Bruyne retorna",
+                        "defesa": "Dias e Akanji sofrem poucos gols",
+                        "probabilidadeMarcar": "81%"
+                    },
+                    "visitante_info": {
+                        "nome": "Liverpool",
+                        "posicao": "1º colocado",
+                        "pontos": 35,
+                        "forma": "4V-1E",
+                        "gols_por_jogo": "2.1 gols fora",
+                        "sequencia": "8 jogos sem perder",
+                        "ataque": "Salah líder de assistências, Núñez confiante",
+                        "defesa": "Van Dijk comanda defesa mais sólida da liga",
+                        "probabilidadeMarcar": "74%"
+                    },
+                    "ajustesTaticos": "City pressiona alto buscando corredor central; Liverpool aposta em contra-ataques velozes com Salah e Luis Díaz.",
+                    "recomendacao": "Ambos marcam com odd mínima 1.70 ou Over 2.5 gols (1.85)",
+                    "alternativa": "Liverpool dupla chance (1.60)",
+                    "observacoes": "Árbitro tende a distribuir cartões. Verificar escalações 1h antes."
+                },
+                {
+                    "titulo": "Arsenal x Chelsea — Derby de Londres",
+                    "competicao": "Premier League",
+                    "data": "07/12/25",
+                    "horario": "12:00",
+                    "local": "Emirates Stadium",
+                    "contexto": {
+                        "importancia": "⭐⭐ Briga direta por Champions",
+                        "clima": "Tempo frio, sem chuva"
+                    },
+                    "mandante_info": {
+                        "nome": "Arsenal",
+                        "posicao": "3º colocado",
+                        "pontos": 30,
+                        "forma": "3V-0E-2D",
+                        "gols_por_jogo": "1.9 gols em casa",
+                        "ataque": "Saka retorna, Martinelli e Jesus em sintonia",
+                        "defesa": "Gabriel + Saliba sólidos",
+                        "probabilidadeMarcar": "76%"
+                    },
+                    "visitante_info": {
+                        "nome": "Chelsea",
+                        "posicao": "5º colocado",
+                        "pontos": 25,
+                        "forma": "2V-1E-2D",
+                        "ataque": "Palmer é o cérebro, Jackson irregular",
+                        "defesa": "Sofre em bolas aéreas",
+                        "probabilidadeMarcar": "58%"
+                    },
+                    "ajustesTaticos": "Arsenal deve dominar posse; Chelsea aposta em transições rápidas com Palmer entre linhas.",
+                    "recomendacao": "Arsenal -0.5 (1.75)",
+                    "alternativa": "Arsenal marcar no primeiro tempo (1.85)"
+                }
+            ]
+        },
+        "laLiga": {
+            "nome": "La Liga",
+            "pais": "Espanha",
+            "logo": "🇪🇸",
+            "rodadaAtual": 16,
+            "dataRodada": "07-08/12/2025",
+            "jogosRodada": [
+                {
+                    "id": 1,
+                    "mandante": "Real Madrid",
+                    "visitante": "Barcelona",
+                    "data": "07/12/25",
+                    "horario": "16:00",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐⭐ El Clásico"
+                },
+                {
+                    "id": 2,
+                    "mandante": "Atlético Madrid",
+                    "visitante": "Sevilla",
+                    "data": "07/12/25",
+                    "horario": "14:00",
+                    "statusAnalise": "disponível"
+                },
+                {
+                    "id": 3,
+                    "mandante": "Real Sociedad",
+                    "visitante": "Athletic Bilbao",
+                    "data": "08/12/25",
+                    "horario": "12:00",
+                    "statusAnalise": "pendente",
+                    "importancia": "⭐ Derby Basco"
+                },
+                {
+                    "id": 4,
+                    "mandante": "Valencia",
+                    "visitante": "Villarreal",
+                    "data": "07/12/25",
+                    "horario": "10:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 5,
+                    "mandante": "Betis",
+                    "visitante": "Getafe",
+                    "data": "08/12/25",
+                    "horario": "14:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 6,
+                    "mandante": "Girona",
+                    "visitante": "Mallorca",
+                    "data": "07/12/25",
+                    "horario": "10:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 7,
+                    "mandante": "Osasuna",
+                    "visitante": "Alavés",
+                    "data": "08/12/25",
+                    "horario": "10:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 8,
+                    "mandante": "Las Palmas",
+                    "visitante": "Celta de Vigo",
+                    "data": "07/12/25",
+                    "horario": "12:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 9,
+                    "mandante": "Rayo Vallecano",
+                    "visitante": "Espanyol",
+                    "data": "08/12/25",
+                    "horario": "10:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 10,
+                    "mandante": "Leganés",
+                    "visitante": "Valladolid",
+                    "data": "07/12/25",
+                    "horario": "10:00",
+                    "statusAnalise": "pendente"
+                }
+            ],
+            "analises": [
+                {
+                    "titulo": "Real Madrid x Barcelona — El Clásico decide liderança",
+                    "competicao": "La Liga",
+                    "data": "07/12/25",
+                    "horario": "16:00",
+                    "local": "Santiago Bernabéu",
+                    "contexto": {
+                        "importancia": "⭐⭐⭐ Confronto direto pela liderança",
+                        "clima": "Temperatura amena, céu limpo"
+                    },
+                    "mandante_info": {
+                        "nome": "Real Madrid",
+                        "posicao": "2º colocado",
+                        "pontos": 36,
+                        "forma": "4V-1D",
+                        "gols_por_jogo": "2.6 gols/jogo em casa",
+                        "sequencia": "15 jogos invicto no Bernabéu",
+                        "ataque": "Vini Jr. e Bellingham em alta",
+                        "defesa": "Rüdiger e Militão sólidos",
+                        "probabilidadeMarcar": "83%"
+                    },
+                    "visitante_info": {
+                        "nome": "Barcelona",
+                        "posicao": "1º colocado",
+                        "pontos": 38,
+                        "forma": "5V",
+                        "gols_por_jogo": "2.3 gols/jogo",
+                        "sequencia": "10 jogos invicto",
+                        "ataque": "Lewandowski artilheiro, Raphinha em fase",
+                        "defesa": "Araújo retorna, Ter Stegen seguro",
+                        "probabilidadeMarcar": "79%"
+                    },
+                    "ajustesTaticos": "Real explora velocidade nas costas de Koundé; Barça aposta em posse com Pedri organizando.",
+                    "recomendacao": "Ambos marcam (1.60) ou Over 3.5 gols (2.40)",
+                    "alternativa": "Empate com odd 3.50",
+                    "observacoes": "Jogo emocional, atenção a cartões e suspensões."
+                },
+                {
+                    "titulo": "Atlético Madrid x Sevilla — rojiblancos favoritos",
+                    "competicao": "La Liga",
+                    "data": "07/12/25",
+                    "horario": "14:00",
+                    "local": "Cívitas Metropolitano",
+                    "contexto": {
+                        "importancia": "Atlético busca G4; Sevilla luta contra Z4"
+                    },
+                    "mandante_info": {
+                        "nome": "Atlético Madrid",
+                        "posicao": "4º colocado",
+                        "pontos": 28,
+                        "forma": "3V-1E-1D",
+                        "ataque": "Griezmann e Morata produzem",
+                        "defesa": "Giménez e Witsel experientes",
+                        "probabilidadeMarcar": "77%"
+                    },
+                    "visitante_info": {
+                        "nome": "Sevilla",
+                        "posicao": "17º",
+                        "pontos": 14,
+                        "forma": "1V-4D",
+                        "ataque": "Baixa produção (12 gols em 15 jogos)",
+                        "defesa": "Pior defesa da liga",
+                        "probabilidadeMarcar": "35%"
+                    },
+                    "ajustesTaticos": "Atlético deve pressionar desde o início explorando fragilidade defensiva.",
+                    "recomendacao": "Atlético -1.5 (1.75)",
+                    "alternativa": "Atlético marcar 3+ gols (2.20)"
+                }
+            ]
+        },
+        "serieA": {
+            "nome": "Serie A",
+            "pais": "Itália",
+            "logo": "🇮🇹",
+            "rodadaAtual": 15,
+            "dataRodada": "07-09/12/2025",
+            "jogosRodada": [
+                {
+                    "id": 1,
+                    "mandante": "Inter de Milão",
+                    "visitante": "Napoli",
+                    "data": "08/12/25",
+                    "horario": "16:45",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐⭐ Confronto direto"
+                },
+                {
+                    "id": 2,
+                    "mandante": "Juventus",
+                    "visitante": "AC Milan",
+                    "data": "07/12/25",
+                    "horario": "14:00",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐ Clássico"
+                },
+                {
+                    "id": 3,
+                    "mandante": "Roma",
+                    "visitante": "Lazio",
+                    "data": "08/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐ Derby della Capitale"
+                },
+                {
+                    "id": 4,
+                    "mandante": "Atalanta",
+                    "visitante": "Fiorentina",
+                    "data": "07/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 5,
+                    "mandante": "Bologna",
+                    "visitante": "Torino",
+                    "data": "09/12/25",
+                    "horario": "13:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 6,
+                    "mandante": "Udinese",
+                    "visitante": "Genoa",
+                    "data": "07/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 7,
+                    "mandante": "Monza",
+                    "visitante": "Cagliari",
+                    "data": "08/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 8,
+                    "mandante": "Verona",
+                    "visitante": "Empoli",
+                    "data": "07/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 9,
+                    "mandante": "Lecce",
+                    "visitante": "Salernitana",
+                    "data": "09/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 10,
+                    "mandante": "Sassuolo",
+                    "visitante": "Frosinone",
+                    "data": "08/12/25",
+                    "horario": "14:00",
+                    "statusAnalise": "pendente"
+                }
+            ],
+            "analises": [
+                {
+                    "titulo": "Inter de Milão x Napoli — duelo pela ponta",
+                    "competicao": "Serie A",
+                    "data": "08/12/25",
+                    "horario": "16:45",
+                    "local": "San Siro",
+                    "contexto": {
+                        "importancia": "⭐⭐⭐ 1º x 2º",
+                        "clima": "Frio intenso, possibilidade de neblina"
+                    },
+                    "mandante_info": {
+                        "nome": "Inter",
+                        "posicao": "1º",
+                        "pontos": 37,
+                        "forma": "4V-1E",
+                        "gols_por_jogo": "2.2 em casa",
+                        "sequencia": "18 jogos invicto",
+                        "ataque": "Lautaro + Thuram somam 25 gols",
+                        "defesa": "Melhor da liga (9 gols sofridos)",
+                        "probabilidadeMarcar": "78%"
+                    },
+                    "visitante_info": {
+                        "nome": "Napoli",
+                        "posicao": "2º",
+                        "pontos": 34,
+                        "forma": "3V-1E-1D",
+                        "gols_por_jogo": "1.9 fora",
+                        "ataque": "Osimhen volta, Kvara decisivo",
+                        "defesa": "Kim e Lobotka dão equilíbrio",
+                        "probabilidadeMarcar": "71%"
+                    },
+                    "ajustesTaticos": "Inter domina meio com Barella e Çalhanoğlu; Napoli busca velocidade com Kvara/Politano.",
+                    "recomendacao": "Under 2.5 gols (1.70)",
+                    "alternativa": "Inter vitória (2.10)"
+                },
+                {
+                    "titulo": "Juventus x AC Milan — clássico truncado",
+                    "competicao": "Serie A",
+                    "data": "07/12/25",
+                    "horario": "14:00",
+                    "local": "Allianz Stadium",
+                    "mandante_info": {
+                        "nome": "Juventus",
+                        "posicao": "3º",
+                        "forma": "2V-3E",
+                        "ataque": "Vlahović irregular, Chiesa retorna",
+                        "defesa": "Bremer e Danilo seguros",
+                        "probabilidadeMarcar": "68%"
+                    },
+                    "visitante_info": {
+                        "nome": "Milan",
+                        "posicao": "5º",
+                        "forma": "2V-1E-2D",
+                        "ataque": "Rafael Leão é a válvula",
+                        "defesa": "Inconstante, sofre gols bobos",
+                        "probabilidadeMarcar": "62%"
+                    },
+                    "recomendacao": "Empate ou Under 2.5 (1.65)",
+                    "alternativa": "Juventus dupla chance (1.40)"
+                },
+                {
+                    "titulo": "Roma x Lazio — Derby della Capitale",
+                    "competicao": "Serie A",
+                    "data": "08/12/25",
+                    "horario": "11:30",
+                    "local": "Stadio Olimpico",
+                    "contexto": {
+                        "importancia": "⭐⭐ Rivalidade histórica"
+                    },
+                    "mandante_info": {
+                        "nome": "Roma",
+                        "posicao": "6º",
+                        "forma": "2V-2E-1D",
+                        "ataque": "Dybala criativo, Lukaku busca ritmo",
+                        "probabilidadeMarcar": "70%"
+                    },
+                    "visitante_info": {
+                        "nome": "Lazio",
+                        "posicao": "7º",
+                        "forma": "3V-2D",
+                        "ataque": "Immobile confiável, Luis Alberto organiza",
+                        "probabilidadeMarcar": "68%"
+                    },
+                    "recomendacao": "Ambos marcam (1.65)",
+                    "alternativa": "Over 2.5 (1.95)"
+                }
+            ]
+        },
+        "bundesliga": {
+            "nome": "Bundesliga",
+            "pais": "Alemanha",
+            "logo": "🇩🇪",
+            "rodadaAtual": 13,
+            "dataRodada": "07-08/12/2025",
+            "jogosRodada": [
+                {
+                    "id": 1,
+                    "mandante": "Bayern de Munique",
+                    "visitante": "Borussia Dortmund",
+                    "data": "07/12/25",
+                    "horario": "13:30",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐⭐ Der Klassiker"
+                },
+                {
+                    "id": 2,
+                    "mandante": "RB Leipzig",
+                    "visitante": "Bayer Leverkusen",
+                    "data": "08/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐ Jogo direto por G4"
+                },
+                {
+                    "id": 3,
+                    "mandante": "Borussia Mönchengladbach",
+                    "visitante": "Eintracht Frankfurt",
+                    "data": "07/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 4,
+                    "mandante": "Wolfsburg",
+                    "visitante": "Union Berlin",
+                    "data": "08/12/25",
+                    "horario": "13:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 5,
+                    "mandante": "Hoffenheim",
+                    "visitante": "Augsburg",
+                    "data": "07/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 6,
+                    "mandante": "Mainz 05",
+                    "visitante": "Freiburg",
+                    "data": "08/12/25",
+                    "horario": "09:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 7,
+                    "mandante": "Stuttgart",
+                    "visitante": "Werder Bremen",
+                    "data": "07/12/25",
+                    "horario": "09:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 8,
+                    "mandante": "Bochum",
+                    "visitante": "Heidenheim",
+                    "data": "08/12/25",
+                    "horario": "11:30",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 9,
+                    "mandante": "Darmstadt",
+                    "visitante": "Colônia",
+                    "data": "07/12/25",
+                    "horario": "09:30",
+                    "statusAnalise": "pendente"
+                }
+            ],
+            "analises": [
+                {
+                    "titulo": "Bayern de Munique x Borussia Dortmund — Der Klassiker",
+                    "competicao": "Bundesliga",
+                    "data": "07/12/25",
+                    "horario": "13:30",
+                    "local": "Allianz Arena",
+                    "contexto": {
+                        "importancia": "⭐⭐⭐ Disputa direta pela liderança",
+                        "clima": "Frio intenso, possível neve"
+                    },
+                    "mandante_info": {
+                        "nome": "Bayern",
+                        "posicao": "1º",
+                        "pontos": 33,
+                        "forma": "5V",
+                        "gols_por_jogo": "3.1 em casa",
+                        "sequencia": "23 jogos invicto",
+                        "ataque": "Kane 22 gols, Sané/Musiala criativos",
+                        "defesa": "Upamecano e De Ligt eficientes",
+                        "probabilidadeMarcar": "88%"
+                    },
+                    "visitante_info": {
+                        "nome": "Dortmund",
+                        "posicao": "3º",
+                        "pontos": 27,
+                        "forma": "3V-1E-1D",
+                        "gols_por_jogo": "2.3 fora",
+                        "ataque": "Füllkrug volta, Adeyemi acelerado",
+                        "defesa": "Hummels lidera, Kobel seguro",
+                        "probabilidadeMarcar": "74%"
+                    },
+                    "ajustesTaticos": "Bayern pressiona saída rival; Dortmund tenta transições com Adeyemi/Brandt.",
+                    "recomendacao": "Over 3.5 gols (1.80)",
+                    "alternativa": "Ambos marcam (1.50) ou Bayern -1.5 (1.95)",
+                    "observacoes": "Temperaturas negativas podem deixar gramado pesado."
+                },
+                {
+                    "titulo": "RB Leipzig x Bayer Leverkusen — duelo de elencos jovens",
+                    "competicao": "Bundesliga",
+                    "data": "08/12/25",
+                    "horario": "11:30",
+                    "local": "Red Bull Arena",
+                    "mandante_info": {
+                        "nome": "RB Leipzig",
+                        "posicao": "2º",
+                        "pontos": 30,
+                        "forma": "4V-1D",
+                        "ataque": "Openda (14 gols) e Xavi Simons em alta",
+                        "defesa": "Orban e Simakan agressivos",
+                        "probabilidadeMarcar": "79%"
+                    },
+                    "visitante_info": {
+                        "nome": "Bayer Leverkusen",
+                        "posicao": "4º",
+                        "pontos": 26,
+                        "forma": "3V-2E",
+                        "ataque": "Boniface letal, Wirtz genial",
+                        "defesa": "Tah experiente porém vulnerável contra velocidade",
+                        "probabilidadeMarcar": "73%"
+                    },
+                    "recomendacao": "Ambos marcam (1.60) ou Over 2.5 (1.70)",
+                    "alternativa": "Leipzig vitória simples (2.00)"
+                }
+            ]
+        },
+        "ligue1": {
+            "nome": "Ligue 1",
+            "pais": "França",
+            "logo": "🇫🇷",
+            "rodadaAtual": 14,
+            "dataRodada": "07-08/12/2025",
+            "jogosRodada": [
+                {
+                    "id": 1,
+                    "mandante": "PSG",
+                    "visitante": "Lyon",
+                    "data": "08/12/25",
+                    "horario": "16:00",
+                    "statusAnalise": "disponível",
+                    "importancia": "⭐⭐ Clássico francês"
+                },
+                {
+                    "id": 2,
+                    "mandante": "Marseille",
+                    "visitante": "Monaco",
+                    "data": "07/12/25",
+                    "horario": "16:45",
+                    "statusAnalise": "disponível"
+                },
+                {
+                    "id": 3,
+                    "mandante": "Lille",
+                    "visitante": "Nice",
+                    "data": "08/12/25",
+                    "horario": "13:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 4,
+                    "mandante": "Lens",
+                    "visitante": "Rennes",
+                    "data": "07/12/25",
+                    "horario": "14:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 5,
+                    "mandante": "Nantes",
+                    "visitante": "Toulouse",
+                    "data": "08/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 6,
+                    "mandante": "Strasbourg",
+                    "visitante": "Montpellier",
+                    "data": "07/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 7,
+                    "mandante": "Reims",
+                    "visitante": "Brest",
+                    "data": "08/12/25",
+                    "horario": "09:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 8,
+                    "mandante": "Le Havre",
+                    "visitante": "Lorient",
+                    "data": "07/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                },
+                {
+                    "id": 9,
+                    "mandante": "Clermont",
+                    "visitante": "Metz",
+                    "data": "08/12/25",
+                    "horario": "11:00",
+                    "statusAnalise": "pendente"
+                }
+            ],
+            "analises": [
+                {
+                    "titulo": "PSG x Lyon — Mbappé em campo",
+                    "competicao": "Ligue 1",
+                    "data": "08/12/25",
+                    "horario": "16:00",
+                    "local": "Parc des Princes",
+                    "contexto": {
+                        "importancia": "⭐⭐ PSG disparado na liderança"
+                    },
+                    "mandante_info": {
+                        "nome": "PSG",
+                        "posicao": "1º",
+                        "pontos": 42,
+                        "forma": "6V",
+                        "gols_por_jogo": "2.9 em casa",
+                        "sequencia": "20 jogos invicto",
+                        "ataque": "Mbappé artilheiro (20 gols), Dembélé criativo",
+                        "defesa": "Marquinhos/Skriniar sólidos",
+                        "probabilidadeMarcar": "86%"
+                    },
+                    "visitante_info": {
+                        "nome": "Lyon",
+                        "posicao": "7º",
+                        "pontos": 20,
+                        "forma": "2V-1E-2D",
+                        "ataque": "Lacazette experiente, Cherki promessa",
+                        "defesa": "Sofre 18 gols fora",
+                        "probabilidadeMarcar": "48%"
+                    },
+                    "ajustesTaticos": "PSG deve dominar posse total; Lyon tenta segurar e sair em velocidade.",
+                    "recomendacao": "PSG -2.5 (1.85)",
+                    "alternativa": "Mbappé marcar a qualquer momento (1.60)",
+                    "observacoes": "Lyon já surpreendeu o PSG antes — gestão de stake."
+                },
+                {
+                    "titulo": "Marseille x Monaco — disputa por Champions",
+                    "competicao": "Ligue 1",
+                    "data": "07/12/25",
+                    "horario": "16:45",
+                    "local": "Stade Vélodrome",
+                    "mandante_info": {
+                        "nome": "Marseille",
+                        "posicao": "2º",
+                        "pontos": 30,
+                        "forma": "3V-1E-1D",
+                        "ataque": "Aubameyang decisivo, Harit abastece",
+                        "defesa": "Gigot e Balerdi sólidos",
+                        "probabilidadeMarcar": "75%"
+                    },
+                    "visitante_info": {
+                        "nome": "Monaco",
+                        "posicao": "3º",
+                        "pontos": 28,
+                        "forma": "4V-1D",
+                        "ataque": "Ben Yedder artilheiro, Minamino criativo",
+                        "defesa": "Estável, sofre poucos gols",
+                        "probabilidadeMarcar": "70%"
+                    },
+                    "ajustesTaticos": "Marseille vai agredir nas alas, Monaco espera brechas nas costas.",
+                    "recomendacao": "Ambos marcam (1.65)",
+                    "alternativa": "Marseille dupla chance (1.45)"
+                }
+            ]
+        }
+    }
+}

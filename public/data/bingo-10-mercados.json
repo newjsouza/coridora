@@ -1,0 +1,124 @@
+{
+    "titulo": "Bingo dos 10 mercados — Rodada 38",
+    "data": "Atualizado em 07/12/25 • Horários de Brasília",
+    "aviso": "Stakes proporcionais — máximo 0.6u por mercado. Gestão total: 4 unidades.",
+    "jogos_programados": [
+        "16:00 — Mirassol x Flamengo",
+        "16:00 — Botafogo x Fortaleza",
+        "16:00 — Atlético-MG x Vasco",
+        "16:00 — Corinthians x Juventude",
+        "16:00 — Vitória x São Paulo"
+    ],
+    "mercados": [
+        {
+            "numero": 1,
+            "titulo": "Flamengo vencer ambos os tempos",
+            "jogo": "Mirassol x Flamengo",
+            "hora": "16:00",
+            "confianca": 75,
+            "odds": { "value": "+12%" },
+            "risco": "Mirassol forte em bolas paradas",
+            "motivo": "Superioridade técnica e intensidade pelos lados." 
+        },
+        {
+            "numero": 2,
+            "titulo": "Gabigol 2+ finalizações no alvo",
+            "jogo": "Mirassol x Flamengo",
+            "hora": "16:00",
+            "confianca": 72,
+            "odds": { "value": "+10%" },
+            "risco": "Gestão de minutos se Flamengo abrir vantagem",
+            "motivo": "Centroavante recebe cruzamentos constantes e cobra pênaltis." 
+        },
+        {
+            "numero": 3,
+            "titulo": "Botafogo -0.5 handicap",
+            "jogo": "Botafogo x Fortaleza",
+            "hora": "16:00",
+            "confianca": 74,
+            "odds": { "value": "+9%" },
+            "risco": "Fortaleza perigoso em transições",
+            "motivo": "Botafogo chega a 2.5 xG médios no Nilton Santos." 
+        },
+        {
+            "numero": 4,
+            "titulo": "Botafogo over 5.5 escanteios",
+            "jogo": "Botafogo x Fortaleza",
+            "hora": "16:00",
+            "confianca": 70,
+            "odds": { "value": "+8%" },
+            "risco": "Fortaleza pode reter posse na esquerda",
+            "motivo": "Pressão pelos flancos gera média de 7.1 escanteios." 
+        },
+        {
+            "numero": 5,
+            "titulo": "Atlético-MG vencer sem sofrer gol",
+            "jogo": "Atlético-MG x Vasco",
+            "hora": "16:00",
+            "confianca": 71,
+            "odds": { "value": "+7%" },
+            "risco": "Vegetti domina bolas aéreas",
+            "motivo": "Zaga vascaína remendada e Galo completo." 
+        },
+        {
+            "numero": 6,
+            "titulo": "Under 2.5 gols",
+            "jogo": "Corinthians x Juventude",
+            "hora": "16:00",
+            "confianca": 69,
+            "odds": { "value": "+7%" },
+            "risco": "Erros individuais podem abrir placar cedo",
+            "motivo": "Modelos projetam xG combinado de 2.0." 
+        },
+        {
+            "numero": 7,
+            "titulo": "Ceará marcar primeiro",
+            "jogo": "Ceará x Palmeiras",
+            "hora": "16:00",
+            "confianca": 66,
+            "odds": { "value": "+9%" },
+            "risco": "Palmeiras letal em contra-ataque",
+            "motivo": "Alvinegro pressiona muito os 20' iniciais com apoio da torcida." 
+        },
+        {
+            "numero": 8,
+            "titulo": "Palmeiras 4+ escanteios",
+            "jogo": "Ceará x Palmeiras",
+            "hora": "16:00",
+            "confianca": 65,
+            "odds": { "value": "+6%" },
+            "risco": "Time pode baixar ritmo se estiver em vantagem",
+            "motivo": "Triângulos com Endrick e Dudu forçam cruzamentos." 
+        },
+        {
+            "numero": 9,
+            "titulo": "Vitória ou empate",
+            "jogo": "Vitória x São Paulo",
+            "hora": "16:00",
+            "confianca": 68,
+            "odds": { "value": "+8%" },
+            "risco": "São Paulo cresce em jogos decisivos",
+            "motivo": "Time baiano faz sequência positiva como mandante." 
+        },
+        {
+            "numero": 10,
+            "titulo": "Grêmio over 4.5 cartões",
+            "jogo": "Sport x Grêmio",
+            "hora": "16:00",
+            "confianca": 64,
+            "odds": { "value": "+7%" },
+            "risco": "Arbitragem pode conduzir jogo mais solto",
+            "motivo": "Disputa direta por vaga continental gera jogo físico." 
+        }
+    ],
+    "resumo_bingo": {
+        "total_mercados": 10,
+        "valor_stake_recomendado": "0.4 u (flat)",
+        "taxa_sucesso_esperada": "64%",
+        "value_medio": "+8.9%",
+        "confianca_media": "70%",
+        "maior_value": "+12% (Flamengo vencer ambos tempos)",
+        "melhor_relacao": "Botafogo -0.5 handicap",
+        "aviso_final": "Cancelar entradas se escalações tiverem 4+ mudanças inesperadas."
+    }
+}

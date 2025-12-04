@@ -1,0 +1,98 @@
+{
+    "documentacao": {
+        "projeto": "PROJEÇÃO ANALYTICS - DADOS DA RODADA",
+        "ultima_atualizacao": "07/12/2025 às 09:52",
+        "rodada": "Brasileirão Série A - Rodada 38",
+        "fontes": "Betano / SofaScore / API Futebol",
+        "responsavel": "Johnathan",
+        "observacao": "Verificar elencos e escalações 2h antes dos jogos"
+    },
+    "versao_dados": "1.2.0",
+    "data_atualizacao": "2025-12-07T09:52:00-03:00",
+    "rodadaCompleta": [
+        {
+            "id": 1,
+            "mandante": "Atlético-MG",
+            "visitante": "Vasco",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 2,
+            "mandante": "Botafogo",
+            "visitante": "Fortaleza",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "disponível"
+        },
+        {
+            "id": 3,
+            "mandante": "Ceará",
+            "visitante": "Palmeiras",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 4,
+            "mandante": "Corinthians",
+            "visitante": "Juventude",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 5,
+            "mandante": "Fluminense",
+            "visitante": "Bahia",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 6,
+            "mandante": "Internacional",
+            "visitante": "RB Bragantino",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 7,
+            "mandante": "Mirassol",
+            "visitante": "Flamengo",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "disponível"
+        },
+        {
+            "id": 8,
+            "mandante": "Santos",
+            "visitante": "Cruzeiro",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 9,
+            "mandante": "Sport",
+            "visitante": "Grêmio",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        },
+        {
+            "id": 10,
+            "mandante": "Vitória",
+            "visitante": "São Paulo",
+            "data": "07/12/25",
+            "horario": "16:00",
+            "statusAnalise": "pendente"
+        }
+    ],
+    "statusAnalises": {
+        "disponiveis": [2, 7],
+        "pendentes": [1, 3, 4, 5, 6, 8, 9, 10]
+    }
+}

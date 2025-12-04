@@ -1,0 +1,98 @@
+{
+    "aviso": "Dados sincronizados com rodada 38 (07/12/25). Ajuste stakes se o value projetado superar 8%.",
+    "indicacoes": [
+        {
+            "status": "GREEN",
+            "confronto": "Mirassol x Flamengo",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Flamengo over 1.5 gols + 5.5 escanteios time",
+            "motivo": "Gabigol centralizado abre corredor para BH/E.Cebolinha; Mirassol sofre média de 6.4 escanteios quando marca bloco baixo.",
+            "nota": "Time titular confirmado e sem desfalques.",
+            "odd_justa": "1.58",
+            "odd_mercado": "1.72",
+            "value": "+8.9%",
+            "confianca": "83%",
+            "stake": "1.30 u",
+            "risco": "Gol cedo do Mirassol pode desacelerar pressão inicial"
+        },
+        {
+            "status": "GREEN",
+            "confronto": "Botafogo x Fortaleza",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Botafogo -0.5 handicap asiático",
+            "motivo": "Almada e Tchê Tchê controlam meio abrindo espaço para Júnior Santos atacar o miolo. Fortaleza chega com linha reserva na zaga.",
+            "odd_justa": "1.64",
+            "odd_mercado": "1.80",
+            "value": "+9.8%",
+            "confianca": "78%",
+            "stake": "1.10 u",
+            "risco": "Fortaleza perigoso em bolas aéreas com Lucero"
+        },
+        {
+            "status": "GREEN",
+            "confronto": "Atlético-MG x Vasco",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Atlético-MG vencer sem sofrer gol",
+            "motivo": "Defesa vascaína perde dois titulares; Hulk volta e pressiona saída com Paulinho atacando profundidade.",
+            "odd_justa": "1.95",
+            "odd_mercado": "2.12",
+            "value": "+8.7%",
+            "confianca": "70%",
+            "stake": "0.95 u",
+            "risco": "Vasco aposta em bolas paradas com Vegetti"
+        },
+        {
+            "status": "AMBER",
+            "confronto": "Corinthians x Juventude",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Under 2.5 gols",
+            "motivo": "Corinthians sem criatividade, Juventude fechado para pontuar; projeção xG combinada 2.1.",
+            "odd_justa": "1.66",
+            "odd_mercado": "1.78",
+            "value": "+7.2%",
+            "confianca": "65%",
+            "stake": "0.80 u",
+            "risco": "Gol cedo em erro individual quebra controle"
+        },
+        {
+            "status": "AMBER",
+            "confronto": "Ceará x Palmeiras",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Ambos marcam - SIM",
+            "motivo": "Ceará agressivo pelos lados, Palmeiras preserva mas mantém Endrick titular; defesas vulneráveis em transições.",
+            "odd_justa": "1.92",
+            "odd_mercado": "2.08",
+            "value": "+8.3%",
+            "confianca": "67%",
+            "stake": "0.85 u",
+            "risco": "Palmeiras pode baixar ritmo se abrir 2 gols"
+        },
+        {
+            "status": "GREEN",
+            "confronto": "Vitória x São Paulo",
+            "campeonato": "Brasileirão Série A",
+            "dias_distante": "Sáb • 16:00",
+            "mercado": "Vitória ou empate + over 1.5 gols",
+            "motivo": "São Paulo fora de casa cai de produção e Vitória marca oito jogos seguidos em casa.",
+            "odd_justa": "1.88",
+            "odd_mercado": "2.04",
+            "value": "+7.9%",
+            "confianca": "69%",
+            "stake": "0.95 u",
+            "risco": "Time baiano sofre em cobertura aérea"
+        }
+    ],
+    "resumo": {
+        "total_apostas": 6,
+        "stake_total_recomendado": "5.95 u",
+        "taxa_sucesso_esperada": "72%",
+        "value_medio": "+8.5%",
+        "confianca_media": "72%",
+        "aviso_especial": "Exposição máxima sugerida: 6.5 unidades distribuídas. Revisar 2h antes das 16:00."
+    }
+}
