@@ -62,6 +62,16 @@
                     <p class="cta-note">Selecione a competição para ver os mercados recomendados ou mergulhe direto no Bingo exclusivo.</p>
                 </section>
 
+                <section class="mobile-indicacoes-overview" aria-labelledby="mobile-indicacoes-title">
+                    <div class="mobile-indicacoes-header">
+                        <h2 id="mobile-indicacoes-title">Indicações por Liga</h2>
+                        <p class="mobile-indicacoes-updated"><strong>Atualização:</strong> <span id="mobile-indicacoes-updated">—</span></p>
+                    </div>
+                    <div id="mobile-indicacoes-summary" class="mobile-indicacoes-grid">
+                        <p class="loading-block">Carregando indicações...</p>
+                    </div>
+                </section>
+
                 <section class="ultima-rodada-home" aria-labelledby="ultima-rodada-home-title">
                     <div class="ultima-rodada-home-header">
                         <h2 id="ultima-rodada-home-title">Resumo da Última Rodada</h2>
@@ -362,6 +372,32 @@
             }).join('');
 
             container.innerHTML = metaHtml + cardsHtml;
+
+            const mobileSummary = document.getElementById('mobile-indicacoes-summary');
+            if (mobileSummary) {
+                if (!orderedGroups.length) {
+                    mobileSummary.innerHTML = '<p class="empty-state">Nenhuma indicação disponível.</p>';
+                } else {
+                    mobileSummary.innerHTML = orderedGroups
+                        .map(([leagueKey, picks]) => {
+                            const leagueName = leagueLabels[leagueKey] || formatTeamKey(leagueKey);
+                            const rodadaLabel = picks[0]?.round ? `Rodada ${picks[0].round}` : 'Agenda confirmada';
+                            return `
+                                <article class="mobile-indicacao-card">
+                                    <p class="league">${leagueName}</p>
+                                    <p class="count">${picks.length} indicações</p>
+                                    <span class="rodada">${rodadaLabel}</span>
+                                </article>
+                            `;
+                        })
+                        .join('');
+                }
+            }
+
+            const mobileUpdated = document.getElementById('mobile-indicacoes-updated');
+            if (mobileUpdated) {
+                mobileUpdated.textContent = formatarDataISO(data.data_atualizacao);
+            }
         }
 
         async function loadAnalises() {

@@ -420,6 +420,72 @@ body.preview-desktop .data-column {
     text-align: center;
 }
 
+.mobile-indicacoes-overview {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin: 10px 0 20px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 219, 116, 0.2);
+    background: linear-gradient(135deg, rgba(4, 18, 11, 0.85), rgba(7, 34, 16, 0.85));
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-indicacoes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.mobile-indicacoes-header h2 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.mobile-indicacoes-updated {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(240, 242, 245, 0.7);
+}
+
+.mobile-indicacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.mobile-indicacao-card {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mobile-indicacao-card .league {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.mobile-indicacao-card .count {
+    margin: 0;
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.mobile-indicacao-card .rodada {
+    font-size: 12px;
+    color: rgba(240, 242, 245, 0.7);
+}
+
 .tabs-selector {
     display: flex;
     justify-content: center;
@@ -1351,6 +1417,10 @@ body.preview-mobile .mobile-cta-panel {
     display: flex;
 }
 
+body.preview-mobile .mobile-indicacoes-overview {
+    display: flex;
+}
+
 body.preview-mobile .rodada-meta-card,
 body.preview-mobile .rodada-grid {
     display: none;
@@ -1445,6 +1515,10 @@ body.preview-mobile .jogo-card .status-badge {
     }
 
     .mobile-cta-panel {
+        display: flex;
+    }
+
+    .mobile-indicacoes-overview {
         display: flex;
     }
 
