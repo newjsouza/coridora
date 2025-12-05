@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ligue 1 • Indicações e Análises</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="liga-page" data-liga="ligue1">
+    <header class="liga-top-bar">
+        <a class="liga-back-link" href="../index.html">← Voltar para o hub</a>
+        <span class="liga-chip">Mobile Focus</span>
+    </header>
+    <main class="liga-main">
+        <section id="liga-hero" class="liga-hero"></section>
+        <div class="liga-tabs">
+            <button class="liga-tab active" data-view="mercados">Indicações de Mercados</button>
+            <button class="liga-tab" data-view="analises">Análises completas</button>
+        </div>
+        <section id="mercados-view" class="liga-view active">
+            <div id="liga-mercados"></div>
+        </section>
+        <section id="analises-view" class="liga-view">
+            <div id="liga-analises"></div>
+        </section>
+        <div id="liga-page-status">Carregando dados da liga...</div>
+    </main>
+    <script src="../js/liga-page.js" defer></script>
+</body>
+</html>

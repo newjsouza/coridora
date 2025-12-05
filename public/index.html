@@ -11,9 +11,16 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="logo">
-            <span class="logo-icon">📊</span>
-            PROJEÇÃO ANALYTICS
+        <div class="header-left">
+            <div class="layout-toggle" role="group" aria-label="Alternar visualização">
+                <span class="layout-label">Preview</span>
+                <button class="layout-toggle-btn active" data-mode="desktop" aria-pressed="true">Desktop</button>
+                <button class="layout-toggle-btn" data-mode="mobile" aria-pressed="false">Mobile</button>
+            </div>
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                PROJEÇÃO ANALYTICS
+            </div>
         </div>
         <div class="status-indicator">
             <span class="status-dot"></span>
@@ -47,9 +54,23 @@
             </div>
         </section>
 
+        <section class="mobile-cta-panel" aria-label="Atalhos rápidos">
+            <button id="escolha-liga-btn" class="cta-button primary">Escolha a Liga</button>
+            <a class="cta-button secondary" href="bingo.html">Bingo Especial</a>
+            <p class="cta-note">Selecione a competição para ver os mercados recomendados ou mergulhe direto no Bingo exclusivo.</p>
+        </section>
+
         <section class="rodada-info">
             <div class="rodada-meta-card" id="rodada-meta-card">Carregando dados oficiais da rodada...</div>
             <div class="rodada-grid" id="rodada-grid"></div>
+        </section>
+
+        <section class="ultima-rodada-home" aria-labelledby="ultima-rodada-home-title">
+            <div class="ultima-rodada-home-header">
+                <h2 id="ultima-rodada-home-title">Resumo da Última Rodada</h2>
+                <p>Atualizações essenciais para quem está no mobile.</p>
+            </div>
+            <div id="ultima-rodada-home" class="loading-block">Carregando última rodada...</div>
         </section>
 
         <div class="tabs-container">
@@ -81,12 +102,34 @@
         </div>
     </main>
 
+    <section class="liga-modal" id="liga-modal" aria-hidden="true" role="dialog" aria-labelledby="liga-modal-title">
+        <div class="liga-modal-content">
+            <div class="liga-modal-header">
+                <h3 id="liga-modal-title">Escolha sua Liga</h3>
+                <button class="close-modal" data-close-liga aria-label="Fechar seleção">×</button>
+            </div>
+            <div id="liga-list" class="liga-list">
+                <p>Carregando ligas...</p>
+            </div>
+        </div>
+    </section>
+
     <script>
         let rodadaCache = null;
         let outrasLigasCache = null;
         let ligaSelecionada = 'premierLeague';
+        let layoutMode = 'desktop';
+        const ligaPageMap = {
+            premierLeague: 'ligas/premier-league.html',
+            laLiga: 'ligas/la-liga.html',
+            serieA: 'ligas/serie-a.html',
+            bundesliga: 'ligas/bundesliga.html',
+            ligue1: 'ligas/ligue-1.html'
+        };
 
         document.addEventListener('DOMContentLoaded', () => {
+            setupLayoutToggle();
+            setupLigaSelection();
             setupTabsSystem();
             loadRodadaInfo();
             loadIndicacoes();
@@ -161,6 +204,34 @@
                     }
                 });
             });
+        }
+
+        function setupLayoutToggle() {
+            const toggle = document.querySelector('.layout-toggle');
+            if (!toggle) return;
+
+            const buttons = toggle.querySelectorAll('.layout-toggle-btn');
+
+            const applyMode = (mode) => {
+                layoutMode = mode;
+                document.body.classList.remove('preview-desktop', 'preview-mobile');
+                document.body.classList.add(`preview-${mode}`);
+                buttons.forEach((btn) => {
+                    const isActive = btn.dataset.mode === mode;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-pressed', String(isActive));
+                });
+            };
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const { mode } = button.dataset;
+                    if (!mode || mode === layoutMode) return;
+                    applyMode(mode);
+                });
+            });
+
+            applyMode(layoutMode);
         }
 
         async function loadIndicacoes() {
@@ -330,22 +401,26 @@
         }
 
         async function loadUltimaRodada() {
-            const container = document.getElementById('ultima-rodada-content');
+            const defaultContainer = document.getElementById('ultima-rodada-content');
             try {
                 const response = await fetch('/data/ultima-rodada.json');
                 if (!response.ok) throw new Error('Falha ao carregar última rodada');
                 const data = await response.json();
-                renderUltimaRodada(data);
+                renderUltimaRodada(data, ['ultima-rodada-content', 'ultima-rodada-home']);
             } catch (error) {
                 console.error(error);
-                container.textContent = 'Erro ao carregar informações da última rodada.';
+                if (defaultContainer) defaultContainer.textContent = 'Erro ao carregar informações da última rodada.';
+                const homeContainer = document.getElementById('ultima-rodada-home');
+                if (homeContainer) homeContainer.textContent = 'Erro ao carregar resumo da rodada.';
             }
         }
 
-        function renderUltimaRodada(data) {
-            const container = document.getElementById('ultima-rodada-content');
+        function renderUltimaRodada(data, targetIds = ['ultima-rodada-content']) {
             if (!data || !Array.isArray(data.jogos)) {
-                container.textContent = 'Última rodada indisponível.';
+                targetIds.forEach((id) => {
+                    const container = document.getElementById(id);
+                    if (container) container.textContent = 'Última rodada indisponível.';
+                });
                 return;
             }
 
@@ -353,7 +428,7 @@
             const jogosHtml = data.jogos.map(renderJogoCard).join('');
             const proximaRodada = renderProximaRodada(data.proxima_rodada);
 
-            container.innerHTML = `
+            const markup = `
                 <div class="ultima-rodada-header">
                     <h2>${cabecalho.titulo || ''}</h2>
                     <p class="destaque-campeonato">${cabecalho.destaque || ''}</p>
@@ -365,6 +440,13 @@
                 </div>
                 ${proximaRodada}
             `;
+
+            targetIds.forEach((id) => {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.innerHTML = markup;
+                }
+            });
         }
 
         function renderJogoCard(jogo) {
@@ -469,14 +551,19 @@
                 return;
             }
             try {
-                const response = await fetch('/data/outras-ligas.json');
-                if (!response.ok) throw new Error('Falha ao carregar outras ligas');
-                outrasLigasCache = await response.json();
+                await ensureOutrasLigasCache();
                 renderOutrasLigas();
             } catch (error) {
                 console.error(error);
                 container.textContent = 'Erro ao carregar ligas internacionais.';
             }
+        }
+
+        async function ensureOutrasLigasCache() {
+            if (outrasLigasCache) return;
+            const response = await fetch('/data/outras-ligas.json');
+            if (!response.ok) throw new Error('Falha ao carregar ligas');
+            outrasLigasCache = await response.json();
         }
 
         function renderOutrasLigas(selectedKey = ligaSelecionada) {
@@ -528,6 +615,63 @@
                     }
                 });
             });
+        }
+
+        function setupLigaSelection() {
+            const trigger = document.getElementById('escolha-liga-btn');
+            const modal = document.getElementById('liga-modal');
+            const list = document.getElementById('liga-list');
+            const closeButton = modal?.querySelector('[data-close-liga]');
+            if (!trigger || !modal || !list) return;
+
+            const openModal = async () => {
+                try {
+                    await ensureOutrasLigasCache();
+                    renderLigaLinks(list);
+                } catch (error) {
+                    console.error(error);
+                    list.innerHTML = '<p>Não foi possível carregar as ligas.</p>';
+                }
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+            };
+
+            trigger.addEventListener('click', openModal);
+            closeButton?.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+
+        function renderLigaLinks(container) {
+            if (!outrasLigasCache?.ligas) {
+                container.innerHTML = '<p>Nenhuma liga encontrada.</p>';
+                return;
+            }
+
+            const links = Object.entries(outrasLigasCache.ligas)
+                .map(([key, liga]) => {
+                    const page = ligaPageMap[key];
+                    if (!page) return '';
+                    return `
+                        <a class="liga-link" href="${page}">
+                            <span class="liga-link-logo">${liga.logo || ''}</span>
+                            <span class="liga-link-text">
+                                <strong>${liga.nome}</strong>
+                                <small>${liga.pais || ''}</small>
+                            </span>
+                        </a>
+                    `;
+                })
+                .filter(Boolean)
+                .join('');
+
+            container.innerHTML = links || '<p>Nenhuma liga disponível.</p>';
         }
 
         function renderJogosRodadaPanel(liga) {

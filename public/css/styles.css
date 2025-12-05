@@ -1,10 +1,11 @@
 :root {
-    --primary: #00d4ff;
-    --secondary: #0f1419;
-    --accent: #ff6b9d;
-    --dark: #050816;
+    --primary: #2ddb74;
+    --primary-soft: rgba(45, 219, 116, 0.15);
+    --secondary: #0b1c11;
+    --accent: #1b7dff;
+    --dark: #041007;
     --light: #f0f2f5;
-    --success: #22c55e;
+    --success: #1d8fff;
     --warning: #f59e0b;
     --danger: #ef4444;
 }
@@ -15,10 +16,14 @@
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none !important;
+}
+
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, rgba(0, 212, 255, 0.12), transparent 40%),
-        linear-gradient(135deg, #050816 0%, #121735 50%, #1b1f3f 100%);
+    background: radial-gradient(circle at top, rgba(23, 94, 41, 0.65), transparent 45%),
+        linear-gradient(135deg, #041007 0%, #0b2613 45%, #10381c 100%);
     color: var(--light);
     min-height: 100vh;
 }
@@ -30,10 +35,19 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 18px 32px;
-    background: rgba(5, 8, 22, 0.85);
+    background: rgba(4, 16, 7, 0.85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 1px solid rgba(45, 219, 116, 0.3);
     z-index: 10;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -65,6 +79,46 @@ body {
     box-shadow: 0 0 10px var(--success);
 }
 
+.layout-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(45, 219, 116, 0.45);
+    background: rgba(45, 219, 116, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.layout-label {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(240, 242, 245, 0.7);
+}
+
+.layout-toggle-btn {
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 6px 14px;
+    background: transparent;
+    color: var(--light);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layout-toggle-btn:hover {
+    color: var(--primary);
+}
+
+.layout-toggle-btn.active {
+    background: var(--primary);
+    color: #02111f;
+    box-shadow: 0 0 18px rgba(45, 219, 116, 0.45);
+}
+
 .main-layout {
     max-width: 1100px;
     margin: 0 auto;
@@ -72,8 +126,8 @@ body {
 }
 
 .hero {
-    background: linear-gradient(145deg, rgba(8, 12, 35, 0.9), rgba(10, 19, 45, 0.75));
-    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: linear-gradient(145deg, rgba(7, 31, 16, 0.95), rgba(8, 48, 20, 0.7));
+    border: 1px solid rgba(45, 219, 116, 0.25);
     border-radius: 18px;
     padding: 48px 24px;
     text-align: center;
@@ -91,7 +145,7 @@ body {
     width: 110px;
     height: 110px;
     border-radius: 26px;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(255, 107, 157, 0.12));
+    background: linear-gradient(135deg, rgba(45, 219, 116, 0.2), rgba(27, 125, 255, 0.1));
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
@@ -102,7 +156,8 @@ body {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.6px;
-    background: linear-gradient(120deg, #6ad9ff, #c38bff, #f28ad9);
+    background: linear-gradient(120deg, #6de88f, #96f4ab, #daf8d6);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -112,6 +167,54 @@ body {
     color: rgba(240, 242, 245, 0.85);
 }
 
+.mobile-cta-panel {
+    margin: 26px 0 10px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(6, 36, 15, 0.85), rgba(18, 73, 33, 0.85));
+    border: 1px solid rgba(45, 219, 116, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    border: none;
+    border-radius: 999px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #2ddb74, #1a9f54);
+    color: #041007;
+    box-shadow: 0 15px 35px rgba(45, 219, 116, 0.4);
+}
+
+.cta-button.secondary {
+    background: linear-gradient(135deg, #113d24, #0c2b18);
+    color: var(--light);
+    border: 1px solid rgba(45, 219, 116, 0.4);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.cta-note {
+    font-size: 13px;
+    color: rgba(240, 242, 245, 0.75);
+}
+
 .rodada-info {
     margin: 32px 0;
     display: grid;
@@ -119,8 +222,8 @@ body {
 }
 
 .rodada-meta-card {
-    background: rgba(0, 212, 255, 0.08);
-    border: 1px solid rgba(0, 212, 255, 0.4);
+    background: rgba(45, 219, 116, 0.08);
+    border: 1px solid rgba(45, 219, 116, 0.4);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -146,13 +249,106 @@ body {
     padding: 16px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(5, 26, 13, 0.6);
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .rodada-card h4 {
     font-size: 16px;
     margin-bottom: 8px;
+}
+
+.ultima-rodada-home {
+    margin: 24px 0 10px;
+    padding: 24px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(11, 43, 21, 0.9), rgba(7, 28, 13, 0.9));
+    border: 1px solid rgba(45, 219, 116, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    display: none;
+}
+
+.ultima-rodada-home-header h2 {
+    color: var(--primary);
+}
+
+.ultima-rodada-home .rodada-jogos-grid {
+    margin-top: 20px;
+}
+
+.liga-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    padding: 20px;
+    z-index: 20;
+}
+
+.liga-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.liga-modal-content {
+    width: min(420px, 100%);
+    background: #07180d;
+    border: 1px solid rgba(45, 219, 116, 0.35);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.liga-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.liga-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.liga-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(45, 219, 116, 0.25);
+    background: rgba(7, 32, 15, 0.9);
+    color: var(--light);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.liga-link:hover {
+    transform: translateX(4px);
+    border-color: var(--primary);
+}
+
+.liga-link-logo {
+    font-size: 20px;
+}
+
+.liga-link-text small {
+    color: rgba(240, 242, 245, 0.65);
 }
 
 .status-pill {
@@ -197,10 +393,10 @@ body {
     gap: 15px;
     flex-wrap: wrap;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(10, 20, 40, 0.8), rgba(20, 40, 80, 0.85));
+    background: linear-gradient(135deg, rgba(6, 31, 15, 0.8), rgba(5, 22, 11, 0.85));
     border-radius: 12px;
     border: 2px solid var(--primary);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(45, 219, 116, 0.25);
 }
 
 .tab-button {
@@ -215,19 +411,19 @@ body {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(45, 219, 116, 0.2);
 }
 
 .tab-button:hover {
-    background: rgba(0, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.45);
+    background: rgba(45, 219, 116, 0.1);
+    box-shadow: 0 0 20px rgba(45, 219, 116, 0.45);
     transform: scale(1.05);
 }
 
 .tab-button.active {
     background: var(--primary);
     color: #02111f;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    box-shadow: 0 0 30px rgba(45, 219, 116, 0.65);
     font-size: 17px;
 }
 
@@ -285,7 +481,7 @@ body {
 
 .indicacao-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(45, 219, 116, 0.25);
 }
 
 .indicacao-card.status-GREEN {
@@ -383,7 +579,7 @@ body {
     padding: 24px;
     border: 2px solid var(--primary);
     border-radius: 10px;
-    background: rgba(0, 212, 255, 0.08);
+    background: rgba(45, 219, 116, 0.08);
 }
 
 .resumo-warning {
@@ -395,7 +591,7 @@ body {
 /* ===== ANÁLISES ===== */
 
 .analises-banner {
-    background: rgba(0, 255, 255, 0.08);
+    background: rgba(45, 219, 116, 0.08);
     border: 2px solid var(--primary);
     border-radius: 8px;
     padding: 18px;
@@ -528,7 +724,7 @@ body {
 }
 
 .rodada37-destaque {
-    color: #22c55e;
+    color: #1b8fff;
     font-weight: 600;
 }
 
@@ -568,8 +764,8 @@ body {
 }
 
 .rodada-resultado {
-    background: linear-gradient(135deg, rgba(30, 50, 80, 0.8), rgba(50, 100, 150, 0.6));
-    border: 2px solid #22c55e;
+    background: linear-gradient(135deg, rgba(11, 37, 18, 0.9), rgba(17, 63, 31, 0.7));
+    border: 2px solid #1b8fff;
     border-radius: 12px;
     padding: 28px;
     margin-bottom: 24px;
@@ -599,8 +795,8 @@ body {
 }
 
 .rodada-conclusao {
-    background: rgba(34, 197, 94, 0.12);
-    border: 2px solid #22c55e;
+    background: rgba(27, 143, 255, 0.12);
+    border: 2px solid #1b8fff;
     border-radius: 12px;
     padding: 24px;
     text-align: center;
@@ -637,7 +833,7 @@ body {
 
 .ligas-menu .liga-button:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 12px rgba(45, 219, 116, 0.3);
 }
 
 .ligas-menu .liga-button.ativo {
@@ -839,6 +1035,291 @@ body {
     margin-top: 12px;
 }
 
+/* ===== PÁGINAS DE LIGA ===== */
+
+body.liga-page {
+    background: radial-gradient(circle at top, rgba(18, 79, 37, 0.7), transparent 50%),
+        linear-gradient(160deg, #031107 0%, #073016 40%, #0c3c1d 100%);
+}
+
+.liga-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.liga-back-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.liga-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 10px 20px 60px;
+}
+
+.liga-hero {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 24px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(6, 36, 15, 0.95), rgba(11, 73, 34, 0.85));
+    border: 1px solid rgba(45, 219, 116, 0.35);
+    margin-bottom: 20px;
+}
+
+.liga-hero-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.liga-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.liga-tab {
+    border: 1px solid rgba(45, 219, 116, 0.4);
+    border-radius: 999px;
+    padding: 12px 20px;
+    background: transparent;
+    color: var(--light);
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.liga-tab.active {
+    background: linear-gradient(135deg, #2ddb74, #20884b);
+    color: #041007;
+}
+
+.liga-view {
+    display: none;
+}
+
+.liga-view.active {
+    display: block;
+}
+
+.liga-card {
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(7, 28, 13, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    margin-bottom: 18px;
+}
+
+.liga-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.liga-chip {
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(45, 219, 116, 0.4);
+    font-size: 12px;
+}
+
+.liga-meta {
+    font-size: 13px;
+    color: rgba(240, 242, 245, 0.75);
+}
+
+.liga-recomendacao {
+    margin: 12px 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.time-bloco {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.liga-times {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+@media (min-width: 720px) {
+    .liga-times {
+        flex-direction: row;
+    }
+}
+
+.liga-recs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.liga-contexto {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px 0;
+}
+
+.liga-ajuste {
+    font-style: italic;
+    color: rgba(240, 242, 245, 0.85);
+}
+
+.liga-alerta {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.empty-state {
+    padding: 18px;
+    text-align: center;
+    color: rgba(240, 242, 245, 0.65);
+}
+
+#liga-page-status,
+.liga-status {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(240, 242, 245, 0.8);
+}
+
+.bingo-page-root {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* ===== MODOS DE PREVIEW ===== */
+
+body.preview-desktop .main-layout {
+    max-width: 1100px;
+}
+
+body.preview-mobile {
+    overflow-x: hidden;
+}
+
+body.preview-mobile .main-layout {
+    max-width: 460px;
+    padding: 24px 16px 80px;
+    margin: 0 auto;
+}
+
+body.preview-mobile .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+body.preview-mobile .hero {
+    padding: 28px 18px;
+    border-radius: 14px;
+}
+
+body.preview-mobile .hero-logo-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+}
+
+body.preview-mobile .header-left {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+body.preview-mobile .layout-toggle {
+    width: 100%;
+    justify-content: space-between;
+}
+
+body.preview-mobile .status-indicator {
+    align-self: flex-end;
+}
+
+body.preview-mobile .tabs-selector {
+    flex-direction: column;
+}
+
+body.preview-mobile .tab-button {
+    width: 100%;
+}
+
+body.preview-mobile .mobile-cta-panel {
+    display: flex;
+}
+
+body.preview-mobile .rodada-meta-card,
+body.preview-mobile .rodada-grid {
+    display: none;
+}
+
+body.preview-mobile .rodada-info {
+    display: none;
+}
+
+body.preview-mobile .ultima-rodada-home {
+    display: block;
+}
+
+body.preview-mobile .hero {
+    padding: 32px 18px;
+}
+
+body.preview-mobile .rodada-grid,
+body.preview-mobile .rodada-jogos-grid,
+body.preview-mobile .jogos-grid,
+body.preview-mobile .bingo-mercados {
+    grid-template-columns: 1fr;
+}
+
+body.preview-mobile .indicacao-header,
+body.preview-mobile .analise-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+body.preview-mobile .indicacao-meta {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+body.preview-mobile .ligas-menu {
+    flex-direction: column;
+}
+
+body.preview-mobile .layout-toggle-btn {
+    flex: 1;
+}
+
+body.preview-mobile .jogo-card .status-badge {
+    font-size: 12px;
+}
+
 /* ===== RESPONSIVIDADE ===== */
 
 @media (max-width: 768px) {
@@ -851,12 +1332,40 @@ body {
         font-size: 24px;
     }
 
+    .hero {
+        padding: 28px 18px;
+        border-radius: 14px;
+    }
+
+    .hero-logo-img {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+    }
+
     .tab-button {
         flex: 1 1 45%;
     }
 
     .indicacao-stats {
         grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    .mobile-cta-panel {
+        display: flex;
+    }
+
+    .rodada-meta-card,
+    .rodada-grid {
+        display: none;
+    }
+
+    .rodada-info {
+        display: none;
+    }
+
+    .ultima-rodada-home {
+        display: block;
     }
 }
 
