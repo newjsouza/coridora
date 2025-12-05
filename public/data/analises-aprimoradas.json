@@ -1,76 +1,76 @@
 {
-    "nota_importante": "Atualização oficial da rodada 38 (07/12/2025 • 09:52). Dados sincronizados com Betano/SofaScore/API Futebol.",
-    "analises": [
-        {
-            "titulo": "Mirassol x Flamengo — análise de visitante favorito",
-            "mandante": "Mirassol",
-            "visitante": "Flamengo",
-            "data": "07/12/25",
-            "horario": "16:00",
-            "local": "Estádio José Maria de Campos Maia (SP)",
-            "competicao": "Brasileirão Série A",
-            "statusAnalise": "disponível",
-            "contexto": {
-                "importancia": "Brasileirão - Disputa por vaga na Libertadores",
-                "temperatura": "Clima ameno, sem interferências",
-                "observacao": "Mirassol sem o lateral titular Pará"
-            },
-            "mirassol": {
-                "posicao": "15º colocado",
-                "forma": "2V-1E-2D",
-                "sequencia": "Cinco jogos sofrendo gols como mandante",
-                "defesa": "Sistema compacto, mas vulnerável em transições rápidas",
-                "golsPorJogo": "1.1 gol / jogo",
-                "probabilidadeMarcar": "52%"
-            },
-            "flamengo": {
-                "posicao": "Top 5",
-                "forma": "3V-1E-1D",
-                "golsPorJogo": "2.0 gols / jogo",
-                "sequencia": "9 partidas seguidas marcando",
-                "ataque": "Gabigol centralizado, BH/E.Cebolinha atacando largura",
-                "probabilidadeMarcar": "82%",
-                "observacao": "Time titular confirmado, sem desfalques"
-            },
-            "ajustesTaticos": "Flamengo deve explorar velocidade nas laterais contra defesa lenta do Mirassol. Paulistas tentarão bloco baixo e bolas paradas com Zeca.",
-            "recomendacao": "Flamengo over 1.5 gols ou vitória simples com odd mínima 1.60",
-            "alternativa": "Ambos marcam (BTTS) com odd mínima 2.10 se Mirassol ameaçar nos 20' iniciais"
-        },
-        {
-            "titulo": "Botafogo x Fortaleza — mandante busca consolidação na liderança",
-            "mandante": "Botafogo",
-            "visitante": "Fortaleza",
-            "data": "07/12/25",
-            "horario": "16:00",
-            "local": "Estádio Nilton Santos (RJ)",
-            "competicao": "Brasileirão Série A",
-            "statusAnalise": "disponível",
-            "contexto": {
-                "importancia": "Brasileirão - Disputa pelo título",
-                "clima": "Temperatura elevada, sem chuva",
-                "alerta": "Gramado responde bem após chuvas da semana"
-            },
-            "botafogo": {
-                "posicao": "1º colocado",
-                "forma": "4V-1E",
-                "golsPorJogo": "2.3 gols / jogo em casa",
-                "sequencia": "15 jogos sem perder como mandante",
-                "ataque": "Júnior Santos centralizado, Savarino e Luiz Henrique nas pontas",
-                "defesa": "Linha compacta com Bastos e Barboza",
-                "probabilidadeMarcar": "79%"
-            },
-            "fortaleza": {
-                "posicao": "Top 10",
-                "forma": "2V-2E-1D",
-                "golsPorJogo": "1.4 gols / jogo fora",
-                "sequencia": "Quatro jogos sofrendo gols como visitante",
-                "defesa": "Sistema equilibrado, mas sofre contra ataques velozes",
-                "ataque": "Dependente de Lucero e Moisés para finalizar",
-                "probabilidadeMarcar": "45%"
-            },
-            "ajustesTaticos": "Botafogo pressiona desde o apito inicial, tentando isolar Lucero. Fortaleza buscará contra-ataques com Moisés e Pikachu.",
-            "recomendacao": "Botafogo vitória simples (1X2) com odd mínima 1.55 ou handicap -0.5",
-            "alternativa": "Botafogo marcar no primeiro tempo com odd mínima 1.90"
-        }
-    ]
+  "nota_importante": "Atualização oficial da rodada 38 (07/12/2025 • 09:52). Dados sincronizados com Betano/SofaScore/API Futebol.",
+  "analises": [
+    {
+      "titulo": "Mirassol x Flamengo — análise de visitante favorito",
+      "mandante": "Mirassol",
+      "visitante": "Flamengo",
+      "data": "07/12/25",
+      "horario": "16:00",
+      "local": "Estádio José Maria de Campos Maia (SP)",
+      "competicao": "Brasileirão Série A",
+      "statusAnalise": "disponível",
+      "contexto": {
+        "importancia": "Brasileirão - Disputa por vaga na Libertadores",
+        "temperatura": "Clima ameno, sem interferências",
+        "observacao": "Mirassol sem o lateral titular Pará"
+      },
+      "mirassol": {
+        "posicao": "15º colocado",
+        "forma": "2V-1E-2D",
+        "sequencia": "Cinco jogos sofrendo gols como mandante",
+        "defesa": "Sistema compacto, mas vulnerável em transições rápidas",
+        "golsPorJogo": "1.1 gol / jogo",
+        "probabilidadeMarcar": "52%"
+      },
+      "flamengo": {
+        "posicao": "Top 5",
+        "forma": "3V-1E-1D",
+        "golsPorJogo": "2.0 gols / jogo",
+        "sequencia": "9 partidas seguidas marcando",
+        "ataque": "Gabigol centralizado, BH/E.Cebolinha atacando largura",
+        "probabilidadeMarcar": "82%",
+        "observacao": "Time titular confirmado, sem desfalques"
+      },
+      "ajustesTaticos": "Flamengo deve explorar velocidade nas laterais contra defesa lenta do Mirassol. Paulistas tentarão bloco baixo e bolas paradas com Zeca.",
+      "recomendacao": "Flamengo over 1.5 gols ou vitória simples com odd mínima 1.60",
+      "alternativa": "Ambos marcam (BTTS) com odd mínima 2.10 se Mirassol ameaçar nos 20' iniciais"
+    },
+    {
+      "titulo": "Botafogo x Fortaleza — mandante busca consolidação na liderança",
+      "mandante": "Botafogo",
+      "visitante": "Fortaleza",
+      "data": "07/12/25",
+      "horario": "16:00",
+      "local": "Estádio Nilton Santos (RJ)",
+      "competicao": "Brasileirão Série A",
+      "statusAnalise": "disponível",
+      "contexto": {
+        "importancia": "Brasileirão - Disputa pelo título",
+        "clima": "Temperatura elevada, sem chuva",
+        "alerta": "Gramado responde bem após chuvas da semana"
+      },
+      "botafogo": {
+        "posicao": "1º colocado",
+        "forma": "4V-1E",
+        "golsPorJogo": "2.3 gols / jogo em casa",
+        "sequencia": "15 jogos sem perder como mandante",
+        "ataque": "Júnior Santos centralizado, Savarino e Luiz Henrique nas pontas",
+        "defesa": "Linha compacta com Bastos e Barboza",
+        "probabilidadeMarcar": "79%"
+      },
+      "fortaleza": {
+        "posicao": "Top 10",
+        "forma": "2V-2E-1D",
+        "golsPorJogo": "1.4 gols / jogo fora",
+        "sequencia": "Quatro jogos sofrendo gols como visitante",
+        "defesa": "Sistema equilibrado, mas sofre contra ataques velozes",
+        "ataque": "Dependente de Lucero e Moisés para finalizar",
+        "probabilidadeMarcar": "45%"
+      },
+      "ajustesTaticos": "Botafogo pressiona desde o apito inicial, tentando isolar Lucero. Fortaleza buscará contra-ataques com Moisés e Pikachu.",
+      "recomendacao": "Botafogo vitória simples (1X2) com odd mínima 1.55 ou handicap -0.5",
+      "alternativa": "Botafogo marcar no primeiro tempo com odd mínima 1.90"
+    }
+  ]
 }

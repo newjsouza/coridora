@@ -1,0 +1,26 @@
+[
+  {
+    "name": "games",
+    "endpoint": "/leagues/games",
+    "method": "GET",
+    "output": "public/data/games.json"
+  },
+  {
+    "name": "indicacoes",
+    "endpoint": "/leagues/indicacoes",
+    "method": "GET",
+    "output": "public/data/indicacoes.json"
+  },
+  {
+    "name": "bingos",
+    "endpoint": "/leagues/bingos",
+    "method": "GET",
+    "output": "public/data/bingos.json"
+  },
+  {
+    "name": "news",
+    "endpoint": "/leagues/news",
+    "method": "GET",
+    "output": "public/data/news.json"
+  }
+]

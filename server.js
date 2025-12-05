@@ -1,13 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(express.json());
 app.use(express.static('public'));
 
-const games = require('./public/data/games.json');
+const gamesData = require('./public/data/games.json');
 const bingos = require('./public/data/bingos.json');
 const news = require('./public/data/news.json');
 
@@ -16,9 +16,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/games', (req, res) => {
-  const league = req.query.league || 'brasileirao';
-  const filteredGames = games.filter(game => game.league === league);
-  res.json(filteredGames);
+  const leagues = Array.isArray(gamesData.leagues) ? gamesData.leagues : [];
+  const requestedLeague = (req.query.league || 'brasileirao').toLowerCase();
+
+  if (requestedLeague === 'all') {
+    return res.json(leagues);
+  }
+
+  const leagueData = leagues.find((liga) => liga.id === requestedLeague);
+  if (!leagueData) {
+    return res.status(404).json({ message: 'Liga não encontrada' });
+  }
+
+  res.json(leagueData.games || []);
 });
 
 app.get('/api/bingos', (req, res) => {

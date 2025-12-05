@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="preview-desktop">
     <header class="site-header">
         <div class="header-left">
             <div class="layout-toggle" role="group" aria-label="Alternar visualização">
@@ -29,9 +29,11 @@
     </header>
 
     <main class="main-layout">
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-logo-img" role="img" aria-label="Logo Projeção Analytics">
+        <div class="experience-grid">
+            <div class="experience-column focus-column">
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="hero-logo-img" role="img" aria-label="Logo Projeção Analytics">
                     <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <defs>
                             <linearGradient id="heroGradient" x1="0" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
@@ -49,56 +51,60 @@
                         <path d="M28 68 C32 66 36 66 40 68" stroke="url(#heroGradient)" stroke-width="2" fill="none" />
                     </svg>
                 </div>
-                <p class="hero-title">Análise inteligente de apostas esportivas</p>
-                <p class="hero-subtitle">Documento completo com indicações, análises, última rodada e bingo especial</p>
+                        <p class="hero-title">Análise inteligente de apostas esportivas</p>
+                        <p class="hero-subtitle">Documento completo com indicações, análises, última rodada e bingo especial</p>
+                    </div>
+                </section>
+
+                <section class="mobile-cta-panel" aria-label="Atalhos rápidos">
+                    <button id="escolha-liga-btn" class="cta-button primary">Escolha a Liga</button>
+                    <a class="cta-button secondary" href="bingo.html">Bingo Especial</a>
+                    <p class="cta-note">Selecione a competição para ver os mercados recomendados ou mergulhe direto no Bingo exclusivo.</p>
+                </section>
+
+                <section class="ultima-rodada-home" aria-labelledby="ultima-rodada-home-title">
+                    <div class="ultima-rodada-home-header">
+                        <h2 id="ultima-rodada-home-title">Resumo da Última Rodada</h2>
+                        <p>Atualizações essenciais para quem está no mobile.</p>
+                    </div>
+                    <div id="ultima-rodada-home" class="loading-block">Carregando última rodada...</div>
+                </section>
             </div>
-        </section>
 
-        <section class="mobile-cta-panel" aria-label="Atalhos rápidos">
-            <button id="escolha-liga-btn" class="cta-button primary">Escolha a Liga</button>
-            <a class="cta-button secondary" href="bingo.html">Bingo Especial</a>
-            <p class="cta-note">Selecione a competição para ver os mercados recomendados ou mergulhe direto no Bingo exclusivo.</p>
-        </section>
+            <div class="experience-column data-column">
+                <section class="rodada-info">
+                    <div class="rodada-meta-card" id="rodada-meta-card">Carregando dados oficiais da rodada...</div>
+                    <div class="rodada-grid" id="rodada-grid"></div>
+                </section>
 
-        <section class="rodada-info">
-            <div class="rodada-meta-card" id="rodada-meta-card">Carregando dados oficiais da rodada...</div>
-            <div class="rodada-grid" id="rodada-grid"></div>
-        </section>
+                <div class="tabs-container">
+                    <div class="tabs-selector">
+                        <button class="tab-button active" data-tab="indicacoes">📊 Indicações</button>
+                        <button class="tab-button" data-tab="analises">🔍 Análises</button>
+                        <button class="tab-button" data-tab="ultima-rodada">🏆 Última Rodada</button>
+                        <button class="tab-button" data-tab="outras-ligas">🌍 Outras Ligas</button>
+                        <button class="tab-button" data-tab="bingo">🎯 Bingo</button>
+                    </div>
+                </div>
 
-        <section class="ultima-rodada-home" aria-labelledby="ultima-rodada-home-title">
-            <div class="ultima-rodada-home-header">
-                <h2 id="ultima-rodada-home-title">Resumo da Última Rodada</h2>
-                <p>Atualizações essenciais para quem está no mobile.</p>
+                <div class="tabs-content">
+                    <section id="indicacoes" class="tab-content active">
+                        <div id="indicacoes-list" class="loading-block">Carregando indicações...</div>
+                    </section>
+                    <section id="analises" class="tab-content">
+                        <div id="analises-list" class="loading-block">Selecione a aba para carregar as análises.</div>
+                    </section>
+                    <section id="ultima-rodada" class="tab-content">
+                        <div id="ultima-rodada-content" class="loading-block">Carregando última rodada...</div>
+                    </section>
+                    <section id="outras-ligas" class="tab-content">
+                        <div id="outras-ligas-content" class="loading-block">Carregando ligas internacionais...</div>
+                    </section>
+                    <section id="bingo" class="tab-content">
+                        <div id="bingo-list" class="loading-block">Carregando bingo especial...</div>
+                    </section>
+                </div>
             </div>
-            <div id="ultima-rodada-home" class="loading-block">Carregando última rodada...</div>
-        </section>
-
-        <div class="tabs-container">
-            <div class="tabs-selector">
-                <button class="tab-button active" data-tab="indicacoes">📊 Indicações</button>
-                <button class="tab-button" data-tab="analises">🔍 Análises</button>
-                <button class="tab-button" data-tab="ultima-rodada">🏆 Última Rodada</button>
-                <button class="tab-button" data-tab="outras-ligas">🌍 Outras Ligas</button>
-                <button class="tab-button" data-tab="bingo">🎯 Bingo</button>
-            </div>
-        </div>
-
-        <div class="tabs-content">
-            <section id="indicacoes" class="tab-content active">
-                <div id="indicacoes-list" class="loading-block">Carregando indicações...</div>
-            </section>
-            <section id="analises" class="tab-content">
-                <div id="analises-list" class="loading-block">Selecione a aba para carregar as análises.</div>
-            </section>
-            <section id="ultima-rodada" class="tab-content">
-                <div id="ultima-rodada-content" class="loading-block">Carregando última rodada...</div>
-            </section>
-            <section id="outras-ligas" class="tab-content">
-                <div id="outras-ligas-content" class="loading-block">Carregando ligas internacionais...</div>
-            </section>
-            <section id="bingo" class="tab-content">
-                <div id="bingo-list" class="loading-block">Carregando bingo especial...</div>
-            </section>
         </div>
     </main>
 
@@ -118,14 +124,25 @@
         let rodadaCache = null;
         let outrasLigasCache = null;
         let ligaSelecionada = 'premierLeague';
-        let layoutMode = 'desktop';
         const ligaPageMap = {
             premierLeague: 'ligas/premier-league.html',
             laLiga: 'ligas/la-liga.html',
             serieA: 'ligas/serie-a.html',
             bundesliga: 'ligas/bundesliga.html',
-            ligue1: 'ligas/ligue-1.html'
+            ligue1: 'ligas/ligue-1.html',
+            brasileiraoBetano: 'ligas/brasileirao-betano.html'
         };
+
+        function getDefaultLayoutMode() {
+            if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+                return 'desktop';
+            }
+            const mediaMobile = window.matchMedia('(max-width: 768px)');
+            const userAgentMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone|Mobi/i.test(navigator.userAgent);
+            return (mediaMobile?.matches || userAgentMobile) ? 'mobile' : 'desktop';
+        }
+
+        let layoutMode = getDefaultLayoutMode();
 
         document.addEventListener('DOMContentLoaded', () => {
             setupLayoutToggle();
@@ -237,7 +254,7 @@
         async function loadIndicacoes() {
             const container = document.getElementById('indicacoes-list');
             try {
-                const response = await fetch('/data/indicacoes-proximas.json');
+                const response = await fetch('/data/indicacoes.json');
                 if (!response.ok) throw new Error('Falha ao carregar indicações');
                 const data = await response.json();
                 renderIndicacoes(data);
@@ -249,61 +266,102 @@
 
         function renderIndicacoes(data) {
             const container = document.getElementById('indicacoes-list');
+            if (!container) return;
             if (!data || !Array.isArray(data.indicacoes)) {
                 container.textContent = 'Nenhuma indicação disponível no momento.';
                 return;
             }
 
-            let html = `<div class="aviso-variabilidade">${data.aviso || ''}</div>`;
+            const leagueLabels = {
+                brasileirao: 'Campeonato Brasileiro',
+                laliga: 'La Liga',
+                premierleague: 'Premier League',
+                seriea: 'Serie A',
+                championsleague: 'Champions League'
+            };
+            const leagueOrder = Object.keys(leagueLabels);
 
-            html += data.indicacoes.slice(0, 6).map((aposta) => {
-                const jogoBase = buscarJogoNaRodada(aposta.confronto);
-                const status = jogoBase?.statusAnalise ? `<span class="status-pill ${statusToClass(jogoBase.statusAnalise)}">${jogoBase.statusAnalise}</span>` : '';
-                const agenda = jogoBase ? `${jogoBase.data} • ${jogoBase.horario}` : (aposta.dias_distante || formatarData(aposta.data));
+            const grouped = data.indicacoes.reduce((acc, indicacao) => {
+                const key = (indicacao.league || 'outras').toLowerCase();
+                if (!acc[key]) acc[key] = [];
+                acc[key].push(indicacao);
+                return acc;
+            }, {});
+
+            const orderedGroups = Object.entries(grouped).sort((a, b) => {
+                const orderA = leagueOrder.indexOf(a[0]);
+                const orderB = leagueOrder.indexOf(b[0]);
+                if (orderA === -1 && orderB === -1) {
+                    return a[0].localeCompare(b[0]);
+                }
+                if (orderA === -1) return 1;
+                if (orderB === -1) return -1;
+                return orderA - orderB;
+            });
+
+            if (!orderedGroups.length) {
+                container.textContent = 'Nenhuma indicação disponível no momento.';
+                return;
+            }
+
+            const metaHtml = `
+                <div class="indicacoes-meta">
+                    <div>
+                        <p><strong>Total:</strong> ${data.total_indicacoes || data.indicacoes.length}</p>
+                        <p><strong>Atualização:</strong> ${formatarDataISO(data.data_atualizacao)}</p>
+                    </div>
+                    <p class="indicacoes-meta-aviso">${data.aviso || ''}</p>
+                </div>
+            `;
+
+            const cardsHtml = orderedGroups.map(([leagueKey, picks]) => {
+                const leagueName = leagueLabels[leagueKey] || formatTeamKey(leagueKey);
+                const cards = picks.map((aposta) => {
+                    const jogoBase = buscarJogoNaRodada(aposta.confronto);
+                    const statusRodada = jogoBase?.statusAnalise ? `<span class="status-pill ${statusToClass(jogoBase.statusAnalise)}">${jogoBase.statusAnalise}</span>` : '';
+                    const agendaBase = jogoBase ? `${jogoBase.data} • ${jogoBase.horario}` : '';
+                    const cardRound = aposta.round ? `Rodada ${aposta.round}` : '';
+                    const agenda = agendaBase || cardRound || 'Agenda em definição';
+                    const status = aposta.status ? `<span class="status-badge ${aposta.status}">${aposta.status}</span>` : '';
+                    return `
+                        <article class="indicacao-card status-${aposta.status || 'NEUTRAL'}">
+                            <div class="indicacao-header">
+                                <h3>${aposta.confronto}</h3>
+                                ${status}
+                                ${statusRodada}
+                            </div>
+                            <div class="indicacao-meta">
+                                <span>${leagueName}</span>
+                                <span>${agenda}</span>
+                            </div>
+                            <div class="indicacao-aposta">
+                                <h4>${aposta.mercado}</h4>
+                                <p><strong>Motivo:</strong> ${aposta.motivo}</p>
+                            </div>
+                            <div class="indicacao-stats">
+                                <div class="stat"><label>Confiança</label><span>${aposta.confianca}%</span></div>
+                                <div class="stat"><label>Value</label><span class="value-positive">${aposta.value}</span></div>
+                                <div class="stat"><label>Stake</label><span>${aposta.stake}</span></div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
 
                 return `
-                    <article class="indicacao-card status-${aposta.status}">
-                        <div class="indicacao-header">
-                            <h3>${aposta.confronto}</h3>
-                            <span class="status-badge ${aposta.status}">${aposta.status}</span>
-                            ${status}
-                        </div>
-                        <div class="indicacao-meta">
-                            <span class="campeonato">${aposta.campeonato}</span>
-                            <span class="data">${agenda}</span>
-                        </div>
-                        <div class="indicacao-aposta">
-                            <h4>${aposta.mercado}</h4>
-                            <p><strong>Motivo:</strong> ${aposta.motivo}</p>
-                            ${aposta.nota ? `<p><strong>Nota:</strong> ${aposta.nota}</p>` : ''}
-                        </div>
-                        <div class="indicacao-stats">
-                            <div class="stat"><label>Odd justa</label><span>${aposta.odd_justa}</span></div>
-                            <div class="stat"><label>Odd mercado</label><span>${aposta.odd_mercado}</span></div>
-                            <div class="stat"><label>Value</label><span class="value-positive">${aposta.value}</span></div>
-                            <div class="stat"><label>Confiança</label><span>${aposta.confianca}</span></div>
-                            <div class="stat"><label>Stake</label><span>${aposta.stake}</span></div>
-                            <div class="stat"><label>Risco</label><span>${aposta.risco}</span></div>
-                        </div>
-                    </article>
+                    <section class="indicacoes-league-group">
+                        <header class="indicacoes-league-header">
+                            <div>
+                                <p class="indicacoes-league-name">${leagueName}</p>
+                                ${picks[0]?.round ? `<span class="indicacoes-league-round">Rodada ${picks[0].round}</span>` : ''}
+                            </div>
+                            <span class="indicacoes-league-count">${picks.length} indicações</span>
+                        </header>
+                        ${cards}
+                    </section>
                 `;
             }).join('');
 
-            if (data.resumo) {
-                html += `
-                    <div class="indicacoes-resumo">
-                        <h3>📊 Resumo das Indicações</h3>
-                        <p><strong>Total de apostas:</strong> ${data.resumo.total_apostas}</p>
-                        <p><strong>Stake recomendado:</strong> ${data.resumo.stake_total_recomendado}</p>
-                        <p><strong>Taxa de sucesso esperada:</strong> ${data.resumo.taxa_sucesso_esperada}</p>
-                        <p><strong>Value médio:</strong> ${data.resumo.value_medio}</p>
-                        <p><strong>Confiança média:</strong> ${data.resumo.confianca_media}</p>
-                        <p class="resumo-warning">${data.resumo.aviso_especial || ''}</p>
-                    </div>
-                `;
-            }
-
-            container.innerHTML = html;
+            container.innerHTML = metaHtml + cardsHtml;
         }
 
         async function loadAnalises() {

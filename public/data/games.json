@@ -1,362 +1,797 @@
-[
-  {
-    "id": 1,
-    "home_team": "Flamengo",
-    "away_team": "Ceará",
-    "league": "brasileirao",
-    "match_date": "2025-12-03T21:30:00-03:00",
-    "venue": "Maracanã (RJ)",
-    "context": "Flamengo pode definir o campeonato com apenas uma vitória. Lidera com 75 pontos, cinco à frente do Palmeiras, jogando em casa logo após conquistar a Libertadores.",
-    "confidence": 92,
-    "tips": [
-      {
-        "market": "Escanteios",
-        "pick": "Mais de 9.5 (Over)",
-        "odds": 1.72,
-        "explanation": "Odd justa 1.28 versus 1.72 na BetMGM (value +34,2%). Flamengo tem média de 10.08 escanteios e o Ceará 10.00; os últimos 4 confrontos superaram 9.5. Laterais Ayrton Lucas e Emerson Royal empilham cruzamentos e 4 de 5 jogos recentes de ambos os clubes passaram essa linha."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Flamengo",
-        "odds": 1.25,
-        "explanation": "Odd justa 1.18 contra 1.25 na Betnacional (value +6,2%). Flamengo tem 78% de aproveitamento no Maracanã e conquistou 44 de 75 pontos em casa; Ceará fez só 17 como visitante e não vence o Rubro-Negro há 5 partidas. Probabilidade estimada de 85% torna a aposta segura."
-      },
-      {
-        "market": "Escanteios",
-        "pick": "Mais de 10.5 (Over)",
-        "odds": 1.90,
-        "explanation": "Odd justa 1.45 com mercado 1.90 na BR4Bet (value +31%). Soma das médias chega a 20.08 escanteios e o Flamengo bateu 6.5 escanteios em 6 dos últimos 11 jogos. Ceará sofre 11.78 finalizações por jogo e recua bastante, elevando o potencial de cantos acima de 10.5."
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "home_team": "Cruzeiro",
-    "away_team": "Botafogo",
-    "league": "brasileirao",
-    "match_date": "2025-12-04T19:30:00-03:00",
-    "venue": "Mineirão (BH)",
-    "context": "Confronto direto pela Libertadores: Cruzeiro (68 pts) é o 3º e Botafogo (58 pts) o 6º, com histórico de 65% de aproveitamento mineiro no Mineirão.",
-    "confidence": 88,
-    "tips": [
-      {
-        "market": "1X2",
-        "pick": "Vitória do Cruzeiro",
-        "odds": 2.10,
-        "explanation": "Odd justa 1.92 vs 2.10 na BetMGM (value +9,2%). Cruzeiro soma 13-3-2 em casa, não perde para o Botafogo há quase 10 anos (6V,8E) e mantém 65% de aproveitamento histórico no Mineirão."
-      },
-      {
-        "market": "Total de Gols",
-        "pick": "Menos de 2.5",
-        "odds": 1.75,
-        "explanation": "Odd justa 1.54 com mercado 1.75 na Novibet (value +13,8%). Três dos últimos 4 confrontos ficaram abaixo de 2.5, Cruzeiro sofre 0.50 gol em casa e Botafogo marca 0.88 fora, sustentando cenário de placar curto."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.80,
-        "explanation": "Odd justa 1.82 (value -1%). Cruzeiro marcou 52 gols e Botafogo 50; jogos recentes de ambos tiveram gols dos dois lados, mas o mercado não oferece vantagem clara. Recomendado apenas para múltiplas."
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "home_team": "Fortaleza",
-    "away_team": "Corinthians",
-    "league": "brasileirao",
-    "match_date": "2025-12-03T19:00:00-03:00",
-    "venue": "Castelão (CE)",
-    "context": "Mata-mata de rebaixamento: Fortaleza é o 18º com 40 pontos e vem de 8 jogos invicto; precisa vencer para deixar o Z-4 contra um Corinthians inconsistente.",
-    "confidence": 84,
-    "tips": [
-      {
-        "market": "1X2",
-        "pick": "Vitória do Fortaleza",
-        "odds": 1.95,
-        "explanation": "Odd justa 1.92 e mercado 1.95 na bet365 (value +1,4%). Fortaleza está invicto há 8 jogos, venceu as últimas 4 em casa contra o Corinthians, que sofreu gols nos últimos 5 jogos e ganhou só 4 de 18 fora." 
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.95,
-        "explanation": "Odd justa 1.47 ante 1.95 na bet365 (value +32,6%). Fortaleza teve ambas marcam em 8/10 jogos recentes e o Corinthians balançou redes em 8 das últimas 10 atuações como visitante." 
-      },
-      {
-        "market": "Escanteios",
-        "pick": "Mais de 10.5 (Over)",
-        "odds": 2.02,
-        "explanation": "Odd justa 1.61 contra 2.02 na Betsson (value +25,2%). Fortaleza tem média de 11 escanteios (5.63 a favor, 5.36 contra) e Corinthians 9.19, além de liderar em cartões, o que gera mais bolas paradas." 
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "home_team": "Real Madrid",
-    "away_team": "Manchester City",
-    "league": "champions",
-    "match_date": "2025-12-10T20:00:00Z",
-    "venue": "Santiago Bernabéu",
-    "context": "Clássico europeu valendo top-8: Real Madrid (12 pts) é 5º, City (10 pts) é 9º. Quem perder fica perto da eliminação.",
-    "confidence": 90,
-    "tips": [
-      {
-        "market": "1X2",
-        "pick": "Vitória do Real Madrid",
-        "odds": 2.32,
-        "explanation": "Odd justa 1.67 versus 2.32 na Betano (value +39,2%). Madrid tem 4 vitórias nos últimos 5 jogos no Bernabéu e marcou 19 gols nessa sequência; Mbappé em grande fase contra defesa do City que sofre 1.6 gol/jogo fora."
-      },
-      {
-        "market": "Goleador",
-        "pick": "Mbappé marca a qualquer momento",
-        "odds": 2.75,
-        "explanation": "Odd justa 2.38 comparada aos 2.75 da bet365 (value +15,5%). Mbappé soma 9 gols em 5 jogos de Champions e enfrenta defesa inglesa que sofreu gols nos últimos 4 jogos fora."
-      },
-      {
-        "market": "Escanteios",
-        "pick": "Mais de 11.5 (Over)",
-        "odds": 2.10,
-        "explanation": "Odd justa 1.47 (value +42,8%). Madrid força 10.4 cruzamentos por jogo e o City cede 7.1 escanteios; soma esperada de 17.5 cantos favorece linha 11.5."
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "home_team": "Inter de Milão",
-    "away_team": "Liverpool",
-    "league": "champions",
-    "match_date": "2025-12-09T17:00:00Z",
-    "venue": "San Siro",
-    "context": "Inter lidera a fase com 4 vitórias seguidas e sem sofrer gols; Liverpool vive crise com derrotas na Premier e depende de Salah.",
-    "confidence": 88,
-    "tips": [
-      {
-        "market": "1X2",
-        "pick": "Vitória da Inter de Milão",
-        "odds": 2.37,
-        "explanation": "Odd justa 1.54 face a 2.37 na Betano (value +54,1%). Inter venceu 4 seguidas sem sofrer gol e tem defesa de 0.4 gol/jogo; Liverpool ganhou só 3 de 10 fora e sofre 1.8 gol/jogo."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 2.20,
-        "explanation": "Odd justa 1.67 (value +32%). Inter é sólida, mas Liverpool marcou em 4/5 jogos fora e precisa atacar; chance estimada em 60%."
-      },
-      {
-        "market": "Goleador",
-        "pick": "Lautaro Martínez marca a qualquer momento",
-        "odds": 3.10,
-        "explanation": "Odd justa 2.63 comparada à bet365 3.10 (value +17,8%). Lautaro marcou em 4 jogos seguidos e explora a linha alta do Liverpool."
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "home_team": "Barcelona",
-    "away_team": "Eintracht Frankfurt",
-    "league": "champions",
-    "match_date": "2025-12-09T16:45:00Z",
-    "venue": "Camp Nou",
-    "context": "Camp Nou reaberto, Barça precisa vencer para avançar; Frankfurt é 28º com 4 pontos e não venceu fora nesta fase.",
-    "confidence": 86,
-    "tips": [
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 2.85,
-        "explanation": "Odd justa 1.23 (value +130,8%). Barça marcou 21 gols em 5 jogos em casa e o Frankfurt busca gols por sobrevivência; probabilidade estimada de 81%."
-      },
-      {
-        "market": "Total de Gols",
-        "pick": "Mais de 3.5",
-        "odds": 2.45,
-        "explanation": "Odd justa 1.39 (value +76,4%). Barcelona tem média de 3.5 gols em casa e Frankfurt sofre 1.6; soma esperada 5.1 gols."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Barcelona",
-        "odds": 1.19,
-        "explanation": "Odd justa 2.00 (value -40,5%). Vitória catalã é provável, mas o preço é ruim; NÃO recomendado como aposta individual devido ao valor negativo. Só faz sentido combinada com outros mercados, se necessário."
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "home_team": "Leeds United",
-    "away_team": "Liverpool",
-    "league": "premier",
-    "match_date": "2025-12-06T12:30:00Z",
-    "venue": "Anfield",
-    "context": "Liverpool tenta reagir rumo ao topo (21 pts em 13 jogos) contra um Leeds em queda com 11 pts e 5 derrotas nas últimas 7 rodadas.",
-    "confidence": 82,
-    "tips": [
-      {
-        "market": "Total de Gols",
-        "pick": "Mais de 2.5",
-        "odds": 2.10,
-        "explanation": "Odd justa 1.48 (value +41,8%). Liverpool faz 1.8 gol/jogo e Leeds sofre 1.8; 67,5% dos confrontos recentes passaram de 2.5 gols e Leeds levou gol em 10 jogos seguidos."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.85,
-        "explanation": "Odd justa 1.74 (value +6,4%). Leeds marcou em 70% dos últimos jogos em casa e Liverpool sofreu em 40% dos últimos 6 jogos; probabilidade combinada ~57,5%."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Liverpool",
-        "odds": 1.75,
-        "explanation": "Odd justa 2.29 (value -23,7%). Reds são favoritos mas o preço não compensa; recomendada apenas se combinada a outros mercados."
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "home_team": "Tottenham",
-    "away_team": "Liverpool",
-    "league": "premier",
-    "match_date": "2025-12-20T14:30:00Z",
-    "venue": "Tottenham Hotspur Stadium",
-    "context": "Clássico pós-Natal com ambos fora do top-4. Liverpool busca retomada e Tottenham tenta consolidar posição jogando em casa.",
-    "confidence": 85,
-    "tips": [
-      {
-        "market": "HT/FT",
-        "pick": "Liverpool vence HT/FT",
-        "odds": 3.25,
-        "explanation": "Odd justa 1.54 (value +111,3%). Liverpool costuma atacar cedo e venceu 5 dos últimos 7 clássicos, liderando no intervalo e confirmando no final em 65% dos casos."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Liverpool",
-        "odds": 1.95,
-        "explanation": "Odd justa 1.67 (value +17%). Liverpool domina o confronto recente (3 vitórias nos últimos 4) e Tottenham oscila em casa nesse período."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.88,
-        "explanation": "Odd justa 2.04 (value -7,9%). Histórico mostra apenas 45% de ambas marcam; mercado está otimista demais, portanto aposta a evitar isoladamente."
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "home_team": "Manchester City",
-    "away_team": "Sunderland",
-    "league": "premier",
-    "match_date": "2025-12-06T15:00:00Z",
-    "venue": "Etihad Stadium",
-    "context": "City (25 pts) recebe o 19º Sunderland (19 pts) em cenário de enorme desequilíbrio técnico.",
-    "confidence": 90,
-    "tips": [
-      {
-        "market": "Total de Gols",
-        "pick": "Mais de 3.5",
-        "odds": 2.15,
-        "explanation": "Odd justa 1.39 (value +54,8%). City marca 2.08 gols/jogo em casa e Sunderland sofre 1.38; jogos recentes dos Citizens em casa passaram de 3 gols."
-      },
-      {
-        "market": "Goleador",
-        "pick": "Haaland marca 2+ gols",
-        "odds": 3.40,
-        "explanation": "Odd justa 2.86 (value +19%). Haaland soma 14 gols em 13 jogos e já teve 6 jogos com 2+ gols contra defesas frágeis como a do Sunderland."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Manchester City",
-        "odds": 1.08,
-        "explanation": "Odd justa 1.25 (value -13,6%). City deve vencer, mas o preço é baixo demais para aposta simples; prefira combinar com outros mercados."
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "home_team": "Athletic Bilbao",
-    "away_team": "Real Madrid",
-    "league": "laliga",
-    "match_date": "2025-12-03T15:00:00+01:00",
-    "venue": "San Mamés",
-    "context": "Real Madrid busca quebrar sequência de três empates para seguir na briga pelo título; Athletic (8º) tenta usar a fortaleza de San Mamés para mirar Champions.",
-    "confidence": 82,
-    "tips": [
-      {
-        "market": "Escanteios",
-        "pick": "Mais de 9.5",
-        "odds": 3.40,
-        "explanation": "Odd justa 1.47 (value +131,2%). Athletic gera 10.3 escanteios em casa e o Real Madrid sofre 8.2 como visitante, projetando 18.5 cantos e fazendo desta a melhor aposta da rodada."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.72,
-        "explanation": "Odd justa 1.67 (value +3,2%). Athletic marca em 70% dos jogos em casa e o Real cedeu gols em 8 dos últimos 10 jogos fora; use em múltiplas junto ao over de escanteios."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Real Madrid",
-        "odds": 1.78,
-        "explanation": "Odd justa 1.76 (value +1,1%). Madrid é favorito com 56,8% de probabilidade, mas o preço está praticamente alinhado; somente combine com outros mercados para extrair value."
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "home_team": "Real Betis",
-    "away_team": "Barcelona",
-    "league": "laliga",
-    "match_date": "2025-12-06T12:30:00+01:00",
-    "venue": "Benito Villamarín",
-    "context": "Líder Barcelona (34 pts) encara o 5º Betis, forte em casa, num duelo que pode consolidar a liderança catalã na La Liga.",
-    "confidence": 88,
-    "tips": [
-      {
-        "market": "Total de Gols",
-        "pick": "Mais de 2.5",
-        "odds": 2.10,
-        "explanation": "Odd justa 1.28 (value +63,8%). Barça marca 3.5 gols fora e Betis sofre 1.0; 100% dos últimos 11 jogos do Barça passaram dessa linha."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 1.95,
-        "explanation": "Odd justa 1.61 (value +20,9%). Betis marcou em 8/10 jogos em casa e o Barcelona sofreu em 9 confrontos seguidos contra o rival."
-      },
-      {
-        "market": "1X2",
-        "pick": "Vitória do Barcelona",
-        "odds": 1.75,
-        "explanation": "Odd justa 1.54 (value +13,8%). Barça soma 11 vitórias em 14 jogos e mantém invencibilidade recente fora; aposta com risco baixo e retorno moderado."
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "home_team": "Villarreal",
-    "away_team": "Getafe",
-    "league": "laliga",
-    "match_date": "2025-12-07T19:00:00+01:00",
-    "venue": "Estadio de la Cerámica",
-    "context": "Villarreal (3º, invicto em casa) recebe o 12º Getafe, que sofre longe de casa, em duelo importante para garantir vaga direta na Champions.",
-    "confidence": 86,
-    "tips": [
-      {
-        "market": "1X2",
-        "pick": "Vitória do Villarreal",
-        "odds": 1.63,
-        "explanation": "Odd justa 1.43 (value +14,1%). Submarino Amarelo soma 5 vitórias seguidas em casa com defesa que sofre menos de 1 gol/jogo; Getafe tem 1 vitória em 6 fora."
-      },
-      {
-        "market": "Total de Gols",
-        "pick": "Mais de 1.5",
-        "odds": 1.85,
-        "explanation": "Odd justa 1.39 (value +33,2%). Villarreal marca 2.1 gols em casa e Getafe sofre 1.07; 72% dos confrontos tiveram 2+ gols."
-      },
-      {
-        "market": "Ambas Marcam",
-        "pick": "Sim",
-        "odds": 2.10,
-        "explanation": "Odd justa 2.04 (value +2,9%). Getafe marca pouco fora e Villarreal quase não cede gols; só use em múltiplas de alto retorno."
-      }
-    ]
-  }
-]
+{
+  "leagues": [
+    {
+      "id": "brasileirao",
+      "name": "Campeonato Brasileiro",
+      "country": "Brasil",
+      "round": 38,
+      "status": "upcoming",
+      "games": [
+        {
+          "id": "fluminense_bahia_r38",
+          "homeTeam": "Fluminense",
+          "awayTeam": "Bahia",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Maracanã",
+          "city": "Rio de Janeiro",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.95,
+            "draw": 3.4,
+            "away": 3.85
+          }
+        },
+        {
+          "id": "botafogo_fortaleza_r38",
+          "homeTeam": "Botafogo",
+          "awayTeam": "Fortaleza",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Nilton Santos",
+          "city": "Rio de Janeiro",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.85,
+            "draw": 3.5,
+            "away": 4.1
+          }
+        },
+        {
+          "id": "corinthians_juventude_r38",
+          "homeTeam": "Corinthians",
+          "awayTeam": "Juventude",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Neo Química Arena",
+          "city": "São Paulo",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.62,
+            "draw": 3.8,
+            "away": 5.5
+          }
+        },
+        {
+          "id": "santos_cruzeiro_r38",
+          "homeTeam": "Santos",
+          "awayTeam": "Cruzeiro",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Vila Belmiro",
+          "city": "Santos",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.3,
+            "draw": 3.3,
+            "away": 3
+          }
+        },
+        {
+          "id": "mirassol_flamengo_r38",
+          "homeTeam": "Mirassol",
+          "awayTeam": "Flamengo",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Maião",
+          "city": "Mirassol",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 4.5,
+            "draw": 3.8,
+            "away": 1.72
+          }
+        },
+        {
+          "id": "atletico_vasco_r38",
+          "homeTeam": "Atlético-MG",
+          "awayTeam": "Vasco",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Arena MRV",
+          "city": "Belo Horizonte",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.78,
+            "draw": 3.6,
+            "away": 4.5
+          }
+        },
+        {
+          "id": "inter_bragantino_r38",
+          "homeTeam": "Inter",
+          "awayTeam": "RB Bragantino",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Beira-Rio",
+          "city": "Porto Alegre",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.68,
+            "draw": 3.7,
+            "away": 5
+          }
+        },
+        {
+          "id": "vitoria_saopaulo_r38",
+          "homeTeam": "Vitória",
+          "awayTeam": "São Paulo",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Barradão",
+          "city": "Salvador",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 3.4,
+            "draw": 3.5,
+            "away": 2.1
+          }
+        },
+        {
+          "id": "ceara_palmeiras_r38",
+          "homeTeam": "Ceará",
+          "awayTeam": "Palmeiras",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Arena Castelão",
+          "city": "Fortaleza",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 5,
+            "draw": 3.9,
+            "away": 1.68
+          }
+        },
+        {
+          "id": "sport_gremio_r38",
+          "homeTeam": "Sport",
+          "awayTeam": "Grêmio",
+          "date": "2025-12-07",
+          "time": "16:00",
+          "stadium": "Ilha do Retiro",
+          "city": "Recife",
+          "league": "brasileirao",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.6,
+            "draw": 3.2,
+            "away": 2.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "laliga",
+      "name": "La Liga",
+      "country": "España",
+      "round": 15,
+      "status": "upcoming",
+      "games": [
+        {
+          "id": "villarreal_getafe_j15",
+          "homeTeam": "Villarreal",
+          "awayTeam": "Getafe",
+          "date": "2025-12-06",
+          "time": "13:00",
+          "stadium": "La Cerámica",
+          "city": "Villarreal",
+          "league": "laliga",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.68,
+            "draw": 3.7,
+            "away": 5
+          }
+        },
+        {
+          "id": "alaves_realsociedad_j15",
+          "homeTeam": "Alavés",
+          "awayTeam": "Real Sociedad",
+          "date": "2025-12-06",
+          "time": "15:15",
+          "stadium": "Estadio Mendizorrotza",
+          "city": "Vitoria",
+          "league": "laliga",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.4,
+            "draw": 3.2,
+            "away": 3.1
+          }
+        },
+        {
+          "id": "betis_barcelona_j15",
+          "homeTeam": "Real Betis",
+          "awayTeam": "Barcelona",
+          "date": "2025-12-06",
+          "time": "17:30",
+          "stadium": "Estadio de la Cartuja",
+          "city": "Seville",
+          "league": "laliga",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 4.5,
+            "draw": 3.8,
+            "away": 1.72
+          }
+        },
+        {
+          "id": "athletic_atletico_j15",
+          "homeTeam": "Athletic Club",
+          "awayTeam": "Atlético Madrid",
+          "date": "2025-12-07",
+          "time": "19:00",
+          "stadium": "San Mamés",
+          "city": "Bilbao",
+          "league": "laliga",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.8,
+            "draw": 3.4,
+            "away": 2.5
+          }
+        },
+        {
+          "id": "realmadrid_celta_j15",
+          "homeTeam": "Real Madrid",
+          "awayTeam": "Celta Vigo",
+          "date": "2025-12-06",
+          "time": "16:00",
+          "stadium": "Santiago Bernabéu",
+          "city": "Madrid",
+          "league": "laliga",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.42,
+            "draw": 4.5,
+            "away": 7
+          }
+        },
+        {
+          "id": "levante_sevilla_j15",
+          "homeTeam": "Levante",
+          "awayTeam": "Sevilla",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "Estadio Ciudad de Valencia",
+          "city": "Valencia",
+          "league": "laliga",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.75,
+            "draw": 3.3,
+            "away": 2.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "premierleague",
+      "name": "Premier League",
+      "country": "England",
+      "round": 15,
+      "status": "upcoming",
+      "games": [
+        {
+          "id": "astonvilla_arsenal_j15",
+          "homeTeam": "Aston Villa",
+          "awayTeam": "Arsenal",
+          "date": "2025-12-06",
+          "time": "12:30",
+          "stadium": "Villa Park",
+          "city": "Birmingham",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.5,
+            "draw": 3.4,
+            "away": 3
+          }
+        },
+        {
+          "id": "bournemouth_chelsea_j15",
+          "homeTeam": "Bournemouth",
+          "awayTeam": "Chelsea",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "Vitality Stadium",
+          "city": "Bournemouth",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.1,
+            "draw": 3.5,
+            "away": 3.5
+          }
+        },
+        {
+          "id": "everton_nottingham_j15",
+          "homeTeam": "Everton",
+          "awayTeam": "Nottingham Forest",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "Goodison Park",
+          "city": "Liverpool",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.75,
+            "draw": 3.3,
+            "away": 2.75
+          }
+        },
+        {
+          "id": "manchestercity_sunderland_j15",
+          "homeTeam": "Manchester City",
+          "awayTeam": "Sunderland",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "Etihad Stadium",
+          "city": "Manchester",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.18,
+            "draw": 8,
+            "away": 18
+          }
+        },
+        {
+          "id": "newcastle_burnley_j15",
+          "homeTeam": "Newcastle United",
+          "awayTeam": "Burnley",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "St James Park",
+          "city": "Newcastle",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.72,
+            "draw": 3.8,
+            "away": 5
+          }
+        },
+        {
+          "id": "tottenham_brentford_j15",
+          "homeTeam": "Tottenham",
+          "awayTeam": "Brentford",
+          "date": "2025-12-06",
+          "time": "15:00",
+          "stadium": "Tottenham Hotspur Stadium",
+          "city": "London",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.67,
+            "draw": 3.8,
+            "away": 5.5
+          }
+        },
+        {
+          "id": "leeds_liverpool_j15",
+          "homeTeam": "Leeds United",
+          "awayTeam": "Liverpool",
+          "date": "2025-12-06",
+          "time": "17:30",
+          "stadium": "Elland Road",
+          "city": "Leeds",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 3,
+            "draw": 3,
+            "away": 2.1
+          }
+        },
+        {
+          "id": "brighton_westham_j16",
+          "homeTeam": "Brighton",
+          "awayTeam": "West Ham",
+          "date": "2025-12-07",
+          "time": "14:00",
+          "stadium": "Amex Stadium",
+          "city": "Brighton",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.85,
+            "draw": 3.6,
+            "away": 4.5
+          }
+        },
+        {
+          "id": "fulham_crystalpalace_j16",
+          "homeTeam": "Fulham",
+          "awayTeam": "Crystal Palace",
+          "date": "2025-12-07",
+          "time": "16:30",
+          "stadium": "Craven Cottage",
+          "city": "London",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.9,
+            "draw": 3.6,
+            "away": 4
+          }
+        },
+        {
+          "id": "wolverhampton_manchesterunited_j17",
+          "homeTeam": "Wolverhampton",
+          "awayTeam": "Manchester United",
+          "date": "2025-12-08",
+          "time": "20:00",
+          "stadium": "Molineux Stadium",
+          "city": "Wolverhampton",
+          "league": "premierleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 3,
+            "draw": 3.4,
+            "away": 2.3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seriea",
+      "name": "Serie A",
+      "country": "Italia",
+      "round": 14,
+      "status": "upcoming",
+      "games": [
+        {
+          "id": "sassuolo_fiorentina_j14",
+          "homeTeam": "Sassuolo",
+          "awayTeam": "Fiorentina",
+          "date": "2025-12-06",
+          "time": "11:00",
+          "stadium": "Mapei Stadium",
+          "city": "Reggio Emilia",
+          "league": "seriea",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 3.2,
+            "draw": 3.4,
+            "away": 2.2
+          }
+        },
+        {
+          "id": "inter_como_j14",
+          "homeTeam": "Internazionale",
+          "awayTeam": "Como",
+          "date": "2025-12-06",
+          "time": "14:00",
+          "stadium": "San Siro",
+          "city": "Milano",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.32,
+            "draw": 5.5,
+            "away": 9
+          }
+        },
+        {
+          "id": "verona_atalanta_j14",
+          "homeTeam": "Hellas Verona",
+          "awayTeam": "Atalanta",
+          "date": "2025-12-06",
+          "time": "16:45",
+          "stadium": "Stadio Bentegodi",
+          "city": "Verona",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 5.5,
+            "draw": 3.6,
+            "away": 1.58
+          }
+        },
+        {
+          "id": "cremonese_lecce_j15",
+          "homeTeam": "Cremonese",
+          "awayTeam": "Lecce",
+          "date": "2025-12-07",
+          "time": "08:30",
+          "stadium": "Giovanni Zini",
+          "city": "Cremona",
+          "league": "seriea",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.1,
+            "draw": 3.5,
+            "away": 3.6
+          }
+        },
+        {
+          "id": "cagliari_roma_j15",
+          "homeTeam": "Cagliari",
+          "awayTeam": "AS Roma",
+          "date": "2025-12-07",
+          "time": "11:00",
+          "stadium": "Unipol Domus",
+          "city": "Cagliari",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 3.5,
+            "draw": 3.6,
+            "away": 2.05
+          }
+        },
+        {
+          "id": "lazio_bologna_j15",
+          "homeTeam": "Lazio",
+          "awayTeam": "Bologna",
+          "date": "2025-12-07",
+          "time": "14:00",
+          "stadium": "Stadio Olimpico",
+          "city": "Roma",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2,
+            "draw": 3.3,
+            "away": 3.8
+          }
+        },
+        {
+          "id": "napoli_juventus_j15",
+          "homeTeam": "Napoli",
+          "awayTeam": "Juventus",
+          "date": "2025-12-07",
+          "time": "16:45",
+          "stadium": "Diego Armando Maradona",
+          "city": "Napoli",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.2,
+            "draw": 3.4,
+            "away": 3.2
+          }
+        },
+        {
+          "id": "pisa_parma_j16",
+          "homeTeam": "Pisa",
+          "awayTeam": "Parma",
+          "date": "2025-12-08",
+          "time": "11:00",
+          "stadium": "Arena Garibaldi",
+          "city": "Pisa",
+          "league": "seriea",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.5,
+            "draw": 3.2,
+            "away": 3
+          }
+        },
+        {
+          "id": "udinese_genoa_j16",
+          "homeTeam": "Udinese",
+          "awayTeam": "Genoa",
+          "date": "2025-12-08",
+          "time": "14:00",
+          "stadium": "Bluenergy Stadium",
+          "city": "Udine",
+          "league": "seriea",
+          "importance": "medium",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.95,
+            "draw": 3.4,
+            "away": 4
+          }
+        },
+        {
+          "id": "torino_milan_j16",
+          "homeTeam": "Torino",
+          "awayTeam": "AC Milan",
+          "date": "2025-12-08",
+          "time": "16:45",
+          "stadium": "Olimpico Grande Torino",
+          "city": "Torino",
+          "league": "seriea",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 3.6,
+            "draw": 3.4,
+            "away": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "championsleague",
+      "name": "Champions League",
+      "country": "Europa",
+      "round": 6,
+      "status": "upcoming",
+      "games": [
+        {
+          "id": "bayern_sporting_r6",
+          "homeTeam": "Bayern München",
+          "awayTeam": "Sporting CP",
+          "date": "2025-12-09",
+          "time": "17:45",
+          "stadium": "Allianz Arena",
+          "city": "München",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.35,
+            "draw": 5.5,
+            "away": 8.5
+          }
+        },
+        {
+          "id": "barcelona_frankfurt_r6",
+          "homeTeam": "Barcelona",
+          "awayTeam": "Frankfurt",
+          "date": "2025-12-09",
+          "time": "16:45",
+          "stadium": "Camp Nou",
+          "city": "Barcelona",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.32,
+            "draw": 5.5,
+            "away": 9
+          }
+        },
+        {
+          "id": "inter_liverpool_r6",
+          "homeTeam": "Inter de Milão",
+          "awayTeam": "Liverpool",
+          "date": "2025-12-09",
+          "time": "16:45",
+          "stadium": "San Siro",
+          "city": "Milano",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.05,
+            "draw": 3.4,
+            "away": 3.8
+          }
+        },
+        {
+          "id": "chelsea_atalanta_r6",
+          "homeTeam": "Chelsea",
+          "awayTeam": "Atalanta",
+          "date": "2025-12-09",
+          "time": "16:45",
+          "stadium": "Stamford Bridge",
+          "city": "London",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.3,
+            "draw": 3.3,
+            "away": 3.1
+          }
+        },
+        {
+          "id": "psv_atletico_r6",
+          "homeTeam": "PSV Eindhoven",
+          "awayTeam": "Atlético Madrid",
+          "date": "2025-12-09",
+          "time": "16:45",
+          "stadium": "Philips Stadion",
+          "city": "Eindhoven",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.75,
+            "draw": 3.3,
+            "away": 2.75
+          }
+        },
+        {
+          "id": "realmadrid_manchestercity_r6",
+          "homeTeam": "Real Madrid",
+          "awayTeam": "Manchester City",
+          "date": "2025-12-10",
+          "time": "16:45",
+          "stadium": "Santiago Bernabéu",
+          "city": "Madrid",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 2.4,
+            "draw": 3.3,
+            "away": 2.9
+          }
+        },
+        {
+          "id": "psg_athletic_r6",
+          "homeTeam": "PSG",
+          "awayTeam": "Athletic Bilbao",
+          "date": "2025-12-10",
+          "time": "16:45",
+          "stadium": "Parc des Princes",
+          "city": "Paris",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.78,
+            "draw": 3.6,
+            "away": 4.5
+          }
+        },
+        {
+          "id": "juventus_benfica_r6",
+          "homeTeam": "Juventus",
+          "awayTeam": "Benfica",
+          "date": "2025-12-10",
+          "time": "16:45",
+          "stadium": "Allianz Stadium",
+          "city": "Torino",
+          "league": "championsleague",
+          "importance": "high",
+          "status": "scheduled",
+          "odds": {
+            "home": 1.85,
+            "draw": 3.6,
+            "away": 4.2
+          }
+        }
+      ]
+    }
+  ]
+}

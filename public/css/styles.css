@@ -120,9 +120,38 @@ body {
 }
 
 .main-layout {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 32px 20px 60px;
+}
+
+.experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.experience-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+body.preview-desktop .experience-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 360px) 1fr;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+body.preview-desktop .focus-column {
+    position: sticky;
+    top: 110px;
+    align-self: flex-start;
+}
+
+body.preview-desktop .data-column {
+    min-width: 0;
 }
 
 .hero {
@@ -169,7 +198,7 @@ body {
 
 .mobile-cta-panel {
     margin: 26px 0 10px;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 20px;
@@ -265,7 +294,7 @@ body {
     background: linear-gradient(135deg, rgba(11, 43, 21, 0.9), rgba(7, 28, 13, 0.9));
     border: 1px solid rgba(45, 219, 116, 0.35);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    display: none;
+    display: block;
 }
 
 .ultima-rodada-home-header h2 {
@@ -459,15 +488,61 @@ body {
 
 /* ===== INDICAÇÕES ===== */
 
-.aviso-variabilidade {
-    background: rgba(255, 193, 7, 0.1);
-    border-left: 4px solid #ffc107;
-    padding: 16px;
+.indicacoes-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px;
     margin-bottom: 24px;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.indicacoes-meta p {
+    margin: 0;
+}
+
+.indicacoes-meta-aviso {
+    flex: 1;
+    font-size: 13px;
     color: #ffc107;
     font-style: italic;
+    text-align: right;
+}
+
+.indicacoes-league-group {
+    margin-bottom: 32px;
+}
+
+.indicacoes-league-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.indicacoes-league-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.indicacoes-league-round {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.indicacoes-league-count {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(240, 242, 245, 0.7);
 }
 
 .indicacao-card {
@@ -1301,6 +1376,20 @@ body.preview-mobile .analise-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+}
+
+body.preview-mobile .indicacoes-meta {
+    flex-direction: column;
+    gap: 12px;
+}
+
+body.preview-mobile .indicacoes-meta-aviso {
+    text-align: left;
+}
+
+body.preview-mobile .indicacoes-league-header {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 body.preview-mobile .indicacao-meta {
