@@ -1,40 +1,43 @@
 {
-  "nota_importante": "Atualização oficial da rodada 38 (07/12/2025 • 09:52). Dados sincronizados com Betano/SofaScore/API Futebol.",
+  "nota_importante": "⚠️ Situação especial confirmada: Flamengo viajará para Doha e enfrentará o Mirassol com o elenco Sub-20 em 06/12 às 18h30. APEX-ML suspensa neste confronto.",
   "analises": [
     {
-      "titulo": "Mirassol x Flamengo — análise de visitante favorito",
+      "titulo": "Mirassol x Flamengo — análise especial (Sub-20)",
       "mandante": "Mirassol",
       "visitante": "Flamengo",
-      "data": "07/12/25",
-      "horario": "16:00",
-      "local": "Estádio José Maria de Campos Maia (SP)",
+      "data": "06/12/25",
+      "horario": "18:30",
+      "local": "Estádio José Maria de Campos Maia (Maião), Mirassol (SP)",
       "competicao": "Brasileirão Série A",
       "statusAnalise": "disponível",
       "contexto": {
-        "importancia": "Brasileirão - Disputa por vaga na Libertadores",
-        "temperatura": "Clima ameno, sem interferências",
-        "observacao": "Mirassol sem o lateral titular Pará"
+        "importancia": "Rodada 38 com cenário excepcional",
+        "clima": "Noite quente, 27ºC",
+        "alerta": "Flamengo antecipou viagem e atua com equipe Sub-20",
+        "status": "APEX-ML suspensa para este jogo"
       },
       "mirassol": {
-        "posicao": "15º colocado",
-        "forma": "2V-1E-2D",
-        "sequencia": "Cinco jogos sofrendo gols como mandante",
-        "defesa": "Sistema compacto, mas vulnerável em transições rápidas",
-        "golsPorJogo": "1.1 gol / jogo",
-        "probabilidadeMarcar": "52%"
+        "posicao": "4º lugar - 66 pts (vaga direta na Libertadores 2026)",
+        "forma": "3V-1E-1D nas últimas 5",
+        "sequencia": "Maior surpresa da liga, invicto há 6 jogos em casa",
+        "ataque": "Reinaldo (14 gols) lidera; Walter garante consistência",
+        "golsPorJogo": "1.5 gols/jogo em casa",
+        "probabilidadeMarcar": "74%"
       },
       "flamengo": {
-        "posicao": "Top 5",
-        "forma": "3V-1E-1D",
-        "golsPorJogo": "2.0 gols / jogo",
-        "sequencia": "9 partidas seguidas marcando",
-        "ataque": "Gabigol centralizado, BH/E.Cebolinha atacando largura",
-        "probabilidadeMarcar": "82%",
-        "observacao": "Time titular confirmado, sem desfalques"
+        "posicao": "Campeão brasileiro 2025 já confirmado",
+        "forma": "Elenco principal poupado; Sub-20 em campo",
+        "sequencia": "Base com pouco ritmo de Série A",
+        "ataque": "Jovens da Copinha liderados por Lorran",
+        "defesa": "Experiência reduzida, foco em proteger área",
+        "golsPorJogo": "1.1 gols/jogo categoria Sub-20",
+        "probabilidadeMarcar": "48%",
+        "observacao": "Delegação principal embarca no sábado à tarde para Doha; técnico Bruno Pivetti comanda o Sub-20"
       },
-      "ajustesTaticos": "Flamengo deve explorar velocidade nas laterais contra defesa lenta do Mirassol. Paulistas tentarão bloco baixo e bolas paradas com Zeca.",
-      "recomendacao": "Flamengo over 1.5 gols ou vitória simples com odd mínima 1.60",
-      "alternativa": "Ambos marcam (BTTS) com odd mínima 2.10 se Mirassol ameaçar nos 20' iniciais"
+      "ajustesTaticos": "Mirassol deve acelerar pelos corredores explorando Reinaldo e contra-ataques curtos; Flamengo Sub-20 tende a baixar linhas e administrar desgaste antes da viagem da delegação principal.",
+      "recomendacao": "Mirassol Vitória ou Empate (Dupla Chance) — Odd mínima 1.70 • Stake 2%",
+      "alternativa": "Mirassol vitória direta caso odd permaneça acima de 2.35 (monitorar 1h antes).",
+      "observacoes": "Stake reduzida com status AMBER; foco nos primeiros 25 minutos para confirmar postura carioca."
     },
     {
       "titulo": "Botafogo x Fortaleza — mandante busca consolidação na liderança",

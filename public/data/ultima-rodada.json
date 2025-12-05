@@ -2,8 +2,8 @@
   "cabecalho": {
     "titulo": "🏆 Rodada 37 - Brasileirão 2025",
     "destaque": "⭐ FLAMENGO CAMPEÃO BRASILEIRO 2025 ⭐",
-    "info_rodada": "Rodada disputada em 03/12/2025 - Título decidido antecipadamente",
-    "contexto": "Resultados oficiais confirmados; rodada 38 acontece dia 07/12 às 16:00"
+    "info_rodada": "Atualização oficial em 05/12/2025 • 09h05 (UTC-3)",
+    "contexto": "Rodada 38 terá monitoramento especial: Mirassol x Flamengo antecipado para sábado (06/12 • 18h30) com Sub-20 rubro-negro"
   },
   "rodada": 37,
   "jogos": [
@@ -116,12 +116,13 @@
   "proxima_rodada": {
     "titulo": "📅 Próxima Rodada (38ª - Final)",
     "data": "07/12/2025 às 16:00 (todos os jogos)",
-    "contexto": "Rodada de encerramento. Flamengo já campeão; vice, G6 e rebaixamento ainda em disputa.",
+    "contexto": "Rodada de encerramento com um jogo fora do pacote tradicional. Flamengo já campeão; vice, G6 e rebaixamento ainda em disputa.",
     "pendencias": [
       "🥈 Vice-campeonato: Palmeiras 73 pts x Cruzeiro 69 pts",
       "📉 Rebaixamento: Internacional (18º) depende de combinação",
-      "🎫 Vagas continentais abertas para G6/G8"
+      "🎫 Vagas continentais abertas para G6/G8",
+      "⚠️ Monitorar AC Milan x Sassuolo (08/12) para possíveis rotações"
     ],
-    "alerta": "⚠️ Mirassol x Flamengo é protocolo. Flamengo cogita usar time misto visando Copa Intercontinental (10/12)."
+    "alerta": "⚠️ Mirassol x Flamengo foi antecipado para sábado (06/12 • 18h30). Flamengo viajará para Doha e colocará o Sub-20 em campo; APEX-ML suspensa para este confronto."
   }
 }

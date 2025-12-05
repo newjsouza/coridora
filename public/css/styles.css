@@ -408,6 +408,10 @@ body.preview-desktop .data-column {
     color: var(--warning);
 }
 
+.status-pill.status-especial {
+    color: var(--accent);
+}
+
 /* ===== SISTEMA DE ABAS DINÂMICO ===== */
 
 .tabs-container {

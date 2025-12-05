@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Flamengo mira título antecipado",
-    "description": "Rubro-Negro precisa apenas de uma vitória para levantar a taça do Brasileirão.",
-    "source": "ge",
-    "apex_insight": "Pressão alta e elenco completo colocam o time com 78% de probabilidade de vitória.",
-    "impact": "+4 p.p. de confiança nas apostas pró-Flamengo"
+    "title": "Flamengo antecipa viagem e usará Sub-20 em Mirassol",
+    "description": "Delegação principal embarca no sábado (06/12) rumo a Doha para a Copa Intercontinental; Bruno Pivetti assume o time da base.",
+    "source": "CBF / ge.globo",
+    "apex_insight": "APEX-ML suspensa para o confronto; confiança deslocada para Mirassol devido ao elenco alternativo do Flamengo.",
+    "impact": "-18 p.p. na confiança de mercados pró-Flamengo; +12 p.p. para Mirassol"
   },
   {
     "id": 2,
-    "title": "Manchester City mantém 100% na Champions",
-    "description": "Equipe de Guardiola segue dominante e deve poupar poucos titulares na rodada final.",
-    "source": "ESPN",
-    "apex_insight": "Controle de posse faz o City permitir apenas 0,6 gol por jogo como visitante.",
-    "impact": "+5 p.p. para mercados de vitória e clean sheet"
+    "title": "Mirassol confirma força máxima e clima favorável",
+    "description": "Equipe que já garantiu vaga direta na Libertadores manterá titulares, com Reinaldo e Walter liderando a maior surpresa do Brasileirão.",
+    "source": "SofaScore / CNN Brasil",
+    "apex_insight": "Time paulista soma 6 jogos sem perder em casa e enfrenta adversário sub-20, elevando o value da dupla chance.",
+    "impact": "+18.2% de value em Mirassol Vitória ou Empate; stake reduzida para 2%"
   },
   {
     "id": 3,
-    "title": "Real Madrid lidera corrida em La Liga",
-    "description": "Merengues administram elenco e contam com retorno de Vini Jr.",
-    "source": "MARCA",
-    "apex_insight": "Time produz 2,4 xG por partida no Bernabéu e enfrenta defesa instável do Sevilla.",
-    "impact": "+3 p.p. em handicaps favoráveis ao Real"
+    "title": "Monitoramento europeu sem novas anomalias",
+    "description": "Premier League, La Liga, Serie A e Champions confirmaram escalações principais; apenas o Milan segue em observação para 08/12.",
+    "source": "ESPN / Sky Sport Italia",
+    "apex_insight": "APEX-ML permanece 100% ativa nos 53 confrontos internacionais avaliados, com checagem 1h antes dos jogos.",
+    "impact": "Sem ajustes de stake fora do Brasil; Milan x Sassuolo em monitoramento preventivo"
   }
 ]

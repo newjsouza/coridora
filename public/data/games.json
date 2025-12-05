@@ -79,18 +79,19 @@
           "id": "mirassol_flamengo_r38",
           "homeTeam": "Mirassol",
           "awayTeam": "Flamengo",
-          "date": "2025-12-07",
-          "time": "16:00",
-          "stadium": "Maião",
+          "date": "2025-12-06",
+          "time": "18:30",
+          "stadium": "Estádio José Maria de Campos Maia",
           "city": "Mirassol",
           "league": "brasileirao",
-          "importance": "high",
+          "importance": "critical",
           "status": "scheduled",
           "odds": {
-            "home": 4.5,
-            "draw": 3.8,
-            "away": 1.72
-          }
+            "home": 2.55,
+            "draw": 3.25,
+            "away": 3.1
+          },
+          "notes": "Flamengo usará elenco Sub-20; titulares embarcam para Copa Intercontinental no Catar"
         },
         {
           "id": "atletico_vasco_r38",

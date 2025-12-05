@@ -1,14 +1,14 @@
 {
   "documentacao": {
     "projeto": "PROJEÇÃO ANALYTICS - DADOS DA RODADA",
-    "ultima_atualizacao": "07/12/2025 às 09:52",
+    "ultima_atualizacao": "05/12/2025 às 09:05",
     "rodada": "Brasileirão Série A - Rodada 38",
     "fontes": "Betano / SofaScore / API Futebol",
     "responsavel": "Johnathan",
-    "observacao": "Verificar elencos e escalações 2h antes dos jogos"
+    "observacao": "Mirassol x Flamengo (06/12 • 18h30) terá Flamengo Sub-20 em campo; confirmar escalações 2h antes. Monitorar AC Milan x Sassuolo para rotações."
   },
   "versao_dados": "1.2.0",
-  "data_atualizacao": "2025-12-07T09:52:00-03:00",
+  "data_atualizacao": "2025-12-05T09:05:00-03:00",
   "rodadaCompleta": [
     {
       "id": 1,
@@ -62,9 +62,9 @@
       "id": 7,
       "mandante": "Mirassol",
       "visitante": "Flamengo",
-      "data": "07/12/25",
-      "horario": "16:00",
-      "statusAnalise": "disponível"
+      "data": "06/12/25",
+      "horario": "18:30",
+      "statusAnalise": "especial"
     },
     {
       "id": 8,
@@ -93,8 +93,7 @@
   ],
   "statusAnalises": {
     "disponiveis": [
-      2,
-      7
+      2
     ],
     "pendentes": [
       1,
@@ -105,6 +104,9 @@
       8,
       9,
       10
+    ],
+    "especiais": [
+      7
     ]
   }
 }

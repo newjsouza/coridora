@@ -1,6 +1,6 @@
 {
-  "data_atualizacao": "2025-12-05",
-  "total_indicacoes": 30,
+  "data_atualizacao": "2025-12-05T09:05:00-03:00",
+  "total_indicacoes": 31,
   "aviso": "⚠️ INDICAÇÕES PODEM VARIAR COM ESCALAÇÕES E ANÁLISES PRÉ-JOGO",
   "indicacoes": [
     {
@@ -362,6 +362,18 @@
       "stake": "3%",
       "status": "GREEN",
       "motivo": "Juventus favorita; Benfica visitante sem acesso fácil"
+    },
+    {
+      "id": 31,
+      "league": "brasileirao",
+      "round": 38,
+      "confronto": "Mirassol x Flamengo",
+      "mercado": "Mirassol Vitória ou Empate",
+      "confianca": 72,
+      "value": "+18.2%",
+      "stake": "2%",
+      "status": "AMBER",
+      "motivo": "Flamengo usará elenco sub-20 enquanto o time principal embarca para Doha; Mirassol mantém equipe completa e torcida em casa."
     }
   ]
 }

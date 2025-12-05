@@ -1,12 +1,12 @@
 {
-  "atualizacao": "2025-12-07T10:19:00-03:00",
+  "atualizacao": "2025-12-05T09:05:00-03:00",
   "ligas": {
     "brasileiraoBetano": {
       "nome": "Brasileirão Betano",
       "pais": "Brasil",
       "logo": "🇧🇷",
       "rodadaAtual": 38,
-      "dataRodada": "07/12/2025",
+      "dataRodada": "06-07/12/2025",
       "jogosRodada": [
         {
           "id": 1,
@@ -39,10 +39,10 @@
           "id": 4,
           "mandante": "Mirassol",
           "visitante": "Flamengo",
-          "data": "07/12/25",
-          "horario": "16:00",
-          "statusAnalise": "pendente",
-          "importancia": "⭐⭐ Destaque da rodada"
+          "data": "06/12/25",
+          "horario": "18:30",
+          "statusAnalise": "disponível",
+          "importancia": "⚠️ Situação especial: Flamengo com Sub-20 (18h30 sábado)"
         },
         {
           "id": 5,
@@ -64,6 +64,38 @@
         }
       ],
       "analises": [
+        {
+          "titulo": "Mirassol x Flamengo — vantagem paulista contra Sub-20",
+          "competicao": "Série A",
+          "data": "06/12/25",
+          "horario": "18:30",
+          "local": "Maião, Mirassol (SP)",
+          "contexto": {
+            "importancia": "Rodada 38 com cenário único",
+            "alerta": "Flamengo embarca rumo ao Catar no mesmo dia",
+            "clima": "Calor de 29ºC e umidade elevada"
+          },
+          "mandante_info": {
+            "nome": "Mirassol",
+            "posicao": "4º lugar - 66 pts",
+            "forma": "4V-0E-1D",
+            "ataque": "Reinaldo (14 gols) e Renato Cajá criam",
+            "defesa": "Walter lidera última linha organizada",
+            "probabilidadeMarcar": "76%"
+          },
+          "visitante_info": {
+            "nome": "Flamengo (Sub-20)",
+            "posicao": "Time principal poupado",
+            "forma": "Base com poucos minutos recentes",
+            "ataque": "Lorran, Shola e Werton aceleram transições",
+            "defesa": "Linha alta inexperiente",
+            "probabilidadeMarcar": "48%"
+          },
+          "ajustesTaticos": "Mirassol deve ocupar meio-campo rival com pressão coordenada, enquanto o Sub-20 rubro-negro baixa linhas para administrar desgaste.",
+          "recomendacao": "Mirassol Vitória ou Empate (Dupla Chance) — odd mínima 1.70 • Stake 2%",
+          "alternativa": "Mirassol vitória direta apenas se odd acima de 2.35",
+          "observacoes": "APEX-ML suspensa para o confronto; confirmar escalações 1h antes."
+        },
         {
           "titulo": "Fluminense x Bahia — despedida jogando por recorde",
           "competicao": "Série A",
