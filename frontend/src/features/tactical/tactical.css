@@ -1,0 +1,59 @@
+.tacticalPanel {
+  background: rgba(0, 25, 45, 0.5);
+  border: 1px solid rgba(0,255,255,0.25);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(12px);
+}
+
+.tacticalTitle {
+  color: #8af6ff;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.tacticalSubtitle {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.tacticalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 8px;
+}
+
+.tacticalCell {
+  min-height: 48px;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #eaffff;
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.2), rgba(0,10,25,0.9));
+}
+
+/* Destaques diferentes por intensidade */
+.cell-0, .cell-1, .cell-2 {
+  box-shadow: 0 0 18px rgba(0,255,160,0.55);
+}
+
+.cell-3, .cell-4, .cell-5, .cell-6 {
+  box-shadow: 0 0 14px rgba(0,200,255,0.45);
+}
+
+.cell-7, .cell-8, .cell-9 {
+  box-shadow: 0 0 10px rgba(255,200,0,0.38);
+}
+
+/* Mobile: ocupar 1 coluna quando a tela for muito estreita */
+@media (max-width: 480px) {
+  .tacticalGrid {
+    grid-template-columns: 1fr;
+  }
+}

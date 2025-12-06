@@ -16,10 +16,43 @@ import Heatmap from "@features/match/components/Heatmap";
 import MiniSummary from "@features/match/components/MiniSummary";
 import MatchKPI from "@features/match/components/MatchKPI";
 import MobileTabs from "@features/match/components/MobileTabs";
+import { AnalysisFlow } from "@features/analysis/AnalysisFlow";
+import { PatternChart } from "@features/analysis/PatternChart";
+import { AIExplanation } from "@features/analysis/AIExplanation";
+import { TrendLineChart } from "@features/advanced/TrendLineChart";
+import { KellyCalculator } from "@features/advanced/KellyCalculator";
+import { BankSimulator } from "@features/advanced/BankSimulator";
+import { TacticalHeatmap } from "@features/tactical/TacticalHeatmap";
+import { FactCheckPanel } from "@features/factcheck/FactCheckPanel";
 import { useAppStore } from "@store/useAppStore";
 
 export function Dashboard() {
   const { selectedMatch } = useAppStore();
+
+  const mobileTabs = selectedMatch
+    ? [
+        { id: "insights", label: "Insights", content: <MiniSummary match={selectedMatch} /> },
+        { id: "analysis", label: "Análise", content: <AnalysisFlow /> },
+        { id: "charts", label: "Gráficos", content: <PatternChart /> },
+        { id: "ia", label: "IA", content: <AIExplanation match={selectedMatch} /> },
+        {
+          id: "finance",
+          label: "Financeiro",
+          content: (
+            <>
+              <TrendLineChart />
+              <KellyCalculator />
+              <BankSimulator />
+            </>
+          ),
+        },
+        {
+          id: "factcheck",
+          label: "Fact-Check",
+          content: <FactCheckPanel matchId={selectedMatch?.id ?? "001"} />,
+        },
+      ]
+    : [];
 
   return (
     <Layout>
@@ -37,6 +70,14 @@ export function Dashboard() {
           <div className="dashboard-col dashboard-col-analysis">
             <div className="desktopOnly">
               <RecommendationPanel />
+              <TacticalHeatmap />
+              <FactCheckPanel matchId={selectedMatch?.id ?? "001"} />
+              <AnalysisFlow />
+              <PatternChart />
+              <AIExplanation match={selectedMatch} />
+              <TrendLineChart />
+              <KellyCalculator />
+              <BankSimulator />
               {selectedMatch && (
                 <>
                   <MiniSummary match={selectedMatch} />
@@ -81,50 +122,7 @@ export function Dashboard() {
               )}
             </div>
 
-            {selectedMatch && (
-              <MobileTabs>
-                <div title="Análise Geral">
-                  <RecommendationPanel />
-                </div>
-
-                <div title="Probabilidades">
-                  <Probabilities match={selectedMatch} />
-                </div>
-
-                <div title="Heatmap">
-                  <Heatmap />
-                </div>
-
-                <div title="Cenários">
-                  <GameScenarios match={selectedMatch} />
-                </div>
-
-                <div title="Times">
-                  <TeamCard
-                    title={selectedMatch.home}
-                    stats={{
-                      form: "V V E D V",
-                      goalsFor: 8,
-                      goalsAgainst: 3,
-                      attack: 82,
-                      defense: 70,
-                      trend: "Ofensivo",
-                    }}
-                  />
-                  <TeamCard
-                    title={selectedMatch.away}
-                    stats={{
-                      form: "D V D E D",
-                      goalsFor: 4,
-                      goalsAgainst: 9,
-                      attack: 61,
-                      defense: 52,
-                      trend: "Irregular",
-                    }}
-                  />
-                </div>
-              </MobileTabs>
-            )}
+            {selectedMatch && <MobileTabs items={mobileTabs} />}
           </div>
         </div>
       </section>

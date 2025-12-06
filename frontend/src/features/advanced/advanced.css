@@ -1,0 +1,85 @@
+.neoPanelAdv {
+  background: rgba(0, 30, 50, 0.4);
+  border: 1px solid rgba(0,255,255,0.20);
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.neoTitle {
+  color: #8af6ff;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+/* Line Chart */
+.lineChart {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.chartLine {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 1s ease forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+.chartPoint {
+  opacity: 0;
+  animation: fadePoint 0.4s ease forwards;
+}
+
+@keyframes fadePoint {
+  to { opacity: 1; }
+}
+
+/* Forms */
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #cfffef;
+}
+
+.formRow input {
+  width: 120px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #00eaff;
+  background: rgba(0, 60, 80, 0.35);
+  color: #b2ffff;
+}
+
+/* Stake Box */
+.stakeBox {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0,255,255,0.08);
+  border-radius: 12px;
+}
+
+/* Simulator Buttons */
+.simButtons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btnWin {
+  background: #0aff7a;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnLoss {
+  background: #ff4f4f;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}

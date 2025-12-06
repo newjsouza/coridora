@@ -392,6 +392,30 @@ body {
 	background: #fb7185;
 }
 
+/* Status pill wrapping fix */
+.status-pill,
+.statusPill,
+.recommendation-status {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 10px;
+	border-radius: 999px;
+	font-size: 0.78rem;
+	line-height: 1.1;
+	max-width: 100%;
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+.status-pill span,
+.statusPill span,
+.recommendation-status span {
+	display: inline-block;
+	max-width: 100%;
+}
+
 /* CONFIDENCE BAR */
 
 .confidence-row {
