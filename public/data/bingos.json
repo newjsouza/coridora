@@ -1,24 +1,339 @@
-[
-  {
-    "id": 1,
-    "name": "Múltipla Rodada 33",
-    "selections": [
-      "Flamengo vence",
-      "Cruzeiro ou Empate",
-      "Over 2.5 em Bayern x Sporting"
-    ],
-    "odds": 13.41,
-    "betano_link": "https://www.betano.bet.br/bookingcode/GPCBUJRH"
+{
+  "atualizacao": "2025-12-05T09:05:00-03:00",
+  "meta": {
+    "titulo": "Bingo Responsivo - Especial Intercontinental",
+    "subtitulo": "Mesmo conteudo para desktop e mobile • Odds minimas 8.0x",
+    "aviso": "Verifique escalacoes 2h antes. Mirassol x Flamengo (06/12 • 18h30) esta marcado como contexto especial devido ao elenco Sub-20 rubro-negro.",
+    "fontes": "CBF, Betano, ESPN, UEFA, Sky Sport Italia",
+    "ultima_atualizacao_texto": "Atualizado em 05/12/2025 • 09h05 (UTC-3)"
   },
-  {
-    "id": 2,
-    "name": "Combo Inglaterra",
-    "selections": [
-      "Arsenal +1 escanteio em cada tempo",
-      "Ambas marcam em Brentford",
-      "Saka finaliza ao gol"
+  "resumo": {
+    "total_cards": 4,
+    "ligas_cobertas": [
+      "Brasileirao",
+      "La Liga",
+      "Premier League",
+      "Serie A",
+      "Champions League"
     ],
-    "odds": 9.85,
-    "betano_link": "https://www.betano.bet.br/bookingcode/ENGCOMBO1"
-  }
-]
+    "observacao": "Odds combinadas calculadas com cotacoes medias Betano; stake maxima recomendada 3% do bankroll."
+  },
+  "bingo_cards": [
+    {
+      "id": "bingo_brasileiro_r38",
+      "nome": "Bingo Brasileiro - Rodada 38",
+      "tipo": "padrao",
+      "liga": "brasileirao",
+      "descricao": "Acumule os 6 palpites da rodada final. Todos precisam bater para liberar o premio cheio.",
+      "odds_minima": 8.0,
+      "odds_total": 26.8,
+      "stake": "3% (GREEN)",
+      "status": "disponivel",
+      "cta_link": "https://www.betano.bet.br/bookingcode/BINGO-R38",
+      "palpites": [
+        {
+          "ordem": 1,
+          "icone": "BR",
+          "confronto": "Corinthians x Juventude",
+          "mercado": "Corinthians Vitoria",
+          "odds": 1.62,
+          "confianca": 85,
+          "status": "GREEN",
+          "motivo": "Corinthians em casa, Juventude em crise tecnica"
+        },
+        {
+          "ordem": 2,
+          "icone": "BR",
+          "confronto": "Botafogo x Fortaleza",
+          "mercado": "Botafogo Vitoria",
+          "odds": 1.85,
+          "confianca": 78,
+          "status": "GREEN",
+          "motivo": "Nilton Santos mantendo media de 2.5 xG pro mandante"
+        },
+        {
+          "ordem": 3,
+          "icone": "BR",
+          "confronto": "Fluminense x Bahia",
+          "mercado": "Over 2.5 gols",
+          "odds": 1.8,
+          "confianca": 72,
+          "status": "GREEN",
+          "motivo": "Dois ataques agressivos na rodada de despedida"
+        },
+        {
+          "ordem": 4,
+          "icone": "BR",
+          "confronto": "Vitoria x Sao Paulo",
+          "mercado": "Sao Paulo Vitoria",
+          "odds": 2.1,
+          "confianca": 72,
+          "status": "GREEN",
+          "motivo": "Tricolor leva base titular e chega mais ajustado"
+        },
+        {
+          "ordem": 5,
+          "icone": "BR",
+          "confronto": "Atletico-MG x Vasco",
+          "mercado": "Atletico-MG Vitoria",
+          "odds": 1.78,
+          "confianca": 75,
+          "status": "GREEN",
+          "motivo": "Arena MRV em alta, Galo completo contra defesa remendada"
+        },
+        {
+          "ordem": 6,
+          "icone": "BR",
+          "confronto": "Santos x Cruzeiro",
+          "mercado": "Ambas marcam",
+          "odds": 2.0,
+          "confianca": 68,
+          "status": "AMBER",
+          "motivo": "Times precisam vencer; tendencia de gols para os dois lados"
+        }
+      ],
+      "alternativas": [
+        {
+          "titulo": "Card alternativo",
+          "descricao": "Troque a perna arriscada por Sport Vitoria ou Empate (2.50)",
+          "odds_total": 24.5
+        }
+      ]
+    },
+    {
+      "id": "bingo_especial_intercontinental",
+      "nome": "Bingo Especial: Surpresa do Brasileirao",
+      "tipo": "especial",
+      "tema": "intercontinental_flamengo_sub20",
+      "liga": "multipla",
+      "descricao": "Card tematico combinando Mirassol x Flamengo (Sub-20) com favoritos europeus.",
+      "aviso_critico": "Flamengo leva apenas o Sub-20 a Mirassol. Delegacao principal embarca para Doha as 15h do sabado.",
+      "odds_minima": 8.0,
+      "odds_total": 47.2,
+      "stake": "1% (AMBER - alta incerteza)",
+      "status": "especial",
+      "disponivel_ate": "2025-12-06T18:30:00-03:00",
+      "cta_link": "https://www.betano.bet.br/bookingcode/BINGO-SURPRESA",
+      "palpites": [
+        {
+          "ordem": 1,
+          "icone": "BR",
+          "confronto": "Mirassol x Flamengo (Sub-20)",
+          "mercado": "Mirassol Vitoria",
+          "odds": 3.5,
+          "confianca": 72,
+          "status": "AMBER",
+          "motivo": "Base rubro-negra enfrenta elenco profissional completo. Melhor estreante em 23 anos.",
+          "analise_invertida": true,
+          "data": "2025-12-06",
+          "hora": "18:30"
+        },
+        {
+          "ordem": 2,
+          "icone": "ES",
+          "confronto": "Real Betis x Barcelona",
+          "mercado": "Barcelona Vitoria",
+          "odds": 1.72,
+          "confianca": 82,
+          "status": "GREEN",
+          "motivo": "Lider enfrenta equipe inconsistente e mantem forca maxima"
+        },
+        {
+          "ordem": 3,
+          "icone": "GB",
+          "confronto": "Leeds x Liverpool",
+          "mercado": "Liverpool Vitoria",
+          "odds": 2.1,
+          "confianca": 88,
+          "status": "GREEN",
+          "motivo": "Desigualdade tecnica e disputa pela lideranca"
+        },
+        {
+          "ordem": 4,
+          "icone": "IT",
+          "confronto": "Inter x Como",
+          "mercado": "Inter Vitoria",
+          "odds": 1.32,
+          "confianca": 91,
+          "status": "GREEN",
+          "motivo": "Favoritismo amplo contra equipe recem-promovida"
+        },
+        {
+          "ordem": 5,
+          "icone": "EU",
+          "confronto": "Bayern x Sporting (Champions)",
+          "mercado": "Bayern Vitoria",
+          "odds": 1.35,
+          "confianca": 89,
+          "status": "GREEN",
+          "motivo": "Maquina ofensiva bavara em fase eliminatoria"
+        },
+        {
+          "ordem": 6,
+          "icone": "EU",
+          "confronto": "Real Madrid x Manchester City",
+          "mercado": "Real Madrid Vitoria",
+          "odds": 2.4,
+          "confianca": 61,
+          "status": "AMBER",
+          "motivo": "Classico equilibrado; Bernabeu e calendario favorecem o mandante"
+        }
+      ],
+      "alternativas": [
+        {
+          "titulo": "Versao conservadora",
+          "descricao": "Substitua Mirassol Vitoria por dupla chance e reduza odds totais para ~32.0x",
+          "odds_total": 32.0
+        }
+      ]
+    },
+    {
+      "id": "bingo_europeu_classico",
+      "nome": "Bingo Europeu - Classico Multiligas",
+      "tipo": "padrao",
+      "liga": "europeu",
+      "descricao": "Seis favoritos das principais competicoes do continente com foco em consistencia.",
+      "odds_minima": 6.0,
+      "odds_total": 6.3,
+      "stake": "2% (GREEN)",
+      "status": "disponivel",
+      "cta_link": "https://www.betano.bet.br/bookingcode/BINGO-EUR",
+      "palpites": [
+        {
+          "ordem": 1,
+          "icone": "ES",
+          "confronto": "Real Betis x Barcelona",
+          "mercado": "Barcelona Vitoria",
+          "odds": 1.72,
+          "confianca": 82,
+          "status": "GREEN",
+          "motivo": "Melhor ataque da La Liga encarando defesa vazada"
+        },
+        {
+          "ordem": 2,
+          "icone": "GB",
+          "confronto": "Manchester City x Sunderland",
+          "mercado": "Manchester City Vitoria",
+          "odds": 1.18,
+          "confianca": 94,
+          "status": "GREEN",
+          "motivo": "Diferenca tecnica brutal e 100% em casa"
+        },
+        {
+          "ordem": 3,
+          "icone": "IT",
+          "confronto": "Inter x Como",
+          "mercado": "Inter Vitoria",
+          "odds": 1.32,
+          "confianca": 91,
+          "status": "GREEN",
+          "motivo": "Inter poupa pouco e domina no Giuseppe Meazza"
+        },
+        {
+          "ordem": 4,
+          "icone": "EU",
+          "confronto": "Bayern x Sporting",
+          "mercado": "Bayern Vitoria",
+          "odds": 1.35,
+          "confianca": 89,
+          "status": "GREEN",
+          "motivo": "Ataque bavaro produz 3.3 gols por jogo"
+        },
+        {
+          "ordem": 5,
+          "icone": "EU",
+          "confronto": "Barcelona x Frankfurt (Champions)",
+          "mercado": "Barcelona Vitoria",
+          "odds": 1.32,
+          "confianca": 84,
+          "status": "GREEN",
+          "motivo": "Camp Nou decisivo com elenco completo"
+        },
+        {
+          "ordem": 6,
+          "icone": "EU",
+          "confronto": "PSG x Athletic",
+          "mercado": "PSG Vitoria",
+          "odds": 1.78,
+          "confianca": 78,
+          "status": "GREEN",
+          "motivo": "Mbappe lidera fase inspirada em casa"
+        }
+      ]
+    },
+    {
+      "id": "bingo_europeu_value",
+      "nome": "Bingo Europeu Premium - Value",
+      "tipo": "premium",
+      "liga": "europeu",
+      "descricao": "Seis selecoes com value comprovado para multiplicar a stake sem depender apenas de favoritos.",
+      "odds_minima": 8.0,
+      "odds_total": 23.7,
+      "stake": "1.5% (GREEN)",
+      "status": "disponivel",
+      "cta_link": "https://www.betano.bet.br/bookingcode/BINGO-VALUE",
+      "palpites": [
+        {
+          "ordem": 1,
+          "icone": "ES",
+          "confronto": "Athletic x Atletico de Madrid",
+          "mercado": "Over 9.5 escanteios",
+          "odds": 2.1,
+          "confianca": 71,
+          "status": "AMBER",
+          "motivo": "Athletic lidera corners (10.3 por jogo) enquanto Atletico sofre 7.8 fora"
+        },
+        {
+          "ordem": 2,
+          "icone": "GB",
+          "confronto": "Manchester City x Sunderland",
+          "mercado": "Manchester City Vitoria",
+          "odds": 1.18,
+          "confianca": 94,
+          "status": "GREEN",
+          "motivo": "Base segura que sustenta o acumulado"
+        },
+        {
+          "ordem": 3,
+          "icone": "IT",
+          "confronto": "Inter x Como",
+          "mercado": "Inter Vitoria",
+          "odds": 1.32,
+          "confianca": 91,
+          "status": "GREEN",
+          "motivo": "Value 24.3% segundo APEX-ML"
+        },
+        {
+          "ordem": 4,
+          "icone": "EU",
+          "confronto": "Bayern x Sporting",
+          "mercado": "Bayern Vitoria",
+          "odds": 1.35,
+          "confianca": 89,
+          "status": "GREEN",
+          "motivo": "Value 21.5% mantendo consistencia"
+        },
+        {
+          "ordem": 5,
+          "icone": "ES",
+          "confronto": "Real Madrid x Celta",
+          "mercado": "Over 2.5 gols",
+          "odds": 2.45,
+          "confianca": 88,
+          "status": "GREEN",
+          "motivo": "Value 39.3% com soma de xG em 4.9"
+        },
+        {
+          "ordem": 6,
+          "icone": "FR",
+          "confronto": "PSG x Athletic",
+          "mercado": "PSG Vitoria",
+          "odds": 1.78,
+          "confianca": 78,
+          "status": "GREEN",
+          "motivo": "Fechamento com time dominante no Parc des Princes"
+        }
+      ]
+    }
+  ]
+}

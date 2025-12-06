@@ -1,0 +1,35 @@
+// Tipagens oficiais do Coridora APEX-ML
+
+export interface Match {
+  id: string;
+  league: string;
+  home: string;
+  away: string;
+  date: string;
+  time: string;
+  status?: "scheduled" | "in_progress" | "finished";
+}
+
+export interface AnalysisResult {
+  matchId: string;
+  confidence: number;
+  recommendation: string;
+  reasoning: string;
+  odds?: {
+    fair: number;
+    market: number;
+  };
+  factCheck: FactCheckStatus;
+}
+
+export interface FactCheckStatus {
+  level: "ok" | "warning" | "critical";
+  message: string;
+  sourcesChecked: string[];
+}
+
+export interface LeagueOption {
+  id: string;
+  name: string;
+  code: string;
+}
