@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppStore } from "@store/useAppStore";
-import StatusBadge from "./StatusBadge";
+import { StatusBadge } from "@components/StatusBadge";
 import { BetHighlight } from "@features/bets/BetHighlight";
 import "@/features/bets/bets.css";
 
@@ -33,7 +33,18 @@ export default function RecommendationPanel() {
             {selectedMatch.date} · {selectedMatch.time}
           </p>
         </div>
-        {analysis?.factCheck && <StatusBadge status={analysis.factCheck} />}
+        {analysis?.factCheck && (
+          <StatusBadge
+            text={analysis.factCheck.message}
+            type={
+              analysis.factCheck.level === "warning"
+                ? "warn"
+                : analysis.factCheck.level === "critical"
+                  ? "danger"
+                  : "ok"
+            }
+          />
+        )}
       </div>
 
       {loading && <p className="loading">Carregando análise...</p>}

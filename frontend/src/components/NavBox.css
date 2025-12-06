@@ -1,0 +1,37 @@
+.navbox {
+  background: rgba(0, 30, 45, 0.5);
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 22px;
+  border: 1px solid rgba(0, 255, 200, 0.18);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.08);
+}
+
+.navbox-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ccf9ff;
+  margin-bottom: 14px;
+}
+
+.navbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.navbox-btn {
+  padding: 14px;
+  background: rgba(0, 255, 180, 0.12);
+  border: 1px solid rgba(0, 255, 180, 0.35);
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbox-btn:hover {
+  background: rgba(0, 255, 200, 0.25);
+  scale: 1.03;
+}

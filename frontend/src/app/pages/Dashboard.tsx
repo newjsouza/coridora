@@ -30,6 +30,7 @@ import GraphsPage from "@/mobilePages/GraphsPage";
 import IAPage from "@/mobilePages/IAPage";
 import FinancePage from "@/mobilePages/FinancePage";
 import ScenariosPage from "@/mobilePages/ScenariosPage";
+import { NavBox } from "@components/NavBox";
 
 export function Dashboard() {
   const { selectedMatch } = useAppStore();
@@ -64,6 +65,8 @@ export function Dashboard() {
               {selectedMatch && (
                 <>
                   <MiniSummary match={selectedMatch} />
+                <NavBox />
+
                   <MatchKPI match={selectedMatch} />
                 </>
               )}
