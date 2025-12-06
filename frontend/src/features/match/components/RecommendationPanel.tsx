@@ -2,6 +2,7 @@ import React from "react";
 import { useAppStore } from "@store/useAppStore";
 import StatusBadge from "./StatusBadge";
 import { BetHighlight } from "@features/bets/BetHighlight";
+import "@/features/bets/bets.css";
 
 export default function RecommendationPanel() {
   const { selectedMatch, analysis, loading } = useAppStore();
