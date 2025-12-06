@@ -39,7 +39,7 @@ export default function RecommendationPanel() {
       {loading && <p className="loading">Carregando análise...</p>}
 
       {!loading && analysis && (
-        <>
+        <div className="analysisGrid">
           {analysis.mainBet && (
             <BetHighlight
               title={analysis.mainBet.title}
@@ -81,7 +81,7 @@ export default function RecommendationPanel() {
               </p>
             </div>
           )}
-        </>
+        </div>
       )}
 
       {!loading && !analysis && (

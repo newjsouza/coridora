@@ -178,10 +178,51 @@
   height: 210px;
 }
 
+
 .circle2 {
   width: 160px;
   height: 160px;
+
 }
+
+  /* Garante que NENHUM card seja ocultado */
+  .betHighlightPanel,
+  .probabilityCard,
+  .heatmapCard,
+  .scenarioCard,
+  .analysisBox,
+  .marketCard {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Ajusta grids para empilhar verticalmente */
+  .analysisGrid,
+  .marketGrid,
+  .scenarioGrid,
+  .probabilityGrid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* Garante que nada dependa de largura mínima */
+  .betHighlightPanel,
+  .probabilityCard,
+  .heatmapCard,
+  .scenarioCard {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Força texto a não quebrar errado */
+  .betTitle,
+  .betReasoning,
+  .betCategory {
+    white-space: normal !important;
+  }
 
 .circle3 {
   width: 110px;
