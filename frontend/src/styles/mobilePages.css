@@ -1,0 +1,29 @@
+.mobilePage {
+  background: #0b111b;
+  min-height: 100vh;
+  padding: 16px;
+  color: #e8faff;
+}
+
+.mobilePageHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.backBtn {
+  background: #0af0c5;
+  color: #001;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #0af0c588;
+}
+
+.mobilePageContent {
+  font-size: 16px;
+  line-height: 1.5;
+}

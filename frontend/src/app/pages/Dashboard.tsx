@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "@components/Layout";
 import LeagueSelector from "@features/match/components/LeagueSelector";
 import MatchList from "@features/match/components/MatchList";
@@ -15,7 +15,6 @@ import TeamCard from "@features/match/components/TeamCard";
 import Heatmap from "@features/match/components/Heatmap";
 import MiniSummary from "@features/match/components/MiniSummary";
 import MatchKPI from "@features/match/components/MatchKPI";
-import MobileTabs from "@features/match/components/MobileTabs";
 import { AnalysisFlow } from "@features/analysis/AnalysisFlow";
 import { PatternChart } from "@features/analysis/PatternChart";
 import { AIExplanation } from "@features/analysis/AIExplanation";
@@ -25,34 +24,17 @@ import { BankSimulator } from "@features/advanced/BankSimulator";
 import { TacticalHeatmap } from "@features/tactical/TacticalHeatmap";
 import { FactCheckPanel } from "@features/factcheck/FactCheckPanel";
 import { useAppStore } from "@store/useAppStore";
+import InsightsPage from "@/mobilePages/InsightsPage";
+import AnalysisPage from "@/mobilePages/AnalysisPage";
+import GraphsPage from "@/mobilePages/GraphsPage";
+import IAPage from "@/mobilePages/IAPage";
+import FinancePage from "@/mobilePages/FinancePage";
+import ScenariosPage from "@/mobilePages/ScenariosPage";
 
 export function Dashboard() {
   const { selectedMatch } = useAppStore();
-
-  const mobileTabs = selectedMatch
-    ? [
-        { id: "insights", label: "Insights", content: <MiniSummary match={selectedMatch} /> },
-        { id: "analysis", label: "Análise", content: <AnalysisFlow /> },
-        { id: "charts", label: "Gráficos", content: <PatternChart /> },
-        { id: "ia", label: "IA", content: <AIExplanation match={selectedMatch} /> },
-        {
-          id: "finance",
-          label: "Financeiro",
-          content: (
-            <>
-              <TrendLineChart />
-              <KellyCalculator />
-              <BankSimulator />
-            </>
-          ),
-        },
-        {
-          id: "factcheck",
-          label: "Fact-Check",
-          content: <FactCheckPanel matchId={selectedMatch?.id ?? "001"} />,
-        },
-      ]
-    : [];
+  const isMobile = typeof window !== "undefined" ? window.innerWidth < 600 : false;
+  const [activeMobilePage, setActiveMobilePage] = useState<string | null>(null);
 
   return (
     <Layout>
@@ -68,8 +50,9 @@ export function Dashboard() {
             <MatchList />
           </div>
           <div className="dashboard-col dashboard-col-analysis">
+            <RecommendationPanel />
+
             <div className="desktopOnly">
-              <RecommendationPanel />
               <TacticalHeatmap />
               <FactCheckPanel matchId={selectedMatch?.id ?? "001"} />
               <AnalysisFlow />
@@ -122,7 +105,33 @@ export function Dashboard() {
               )}
             </div>
 
-            {selectedMatch && <MobileTabs items={mobileTabs} />}
+            {selectedMatch && isMobile && !activeMobilePage && (
+              <div className="mobileTabButtons">
+                <button onClick={() => setActiveMobilePage("insights")}>Insights</button>
+                <button onClick={() => setActiveMobilePage("analysis")}>Análise</button>
+                <button onClick={() => setActiveMobilePage("graphs")}>Gráficos</button>
+                <button onClick={() => setActiveMobilePage("ia")}>IA</button>
+                <button onClick={() => setActiveMobilePage("finance")}>Financeiro</button>
+                <button onClick={() => setActiveMobilePage("scenarios")}>Cenários</button>
+              </div>
+            )}
+
+            {activeMobilePage === "insights" && (
+              <InsightsPage onBack={() => setActiveMobilePage(null)} />
+            )}
+            {activeMobilePage === "analysis" && (
+              <AnalysisPage onBack={() => setActiveMobilePage(null)} />
+            )}
+            {activeMobilePage === "graphs" && (
+              <GraphsPage onBack={() => setActiveMobilePage(null)} />
+            )}
+            {activeMobilePage === "ia" && <IAPage onBack={() => setActiveMobilePage(null)} />}
+            {activeMobilePage === "finance" && (
+              <FinancePage onBack={() => setActiveMobilePage(null)} />
+            )}
+            {activeMobilePage === "scenarios" && (
+              <ScenariosPage onBack={() => setActiveMobilePage(null)} />
+            )}
           </div>
         </div>
       </section>
