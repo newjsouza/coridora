@@ -1,0 +1,82 @@
+.top-header {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(0, 18, 32, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,255,200,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  color: #aefcff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-desktop button {
+  background: transparent;
+  border: none;
+  color: #e8ffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.nav-desktop button:hover {
+  background: rgba(0,255,200,0.15);
+}
+
+/* MOBILE BUTTON */
+.menu-btn {
+  display: none;
+  background: rgba(0,255,180,0.17);
+  border: 1px solid rgba(0,255,180,0.3);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background: rgba(0, 20, 32, 0.95);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: slide 0.25s ease forwards;
+}
+
+@keyframes slide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-menu button {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,200,0.25);
+  background: rgba(0,255,200,0.1);
+  color: white;
+  font-size: 17px;
+}
+
+@media (max-width: 820px) {
+  .nav-desktop { display: none; }
+  .menu-btn { display: block; }
+}

@@ -2,16 +2,17 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useNavigationStore } from "@store/useNavigationStore";
 import { NavBar } from "@components/NavBar";
+import { Header } from "./components/Header";
 
 import { Dashboard } from "@app/pages/Dashboard";
 import { Methodology } from "@app/pages/Methodology";
 import { Disclaimer } from "@app/pages/Disclaimer";
-import { Insights } from "./pages/subpages/Insights";
-import { Analise } from "./pages/subpages/Analise";
-import { Graficos } from "./pages/subpages/Graficos";
-import { IA } from "./pages/subpages/IA";
-import { Financeiro } from "./pages/subpages/Financeiro";
-import { Cenarios } from "./pages/subpages/Cenarios";
+import { Insights } from "./pages/Insights";
+import { Analise } from "./pages/Analise";
+import { Graficos } from "./pages/Graficos";
+import { IA } from "./pages/IA";
+import { Financeiro } from "./pages/Financeiro";
+import { Cenarios } from "./pages/Cenarios";
 
 import "./styles.css";
 
@@ -35,6 +36,7 @@ export default function App() {
     <BrowserRouter>
       <div className="app-container">
         <NavBar />
+        <Header />
         <Routes>
           <Route path="/" element={renderPage()} />
           <Route path="/insights" element={<Insights />} />
