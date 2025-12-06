@@ -51,6 +51,13 @@ export const mockAnalysis: AnalysisResult[] = [
 		reasoning:
 			"Flamengo e Botafogo vêm de jogos com alta produção ofensiva. Linhas de ataque fortes, defesas expostas e tendência de jogos abertos em clássico carioca.",
 		odds: { fair: 1.72, market: 1.85 },
+		mainBet: {
+			title: "+2.5 gols ou ambas marcam",
+			fairOdd: 1.72,
+			marketOdd: 1.85,
+			reasoning:
+				"Flamengo e Botafogo vêm de jogos com alta produção ofensiva. Defesa exposta do Botafogo aumenta probabilidade de jogo aberto.",
+		},
 		factCheck: {
 			level: "ok",
 			message: "Dados recentes de desempenho ofensivo confirmados em múltiplas fontes.",
@@ -64,6 +71,13 @@ export const mockAnalysis: AnalysisResult[] = [
 		reasoning:
 			"City é favorito claro em casa, com controle de posse e criação de chances acima da média. Chelsea em fase de reconstrução, devendo adotar postura mais reativa.",
 		odds: { fair: 1.55, market: 1.60 },
+		mainBet: {
+			title: "City vence + under 4.5 gols",
+			fairOdd: 1.55,
+			marketOdd: 1.60,
+			reasoning:
+				"Favoritismo do City com tendência de jogo controlado. Chelsea reativo reduz risco de placar elástico.",
+		},
 		factCheck: {
 			level: "ok",
 			message: "Favoritismo consistente em casas e modelos estatísticos.",
@@ -78,6 +92,13 @@ export const mockAnalysis: AnalysisResult[] = [
 		reasoning:
 			"Clássico de altíssima variância entre Real Madrid e Barcelona. Linha de escanteios costuma ser alta devido ao volume ofensivo de ambos, mas resultado é imprevisível.",
 		odds: { fair: 1.90, market: 2.00 },
+		mainBet: {
+			title: "Over 9.5 escanteios",
+			fairOdd: 1.9,
+			marketOdd: 2.0,
+			reasoning:
+				"Volume ofensivo alto dos dois lados gera muitos cruzamentos e escanteios; resultado final é imprevisível.",
+		},
 		factCheck: {
 			level: "warning",
 			message: "Histórico recente mostra grandes oscilações de desempenho entre as equipes.",
@@ -91,6 +112,13 @@ export const mockAnalysis: AnalysisResult[] = [
 		reasoning:
 			"Atlético tende a jogos controlados em casa, com defesa sólida. Sevilla oscila bastante ofensivamente, o que sugere partida mais travada.",
 		odds: { fair: 1.80, market: 1.88 },
+		mainBet: {
+			title: "Under 3.5 + dupla chance mandante",
+			fairOdd: 1.8,
+			marketOdd: 1.88,
+			reasoning:
+				"Atlético seguro defensivamente em casa; Sevilla irregular no ataque indica jogo mais fechado com vantagem do mandante.",
+		},
 		factCheck: {
 			level: "ok",
 			message: "Tendências defensivas confirmadas nos últimos 10 jogos oficiais.",

@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppStore } from "@store/useAppStore";
 import StatusBadge from "./StatusBadge";
+import { BetHighlight } from "@features/bets/BetHighlight";
 
 export default function RecommendationPanel() {
   const { selectedMatch, analysis, loading } = useAppStore();
@@ -38,6 +39,15 @@ export default function RecommendationPanel() {
 
       {!loading && analysis && (
         <>
+          {analysis.mainBet && (
+            <BetHighlight
+              title={analysis.mainBet.title}
+              confidence={analysis.confidence}
+              odds={{ fair: analysis.mainBet.fairOdd, market: analysis.mainBet.marketOdd }}
+              reasoning={analysis.mainBet.reasoning}
+            />
+          )}
+
           <div className="confidence-row">
             <span>Confiança</span>
             <span className="confidence-value">{analysis.confidence}%</span>

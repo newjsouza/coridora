@@ -19,6 +19,13 @@ export interface AnalysisResult {
     fair: number;
     market: number;
   };
+  mainBet?: {
+    title: string;
+    fairOdd: number;
+    marketOdd: number;
+    reasoning: string;
+    category?: string;
+  };
   factCheck: FactCheckStatus;
 }
 
