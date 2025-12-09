@@ -11,19 +11,14 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 
 // ------------------------------------------------------------
-// ROTAS DE API (CORIDORA API v1)
+// MODO MANUTENÇÃO (exibe aviso e desabilita rotas/API)
 // ------------------------------------------------------------
-app.use("/api", apiRouter);
-
-// ------------------------------------------------------------
-// FRONTEND REACT (VITE BUILD)
-// ------------------------------------------------------------
-const distPath = path.join(__dirname, "frontend", "dist");
-
-app.use(express.static(distPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
+app.use((req, res) => {
+  res
+    .status(503)
+    .send(
+      "A página está momentaneamente fora do ar para manutenção. Tente novamente em alguns minutos."
+    );
 });
 
 // ------------------------------------------------------------
