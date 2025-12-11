@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { TopTabs } from "../components/TopTabs";
 import { betCards } from "./sharedData";
 import "./ReportPage.css";
 
 export const BetsPage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="report-root">
       <TopTabs active="apostas" />
@@ -38,7 +41,9 @@ export const BetsPage: React.FC = () => {
               </div>
               <div className="bet-footer">
                 <span>Proteção on</span>
-                <button className="btn-bet">APOSTAR</button>
+                <button className="btn-bet" onClick={() => navigate(`/aposta/${bet.slug}`)}>
+                  MAIS DETALHES
+                </button>
               </div>
             </div>
           ))}
