@@ -131,38 +131,6 @@ export const ReportPage: React.FC = () => {
         </div>
       </main>
 
-      <nav className="bottom-nav">
-        <button className="bottom-item active">
-          <span className="icon" aria-hidden>
-            🏠
-          </span>
-          <span>Home</span>
-        </button>
-        <button className="bottom-item">
-          <span className="icon" aria-hidden>
-            ⚽
-          </span>
-          <span>Eventos</span>
-        </button>
-        <button className="bottom-item">
-          <span className="icon" aria-hidden>
-            🔍
-          </span>
-          <span>Busca</span>
-        </button>
-        <button className="bottom-item">
-          <span className="icon" aria-hidden>
-            🎟️
-          </span>
-          <span>Bilhetes</span>
-        </button>
-        <button className="bottom-item">
-          <span className="icon" aria-hidden>
-            👤
-          </span>
-          <span>Perfil</span>
-        </button>
-      </nav>
     </div>
   );
 };
