@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
     <>
       <header className="top-header">
         <div className="logo" onClick={() => go("/")}>
-          CORIDORA · APEX-ML
+          APEX-ML
         </div>
 
         {/* Desktop Navigation */}

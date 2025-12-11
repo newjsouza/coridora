@@ -1,4 +1,4 @@
-// Tipagens oficiais do Coridora APEX-ML
+// Tipagens oficiais do APEX-ML
 
 export interface Match {
   id: string;

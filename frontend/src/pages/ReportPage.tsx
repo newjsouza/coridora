@@ -1,19 +1,17 @@
 import React from "react";
 import "./ReportPage.css";
-import { AppHeader } from "../components/AppHeader";
 import { TopTabs } from "../components/TopTabs";
 import { betCards, tableRows } from "./sharedData";
 
 export const ReportPage: React.FC = () => {
   return (
     <div className="report-root">
-      <AppHeader />
 
       <TopTabs active="home" />
 
       <main className="page">
         <div className="section-title">
-          <span>Melhores palpites (Coridora)</span>
+          <span>Melhores palpites (APEX-ML)</span>
           <span className="section-subtitle">Atualizado em tempo real</span>
         </div>
         <div className="chip-row">
@@ -26,7 +24,7 @@ export const ReportPage: React.FC = () => {
 
         <div className="hero-card">
           <div className="hero-header">
-            <span className="hero-label">Selecionado pelo Coridora</span>
+            <span className="hero-label">Selecionado pelo APEX-ML</span>
             <span className="hero-badge">
               Confiança 89% <span aria-hidden>✅</span>
             </span>
@@ -92,7 +90,7 @@ export const ReportPage: React.FC = () => {
 
         <details className="details" open>
           <summary>
-            Por que Coridora? <span>+ info</span>
+            Por que APEX-ML? <span>+ info</span>
           </summary>
           <p>
             Selecionamos apenas odds com valor esperado positivo, protegendo variância e trazendo apostas

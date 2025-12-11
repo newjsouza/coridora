@@ -1,5 +1,4 @@
 import React from "react";
-import { AppHeader } from "../components/AppHeader";
 import { TopTabs } from "../components/TopTabs";
 import "./ReportPage.css";
 
@@ -20,7 +19,6 @@ const warnings = [
 
 export const WarningsPage: React.FC = () => (
   <div className="report-root">
-    <AppHeader />
     <TopTabs active="avisos" />
 
     <main className="page">

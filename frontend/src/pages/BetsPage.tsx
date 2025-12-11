@@ -1,5 +1,4 @@
 import React from "react";
-import { AppHeader } from "../components/AppHeader";
 import { TopTabs } from "../components/TopTabs";
 import { betCards } from "./sharedData";
 import "./ReportPage.css";
@@ -7,7 +6,6 @@ import "./ReportPage.css";
 export const BetsPage: React.FC = () => {
   return (
     <div className="report-root">
-      <AppHeader />
       <TopTabs active="apostas" />
 
       <main className="page">

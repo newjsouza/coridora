@@ -1,11 +1,9 @@
 import React from "react";
-import { AppHeader } from "../components/AppHeader";
 import { TopTabs } from "../components/TopTabs";
 import "./ReportPage.css";
 
 export const ChartsPage: React.FC = () => (
   <div className="report-root">
-    <AppHeader />
     <TopTabs active="graficos" />
 
     <main className="page">

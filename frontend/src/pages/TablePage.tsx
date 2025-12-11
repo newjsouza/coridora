@@ -1,12 +1,10 @@
 import React from "react";
-import { AppHeader } from "../components/AppHeader";
 import { TopTabs } from "../components/TopTabs";
 import { tableRows } from "./sharedData";
 import "./ReportPage.css";
 
 export const TablePage: React.FC = () => (
   <div className="report-root">
-    <AppHeader />
     <TopTabs active="tabelas" />
 
     <main className="page">

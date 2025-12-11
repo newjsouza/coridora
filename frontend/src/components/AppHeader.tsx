@@ -5,8 +5,8 @@ export const AppHeader: React.FC = () => (
     <div className="app-header-left">
       <div className="logo-circle">B</div>
       <div className="app-title">
-        <span>Betano</span>
-        <span>Coridora especial</span>
+        <span>APEX-ML</span>
+        <span>Especial</span>
       </div>
     </div>
     <div className="app-header-right">
