@@ -31,9 +31,7 @@ export const TablePage: React.FC = () => (
                 <td>{row.pick}</td>
                 <td>{row.odd}</td>
                 <td>
-                  <span className={`pill-status ${row.confidence === "82%" ? "red" : ""}`}>
-                    {row.confidence}
-                  </span>
+                  <span className="pill-status">{row.confidence}</span>
                 </td>
                 <td>{row.stake}</td>
               </tr>

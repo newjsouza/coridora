@@ -11,51 +11,49 @@ export const ReportPage: React.FC = () => {
 
       <main className="page">
         <div className="section-title">
-          <span>Melhores palpites (APEX-ML)</span>
-          <span className="section-subtitle">Atualizado em tempo real</span>
+          <span>Relatório corrigido APEX-ML</span>
+          <span className="section-subtitle">Mandos, odds e contexto revisados</span>
         </div>
         <div className="chip-row">
           <span className="chip green">Análise humana</span>
-          <span className="chip green">Odds otimizadas</span>
-          <span className="chip green">Variância protegida</span>
-          <span className="chip green">Live monitor</span>
+          <span className="chip green">Contexto corrigido</span>
+          <span className="chip green">Mandos validados</span>
           <span className="chip orange">Stake inteligente</span>
+          <span className="chip green">Live monitor</span>
         </div>
 
         <div className="hero-card">
           <div className="hero-header">
-            <span className="hero-label">Selecionado pelo APEX-ML</span>
-            <span className="hero-badge">
-              Confiança 89% <span aria-hidden>✅</span>
-            </span>
+            <span className="hero-label">Relatório Corrigido · Aposta #1</span>
+            <span className="hero-badge">Confiança 83% ✅</span>
           </div>
           <div className="hero-main">
             <div className="hero-teams">
-              Espanha x Inglaterra
+              Vasco vs Fluminense
               <br />
-              <small>Liga das Nações UEFA</small>
+              <small>São Januário · 20h00 BRT</small>
             </div>
             <div className="hero-odd">
               <span className="hero-odd-label">ODD</span>
-              <span className="hero-odd-value">1.70</span>
+              <span className="hero-odd-value">2.15 - 2.50</span>
             </div>
           </div>
           <div className="hero-meta">
-            <span>13h30 BRT</span>
-            <span>ODD +8% acima</span>
+            <span>Stake 4% banca</span>
+            <span>Mandante confirmado: Vasco</span>
           </div>
           <div className="hero-progress">
-            <div className="hero-progress-bar" style={{ width: "89%" }} />
+            <div className="hero-progress-bar" style={{ width: "83%" }} />
           </div>
           <div className="hero-meta" style={{ marginTop: 6 }}>
-            <span>1.17 3+ Escanteios Inglaterra</span>
-            <span>2.29 Inglaterra - Escanteios Total</span>
+            <span>Fator casa: +15pp psicológico</span>
+            <span>Árbitro: Raphael Claus (2.8 cartões/jogo)</span>
           </div>
         </div>
 
         <div className="section-title">
-          <span>Melhores odds</span>
-          <span className="section-subtitle">Atualizado às 12:04</span>
+          <span>Apostas revisadas</span>
+          <span className="section-subtitle">Mandos e correções aplicadas</span>
         </div>
 
         <div className="bets-carousel">
@@ -90,16 +88,18 @@ export const ReportPage: React.FC = () => {
 
         <details className="details" open>
           <summary>
-            Por que APEX-ML? <span>+ info</span>
+            Correções críticas <span>verificado</span>
           </summary>
           <p>
-            Selecionamos apenas odds com valor esperado positivo, protegendo variância e trazendo apostas
-            que combinam análise humana com otimização em tempo real.
+            Atualização completa: Vasco é mandante em São Januário (não Maracanã), invertendo o racional
+            para vitória do Vasco com confiança mantida em 83% e stake de 4%.
           </p>
           <ul>
-            <li>Line shopping automático para buscar melhores preços.</li>
-            <li>Proteção por stake inteligente para evitar picos de perda.</li>
-            <li>Monitoramento live para cortar apostas ruins antes do cashout.</li>
+            <li>Vasco mandante confirmado via CBF (Raphael Claus) – fator casa +15pp.</li>
+            <li>Basel vs Aston Villa: St. Jakob-Park; mandância correta.</li>
+            <li>Nottingham vs Utrecht: visitante favorito; texto ajustado.</li>
+            <li>Betis vs Dinamo Zagreb: Betis é visitante no Maksimir.</li>
+            <li>Demais apostas (#4, #6 e correlatas) mantidas; contexto validado.</li>
           </ul>
         </details>
 
@@ -121,9 +121,7 @@ export const ReportPage: React.FC = () => {
                   <td>{row.pick}</td>
                   <td>{row.odd}</td>
                   <td>
-                    <span className={`pill-status ${row.confidence === "82%" ? "red" : ""}`}>
-                      {row.confidence}
-                    </span>
+                    <span className="pill-status">{row.confidence}</span>
                   </td>
                   <td>{row.stake}</td>
                 </tr>
