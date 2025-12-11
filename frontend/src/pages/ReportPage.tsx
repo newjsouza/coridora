@@ -11,49 +11,49 @@ export const ReportPage: React.FC = () => {
 
       <main className="page">
         <div className="section-title">
-          <span>Relatório corrigido APEX-ML</span>
-          <span className="section-subtitle">Mandos, odds e contexto revisados</span>
+          <span>Relatório APEX Sports Analytics · 11/12/2025</span>
+          <span className="section-subtitle">10 indicações consolidadas · Copas + Europa League</span>
         </div>
         <div className="chip-row">
           <span className="chip green">Análise humana</span>
-          <span className="chip green">Contexto corrigido</span>
-          <span className="chip green">Mandos validados</span>
-          <span className="chip orange">Stake inteligente</span>
-          <span className="chip green">Live monitor</span>
+          <span className="chip green">10 indicações</span>
+          <span className="chip green">Stake total 31.5%</span>
+          <span className="chip orange">Kelly 0.25</span>
+          <span className="chip green">Stop-loss 12%</span>
         </div>
 
         <div className="hero-card">
           <div className="hero-header">
-            <span className="hero-label">Relatório Corrigido · Aposta #1</span>
+            <span className="hero-label">Aposta #1 · Conservadora</span>
             <span className="hero-badge">Confiança 83% ✅</span>
           </div>
           <div className="hero-main">
             <div className="hero-teams">
-              Vasco vs Fluminense
+              Fluminense vs Vasco
               <br />
-              <small>São Januário · 20h00 BRT</small>
+              <small>Maracanã · 20h00 BRT</small>
             </div>
             <div className="hero-odd">
               <span className="hero-odd-label">ODD</span>
-              <span className="hero-odd-value">2.15 - 2.50</span>
+              <span className="hero-odd-value">1.80 - 2.10</span>
             </div>
           </div>
           <div className="hero-meta">
             <span>Stake 4% banca</span>
-            <span>Mandante confirmado: Vasco</span>
+            <span>Risco Baixo-Médio</span>
           </div>
           <div className="hero-progress">
             <div className="hero-progress-bar" style={{ width: "83%" }} />
           </div>
           <div className="hero-meta" style={{ marginTop: 6 }}>
-            <span>Fator casa: +15pp psicológico</span>
+            <span>Forma Flu: 7/8 invicto · +15pp psicológico</span>
             <span>Árbitro: Raphael Claus (2.8 cartões/jogo)</span>
           </div>
         </div>
 
         <div className="section-title">
-          <span>Apostas revisadas</span>
-          <span className="section-subtitle">Mandos e correções aplicadas</span>
+          <span>10 apostas do dia</span>
+          <span className="section-subtitle">Copa do Brasil, Challenge Cup, Europa League</span>
         </div>
 
         <div className="bets-carousel">
@@ -88,18 +88,18 @@ export const ReportPage: React.FC = () => {
 
         <details className="details" open>
           <summary>
-            Correções críticas <span>verificado</span>
+            Resumo executivo <span>validado</span>
           </summary>
           <p>
-            Atualização completa: Vasco é mandante em São Januário (não Maracanã), invertendo o racional
-            para vitória do Vasco com confiança mantida em 83% e stake de 4%.
+            Quinta 11/12 concentra semifinais (Copa do Brasil) e 6ª rodada decisiva da Europa League.
+            Pressão alta gera valor em gols, escanteios e cartões, além de moneylines com vantagem técnica.
           </p>
           <ul>
-            <li>Vasco mandante confirmado via CBF (Raphael Claus) – fator casa +15pp.</li>
-            <li>Basel vs Aston Villa: St. Jakob-Park; mandância correta.</li>
-            <li>Nottingham vs Utrecht: visitante favorito; texto ajustado.</li>
-            <li>Betis vs Dinamo Zagreb: Betis é visitante no Maksimir.</li>
-            <li>Demais apostas (#4, #6 e correlatas) mantidas; contexto validado.</li>
+            <li>Banca segregada 100% para apostas do dia; stop-loss diário 12% e Kelly 0.25 aplicado.</li>
+            <li>Stake unitário: 3-5% nas conservadoras; 1-2% nas arrojadas; total planejado 31.5%.</li>
+            <li>Escalações checadas 1h antes; documentação completa em linha com APEX Compliance.</li>
+            <li>Top edges: Aston Villa superior ao Basel; Betis favorito mesmo visitante; Flu em sequência invicta.</li>
+            <li>Mercados de apoio: BTTS+Over em Celtic vs Roma; parlay cartões+Betis; Lo Celso e Roma 1T.</li>
           </ul>
         </details>
 

@@ -4,16 +4,20 @@ import "./ReportPage.css";
 
 const warnings = [
   {
-    title: "Stake máxima",
-    desc: "Não ultrapassar 5% em apostas marcadas como risco alto.",
+    title: "Stake e Kelly",
+    desc: "Conservadoras 3-5%, arrojadas 1-2%; Kelly 0.25 aplicado e stake total do dia 31.5%.",
   },
   {
-    title: "Gestão de banca",
-    desc: "Evite somar mais de 30% de exposição simultânea em jogos do mesmo horário.",
+    title: "Stop-loss diário",
+    desc: "Suspender operações ao atingir 12% de perda da banca do dia.",
   },
   {
-    title: "Linha em movimento",
-    desc: "Recalcule tickets caso o odd caia abaixo de 1.40 para proteger valor esperado.",
+    title: "Escalações e anti-chase",
+    desc: "Confirmar lineups 1h antes (Betano/FlashScore); nada de perseguir perdas ou apostar sob influência.",
+  },
+  {
+    title: "Mercados de apoio",
+    desc: "Monitorar variação de odds em gols, escanteios e cartões; recalcular se odds caírem abaixo do intervalo sugerido.",
   },
 ];
 
