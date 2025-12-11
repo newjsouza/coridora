@@ -23,8 +23,11 @@ COPY lib/ ./lib/
 COPY config/ ./config/
 COPY public/ ./public/
 
-# Copy built frontend from build stage
-COPY --from=frontend-build /app/frontend/dist ./public/dist
+# Prepare frontend dist directory to match server.js static path
+RUN mkdir -p frontend/dist
+
+# Copy built frontend from build stage into expected location
+COPY --from=frontend-build /app/frontend/dist ./frontend/dist
 
 # Expose port
 EXPOSE 3000
