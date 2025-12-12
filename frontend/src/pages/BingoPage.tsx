@@ -2,7 +2,7 @@ import React from "react";
 import { TopTabs } from "../components/TopTabs";
 import "./ReportPage.css";
 
-const bingoLink = "https://br.betano.com/";
+const bingoLink = "https://www.betano.bet.br/mybets/8900126606?bet_ids=5_fdZOUxkZZfabju5KiY8y2nUbpbSDJ1yr_Zek0Gfsk&btag=a_6321b_619c_";
 
 const analyses: { title: string; text: string }[] = [
   {
@@ -55,7 +55,7 @@ export const BingoPage: React.FC = () => {
         </div>
 
         <div className="hero-card bingo-card">
-          <img src="/bingo-slip.svg" alt="Slip do bingo na Betano" className="bingo-image" />
+          <img src="/bingo-slip.png" alt="Slip do bingo na Betano" className="bingo-image" />
         </div>
 
         <div className="bingo-link-card">
