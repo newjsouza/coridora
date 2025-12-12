@@ -484,6 +484,33 @@ h3 {
   border: 1px solid var(--border-soft);
 }
 
+.history-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.metric-card {
+  background: var(--bg-card-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
+}
+
+.metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.metric-value {
+  display: block;
+  margin-top: 4px;
+  font-weight: 700;
+  color: #e6edff;
+}
+
 .detail-text {
   font-size: 12px;
   color: var(--text-muted);
