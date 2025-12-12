@@ -225,7 +225,7 @@ h3 {
 
 .hero-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 6px;
 }
@@ -258,14 +258,24 @@ h3 {
 }
 
 .hero-teams {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .hero-teams small {
   font-size: 11px;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+.hero-teams-3d {
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 1px 0 #0c1220,
+    0 2px 0 #0c1220,
+    0 3px 0 #0b111d,
+    0 4px 10px rgba(0, 0, 0, 0.6);
+  transform: translateZ(0);
 }
 
 .hero-odd {

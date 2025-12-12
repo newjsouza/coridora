@@ -27,11 +27,10 @@ export const ReportPage: React.FC = () => {
 
         <div className="hero-card">
           <div className="hero-header">
-            <span className="hero-label">Aposta #1 · Conservadora</span>
             <span className="hero-badge">Confiança 83% ✅</span>
           </div>
           <div className="hero-main">
-            <div className="hero-teams">
+            <div className="hero-teams hero-teams-3d">
               Fluminense vs Vasco
               <br />
               <small>Maracanã · 20h00 BRT</small>
