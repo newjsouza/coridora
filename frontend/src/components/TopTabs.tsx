@@ -25,13 +25,13 @@ export const TopTabs: React.FC<{ active: NavTarget }> = ({ active }) => {
       {tabs.map((tab) => (
         <button
           key={tab.key}
-          className={`top-tab ${active === tab.key ? "active" : ""}`}
+          className={`top-tab top-tab-${tab.key} ${active === tab.key ? "active" : ""}`}
           onClick={() => navigate(tab.path)}
         >
           <span className="top-tab-icon" aria-hidden>
             {tab.icon}
           </span>
-          <span>{tab.label}</span>
+          <span className="top-tab-label">{tab.label}</span>
         </button>
       ))}
     </div>
