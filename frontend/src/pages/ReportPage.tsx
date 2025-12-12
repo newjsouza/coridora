@@ -25,32 +25,14 @@ export const ReportPage: React.FC = () => {
           <span className="chip green">Stop-loss 12%</span>
         </div>
 
-        <div className="hero-card">
-          <div className="hero-header">
-            <span className="status-pill loss">Encerrado · ❌</span>
-            <span className="hero-badge">Confiança 83%</span>
-          </div>
-          <div className="hero-main">
-            <div className="hero-teams hero-teams-3d">
-              Fluminense vs Vasco
-              <br />
-              <small>Maracanã · 20h00 BRT</small>
-            </div>
-            <div className="hero-odd">
-              <span className="hero-odd-label">ODD</span>
-              <span className="hero-odd-value">1.80 - 2.10</span>
-            </div>
-          </div>
-          <div className="hero-meta">
-            <span>Stake 4% banca</span>
-            <span className="loss-text">Resultado: Vasco 2 x 1 Flu</span>
-          </div>
-          <div className="hero-progress">
-            <div className="hero-progress-bar" style={{ width: "83%" }} />
-          </div>
-          <div className="hero-meta" style={{ marginTop: 6 }}>
-            <span>Jogo encerrado · revisar APEX v2.0 para reduzir stake/confiança</span>
-            <span>Árbitro: Raphael Claus (2.8 cartões/jogo)</span>
+        <div className="hero-card hero-video">
+          <div className="video-frame">
+            <iframe
+              title="Resumo Fluminense vs Vasco"
+              src="https://www.youtube.com/embed/8jJKQ-d0plE?autoplay=1&mute=1&loop=1&playlist=8jJKQ-d0plE&controls=1&modestbranding=1&rel=0&playsinline=1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
 
