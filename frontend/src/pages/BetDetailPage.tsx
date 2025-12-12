@@ -40,6 +40,13 @@ export const BetDetailPage: React.FC = () => {
         <div className="hero-card">
           <div className="hero-header">
             <span className="hero-label">{detail.type}</span>
+            {detail.status && (
+              <span
+                className={`status-pill ${detail.status.includes("✅") ? "win" : detail.status.includes("❌") ? "loss" : "pending"}`}
+              >
+                {detail.status}
+              </span>
+            )}
             <span className="hero-badge">Confiança {detail.confidence}</span>
           </div>
           <div className="hero-main">
@@ -62,6 +69,16 @@ export const BetDetailPage: React.FC = () => {
             <span>Mercado: {detail.market}</span>
           </div>
         </div>
+
+        {detail.finalScore && (
+          <div className="detail-block">
+            <div className="section-title">
+              <span>Status e resultado</span>
+              <span className="section-subtitle">Jogo encerrado</span>
+            </div>
+            <p className="detail-text">{detail.finalScore}</p>
+          </div>
+        )}
 
         <div className="detail-block">
           <div className="section-title">
@@ -94,6 +111,20 @@ export const BetDetailPage: React.FC = () => {
             ))}
           </ul>
         </div>
+
+        {detail.outcomeNotes && detail.outcomeNotes.length > 0 && (
+          <div className="detail-block">
+            <div className="section-title">
+              <span>Pós-jogo</span>
+              <span className="section-subtitle">Análise do resultado</span>
+            </div>
+            <ul className="detail-list">
+              {detail.outcomeNotes.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="detail-cta">
           <button className="btn-bet" onClick={() => navigate(-1)}>

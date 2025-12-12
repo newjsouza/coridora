@@ -27,7 +27,8 @@ export const ReportPage: React.FC = () => {
 
         <div className="hero-card">
           <div className="hero-header">
-            <span className="hero-badge">Confiança 83% ✅</span>
+            <span className="status-pill loss">Encerrado · ❌</span>
+            <span className="hero-badge">Confiança 83%</span>
           </div>
           <div className="hero-main">
             <div className="hero-teams hero-teams-3d">
@@ -42,13 +43,13 @@ export const ReportPage: React.FC = () => {
           </div>
           <div className="hero-meta">
             <span>Stake 4% banca</span>
-            <span>Risco Baixo-Médio</span>
+            <span className="loss-text">Resultado: Vasco 2 x 1 Flu</span>
           </div>
           <div className="hero-progress">
             <div className="hero-progress-bar" style={{ width: "83%" }} />
           </div>
           <div className="hero-meta" style={{ marginTop: 6 }}>
-            <span>Forma Flu: 7/8 invicto · +15pp psicológico</span>
+            <span>Jogo encerrado · revisar APEX v2.0 para reduzir stake/confiança</span>
             <span>Árbitro: Raphael Claus (2.8 cartões/jogo)</span>
           </div>
         </div>
@@ -67,6 +68,14 @@ export const ReportPage: React.FC = () => {
               </div>
               <div className="bet-match">{bet.match}</div>
               <div className="bet-market">{bet.market}</div>
+              {bet.status && (
+                <div className="status-row">
+                  <span className={`status-pill ${bet.statusTone || "pending"}`}>
+                    {bet.status}
+                  </span>
+                  {bet.score && <span className="status-score">{bet.score}</span>}
+                </div>
+              )}
               <div className="bet-odd-row">
                 <div>
                   <div className="bet-odd">{bet.odd}</div>

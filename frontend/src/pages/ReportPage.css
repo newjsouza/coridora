@@ -228,6 +228,7 @@ h3 {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 6px;
+  gap: 8px;
 }
 
 .hero-label {
@@ -276,6 +277,55 @@ h3 {
     0 3px 0 #0b111d,
     0 4px 10px rgba(0, 0, 0, 0.6);
   transform: translateZ(0);
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 6px 0 2px;
+}
+
+.status-pill {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a2235;
+  color: #e6edff;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.status-pill.win {
+  color: var(--accent-green);
+  border-color: rgba(33, 195, 107, 0.35);
+  background: rgba(33, 195, 107, 0.12);
+}
+
+.status-pill.loss {
+  color: var(--accent-red);
+  border-color: rgba(255, 75, 92, 0.4);
+  background: rgba(255, 75, 92, 0.12);
+}
+
+.status-pill.pending {
+  color: var(--accent-yellow);
+  border-color: rgba(255, 204, 51, 0.4);
+  background: rgba(255, 204, 51, 0.12);
+}
+
+.status-score {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.loss-text {
+  color: var(--accent-red);
 }
 
 .hero-odd {

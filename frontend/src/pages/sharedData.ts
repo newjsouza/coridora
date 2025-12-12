@@ -10,6 +10,9 @@ export type BetCard = {
   risk: string;
   slug: string;
   riskTone?: "red";
+  status?: string;
+  statusTone?: "win" | "loss" | "pending";
+  score?: string;
 };
 
 export type TableRow = {
@@ -35,6 +38,9 @@ export type BetDetail = {
   summary: string;
   keyPoints: string[];
   validation: string[];
+  status?: string;
+  finalScore?: string;
+  outcomeNotes?: string[];
 };
 
 export const betCards: BetCard[] = [
@@ -49,6 +55,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 4% banca",
     risk: "Risco Baixo-Médio",
     slug: "fluminense-vasco",
+    status: "Encerrado · ❌ Perdida",
+    statusTone: "loss",
+    score: "Vasco 2 x 1 Fluminense",
   },
   {
     badge: "HOT",
@@ -61,6 +70,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 5% banca",
     risk: "Risco Muito Baixo",
     slug: "aston-villa-basel",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Basel 1 x 2 Aston Villa",
   },
   {
     badge: "OK",
@@ -73,6 +85,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 3.5% banca",
     risk: "Risco Baixo-Médio",
     slug: "nottingham-utrecht",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Utrecht 1 x 2 Nottingham Forest",
   },
   {
     badge: "ARROJADA",
@@ -85,6 +100,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 2% banca",
     risk: "Risco Médio",
     slug: "celtic-roma-btts",
+    status: "Encerrado · ❌ Perdida",
+    statusTone: "loss",
+    score: "Celtic 0 x 3 Roma",
   },
   {
     badge: "HOT",
@@ -97,6 +115,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 4% banca",
     risk: "Risco Baixo-Médio",
     slug: "betis-zagreb",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Dinamo Zagreb 1 x 3 Real Betis",
   },
   {
     badge: "OK",
@@ -109,6 +130,8 @@ export const betCards: BetCard[] = [
     stake: "Stake 3.5% banca",
     risk: "Risco Baixo-Médio",
     slug: "flamengo-pyramids",
+    status: "Não iniciado",
+    statusTone: "pending",
   },
   {
     badge: "PARLAY",
@@ -122,6 +145,9 @@ export const betCards: BetCard[] = [
     risk: "Risco Médio",
     slug: "zagreb-betis-parlay",
     riskTone: "red",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Betis 3-1; 5+ cartões",
   },
   {
     badge: "OK",
@@ -134,6 +160,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 3% banca",
     risk: "Risco Baixo-Médio",
     slug: "roma-primeiro-tempo",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Roma 3-0 no 1º tempo",
   },
   {
     badge: "ARROJADA",
@@ -147,6 +176,9 @@ export const betCards: BetCard[] = [
     risk: "Risco Médio-Alto",
     slug: "lo-celso-marcador",
     riskTone: "red",
+    status: "Encerrado · ❌ Perdida",
+    statusTone: "loss",
+    score: "Lo Celso não marcou",
   },
   {
     badge: "OK",
@@ -159,6 +191,9 @@ export const betCards: BetCard[] = [
     stake: "Stake 3% banca",
     risk: "Risco Baixo-Médio",
     slug: "celtic-roma-escanteios",
+    status: "Encerrado · ✅ Vencida",
+    statusTone: "win",
+    score: "Celtic 0-3 Roma; 11-12 cantos",
   },
 ];
 
@@ -260,6 +295,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Piton ausente na esquerda; fator casa Maracanã.",
       "Stop-loss 12% e Kelly 0.25 aplicados.",
     ],
+    status: "Encerrado · ❌ Perdida",
+    finalScore: "Vasco 2 x 1 Fluminense",
+    outcomeNotes: [
+      "Vasco reverteu psicologia e pressionou em casa; gol da virada aos 90+3.",
+      "Overconfidence: confiança 83% deveria cair ~5pp; stake 4% → 3%.",
+      "APEX v2.0: Índice anomalia médio (45-50) sinalizaria risco."],
   },
   "aston-villa-basel": {
     slug: "aston-villa-basel",
@@ -285,6 +326,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Basel desesperado abre espaços defensivos.",
       "Kelly 0.25 e stake máximo permitido (5%).",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Basel 1 x 2 Aston Villa",
+    outcomeNotes: [
+      "Villa confirmou dominância mesmo após 0-2; virou com Tielemans no 2T.",
+      "Disparidade técnica (500M vs 50M) consolidou valor da odd 1.60.",
+      "Retorno estimado: +8%"],
   },
   "nottingham-utrecht": {
     slug: "nottingham-utrecht",
@@ -309,6 +356,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Lineups 1h antes; manter stake 3.5%.",
       "Controlar exposição simultânea; stop-loss 12%.",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Utrecht 1 x 2 Nottingham Forest",
+    outcomeNotes: [
+      "Forest venceu fora com gol decisivo aos 88'.",
+      "Utrecht manteve defesa frágil; disparidade técnica se confirmou.",
+      "Retorno estimado: +2.6%"],
   },
   "celtic-roma-btts": {
     slug: "celtic-roma-btts",
@@ -333,6 +386,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Checar desfalques (Johnston, Jota) 1h antes.",
       "Stake 2% (Kelly 0.25) por ser arrojada.",
     ],
+    status: "Encerrado · ❌ Perdida",
+    finalScore: "Celtic 0 x 3 Roma",
+    outcomeNotes: [
+      "Over 2.5 bateu, mas BTTS falhou: Celtic não marcou.",
+      "Novo técnico (Nancy) estreou mal; v2.0 rejeitaria a aposta.",
+      "Perda total da parlay pese ao acerto parcial de gols."],
   },
   "betis-zagreb": {
     slug: "betis-zagreb",
@@ -357,6 +416,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Checar suspensões/lesões (Rodríguez, Firpo, Bellerín, Isco).",
       "Manter stake 4% com stop-loss 12%.",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Dinamo Zagreb 1 x 3 Real Betis",
+    outcomeNotes: [
+      "Betis abriu 3-0 ainda no 1º tempo; vitória tranquila.",
+      "Plano técnico de Pellegrini prevaleceu sobre defesa frágil do Zagreb.",
+      "Retorno estimado: +3.3%"],
   },
   "flamengo-pyramids": {
     slug: "flamengo-pyramids",
@@ -405,6 +470,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Stake 2% (Kelly 0.25) por risco combinado.",
       "Monitorar linha de cartões pré-jogo; ajustar se cair abaixo de 4.5.",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Betis 3-1; linha cartões 5+ confirmada",
+    outcomeNotes: [
+      "Parlay validada: vitória Betis + over cartões atingido.",
+      "Árbitro manteve média alta; jogo tenso garantiu 5+ cartões.",
+      "Retorno estimado: +4%"],
   },
   "roma-primeiro-tempo": {
     slug: "roma-primeiro-tempo",
@@ -429,6 +500,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Lineups 1h antes; checar Pellegrini/Soulé titulares.",
       "Stake 3% com stop-loss 12%.",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Roma 3-0 antes do intervalo",
+    outcomeNotes: [
+      "Roma marcou aos 6', 36' e 45+1'.",
+      "Leitura de entrada forte da Roma se confirmou.",
+      "Retorno estimado: +1.95%"],
   },
   "lo-celso-marcador": {
     slug: "lo-celso-marcador",
@@ -453,6 +530,12 @@ export const betDetails: Record<string, BetDetail> = {
       "Stake 1% (Kelly 0.25) por ser mercado de goleador.",
       "Confirmar titularidade 1h antes.",
     ],
+    status: "Encerrado · ❌ Perdida",
+    finalScore: "Celtic 0 x 3 Roma",
+    outcomeNotes: [
+      "Lo Celso não marcou; Roma já vencia cedo sem precisar avançar com ele.",
+      "Posicionado mais recuado; mercado de goleador manteve alta variância.",
+      "Retorno estimado: -1%"],
   },
   "celtic-roma-escanteios": {
     slug: "celtic-roma-escanteios",
@@ -477,5 +560,11 @@ export const betDetails: Record<string, BetDetail> = {
       "Monitorar linha se cair abaixo de 9.5; ajustar stake.",
       "Manter stake 3% com stop-loss diário 12%.",
     ],
+    status: "Encerrado · ✅ Vencida",
+    finalScore: "Celtic 0 x 3 Roma; total 11-12 escanteios",
+    outcomeNotes: [
+      "Pressão do Celtic mesmo perdendo gerou volume de cantos.",
+      "Roma bloqueou e cedeu escanteios, mantendo a linha acima de 9.5.",
+      "Retorno estimado: +2.25%"],
   },
 };
