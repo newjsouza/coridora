@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./ReportPage.css";
 import { TopTabs } from "../components/TopTabs";
-import { betCards, tableRows } from "./sharedData";
+import { betCardsToday, tableRows } from "./sharedData";
 
 export const ReportPage: React.FC = () => {
   const navigate = useNavigate();
@@ -14,35 +14,64 @@ export const ReportPage: React.FC = () => {
 
       <main className="page">
         <div className="section-title">
-          <span>Relatório APEX Sports Analytics · 11/12/2025</span>
-          <span className="section-subtitle">10 indicações consolidadas · Copas + Europa League</span>
+          <span>Relatório APEX Sports Analytics · 12/12/2025</span>
+          <span className="section-subtitle">10 indicações · Bundesliga, Serie A, La Liga e mercados alternativos</span>
         </div>
         <div className="chip-row">
           <span className="chip green">Análise humana</span>
           <span className="chip green">10 indicações</span>
-          <span className="chip green">Stake total 31.5%</span>
-          <span className="chip orange">Kelly 0.25</span>
+          <span className="chip green">Stake total 32%</span>
+          <span className="chip orange">Confiança média 80.1%</span>
           <span className="chip green">Stop-loss 12%</span>
         </div>
 
         <div className="hero-card hero-video">
           <div className="video-frame">
             <iframe
-              title="Vasco vs Fluminense"
-              src="https://www.youtube.com/embed/4kPceYYKnTI?autoplay=1&mute=1&loop=1&playlist=4kPceYYKnTI&controls=1&modestbranding=1&rel=0&playsinline=1"
+              title="Union Berlin vs RB Leipzig"
+              src="https://www.youtube.com/embed/1n2v1Y7__-s?autoplay=1&mute=1&loop=1&playlist=1n2v1Y7__-s&controls=1&modestbranding=1&rel=0&playsinline=1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
         </div>
 
+        <div className="hero-card">
+          <div className="hero-header">
+            <span className="status-pill pending">Não iniciado</span>
+            <span className="hero-badge">Confiança 85%</span>
+          </div>
+          <div className="hero-main">
+            <div className="hero-teams hero-teams-3d">
+              Union Berlin vs RB Leipzig
+              <br />
+              <small>An der Alten Försterei · 16h30 BRT</small>
+            </div>
+            <div className="hero-odd">
+              <span className="hero-odd-label">ODD</span>
+              <span className="hero-odd-value">1.70 - 1.95</span>
+            </div>
+          </div>
+          <div className="hero-meta">
+            <span>Stake 4% banca</span>
+            <span>Parlay: Leipzig + Over 2.5</span>
+          </div>
+          <div className="hero-progress">
+            <div className="hero-progress-bar" style={{ width: "85%" }} />
+          </div>
+          <div className="hero-meta" style={{ marginTop: 6 }}>
+            <span>Disparidade técnica + pressão por vice-liderança</span>
+            <span>Stop-loss 12% · Kelly 0.25</span>
+          </div>
+        </div>
+
         <div className="section-title">
           <span>10 apostas do dia</span>
-          <span className="section-subtitle">Copa do Brasil, Challenge Cup, Europa League</span>
+          <span className="section-subtitle">Bundesliga, Serie A, La Liga e mercados alternativos</span>
         </div>
 
         <div className="bets-carousel">
-          {betCards.map((bet) => (
+          {betCardsToday.map((bet) => (
             <div className="bet-card" key={bet.match}>
               <div className="bet-header">
                 <span className="bet-badge">{bet.badge}</span>
@@ -86,15 +115,15 @@ export const ReportPage: React.FC = () => {
             Resumo executivo <span>validado</span>
           </summary>
           <p>
-            Quinta 11/12 concentra semifinais (Copa do Brasil) e 6ª rodada decisiva da Europa League.
-            Pressão alta gera valor em gols, escanteios e cartões, além de moneylines com vantagem técnica.
+            Sexta 12/12 tem grade curta; foco em Bundesliga, Serie A, La Liga e mercados alternativos (cartões, escanteios e goleadores).
+            Seletividade máxima: 10 entradas, stake total 32% e confiança média 80.1%.
           </p>
           <ul>
-            <li>Banca segregada 100% para apostas do dia; stop-loss diário 12% e Kelly 0.25 aplicado.</li>
-            <li>Stake unitário: 3-5% nas conservadoras; 1-2% nas arrojadas; total planejado 31.5%.</li>
-            <li>Escalações checadas 1h antes; documentação completa em linha com APEX Compliance.</li>
-            <li>Top edges: Aston Villa superior ao Basel; Betis favorito mesmo visitante; Flu em sequência invicta.</li>
-            <li>Mercados de apoio: BTTS+Over em Celtic vs Roma; parlay cartões+Betis; Lo Celso e Roma 1T.</li>
+            <li>Parlays técnicos: Leipzig + Over 2.5; Real Sociedad + Over 2.5.</li>
+            <li>Mercados alternativos: cartões (Turquia), cantos (Bundesliga/Serie A), goleador (Raphinha).</li>
+            <li>Conservadoras 7/10 com stake 3-5%; arrojadas 3/10 com stake 1-2.5%.</li>
+            <li>Kelly 0.25 e stop-loss diário 12% mantidos.</li>
+            <li>Escalações/árbitros monitorados 1h antes de cada jogo.</li>
           </ul>
         </details>
 
