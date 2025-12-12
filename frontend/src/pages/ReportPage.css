@@ -65,7 +65,7 @@
 .app-title {
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .app-title span:first-child {
@@ -74,7 +74,7 @@
 }
 
 .app-title span:last-child {
-  font-size: 11px;
+  font-size: 12px;
   opacity: 0.85;
 }
 
@@ -88,7 +88,7 @@
   border-radius: 999px;
   border: 1px solid #ffe2d1;
   padding: 4px 10px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -101,7 +101,7 @@
   background: #fff;
   color: var(--orange-dark);
   padding: 5px 12px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -140,7 +140,7 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #f7f9ff;
   background: rgba(255, 255, 255, 0.06);
@@ -165,7 +165,7 @@
   justify-content: center;
   background: linear-gradient(135deg, #ffedd7, #ffd8c2);
   color: var(--orange-dark);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -187,7 +187,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   margin: 8px 2px 6px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .section-title span {
@@ -195,7 +195,7 @@ h3 {
 }
 
 .section-subtitle {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -207,7 +207,7 @@ h3 {
 }
 
 .chip {
-  font-size: 10px;
+  font-size: 11px;
   padding: 3px 8px;
   border-radius: 999px;
   background: var(--chip-bg);
@@ -245,7 +245,7 @@ h3 {
 }
 
 .hero-label {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -253,7 +253,7 @@ h3 {
 }
 
 .hero-badge {
-  font-size: 10px;
+  font-size: 11px;
   padding: 3px 7px;
   border-radius: 999px;
   background: rgba(33, 195, 107, 0.12);
@@ -272,12 +272,12 @@ h3 {
 }
 
 .hero-teams {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .hero-teams small {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -301,7 +301,7 @@ h3 {
 }
 
 .status-pill {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 8px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -333,7 +333,7 @@ h3 {
 }
 
 .status-score {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -350,14 +350,14 @@ h3 {
 }
 
 .hero-odd-label {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 1px;
 }
 
 .hero-odd-value {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--accent-green);
 }
@@ -367,7 +367,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -416,11 +416,11 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .bet-badge {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 7px;
   border-radius: 999px;
   background: #182133;
@@ -429,18 +429,18 @@ h3 {
 }
 
 .bet-type {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
 .bet-match {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .bet-market {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   margin-top: 2px;
 }
@@ -453,7 +453,7 @@ h3 {
 }
 
 .bet-odd {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--accent-green);
 }
@@ -466,7 +466,7 @@ h3 {
 }
 
 .tag-risk {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 6px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -479,7 +479,7 @@ h3 {
 }
 
 .tag-stake {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 6px;
   border-radius: 999px;
   background: #182334;
@@ -491,14 +491,14 @@ h3 {
   justify-content: space-between;
   align-items: center;
   margin-top: 6px;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-muted);
 }
 
 .btn-bet {
   border-radius: 999px;
   padding: 5px 9px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   background: linear-gradient(135deg, #22c86b, #0fa85a);
   color: #fff;
@@ -512,7 +512,7 @@ h3 {
   background: var(--bg-card-soft);
   border: 1px solid var(--border-soft);
   padding: 8px 10px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -531,7 +531,7 @@ h3 {
 }
 
 .details summary span {
-  font-size: 11px;
+  font-size: 12px;
   background: #121b2a;
   padding: 3px 6px;
   border-radius: 999px;
@@ -573,7 +573,7 @@ h3 {
 }
 
 .metric-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -585,7 +585,7 @@ h3 {
 }
 
 .detail-text {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
   margin-top: 4px;
@@ -596,7 +596,7 @@ h3 {
   padding-left: 16px;
   color: var(--text-muted);
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .detail-cta {
@@ -616,7 +616,7 @@ h3 {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 thead {
@@ -640,7 +640,7 @@ tbody tr:last-child td {
 }
 
 .pill-status {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 6px;
   border-radius: 999px;
   background: #192335;
