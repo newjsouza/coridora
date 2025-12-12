@@ -191,6 +191,14 @@
 
 .top-tab-icon {
   width: 72px;
+.hero-video-wrapper {
+  position: relative;
+}
+.hero-video-guard {
+  height: 0;
+  padding-bottom: 60%;
+  pointer-events: none;
+}
   height: 72px;
   border-radius: 50%;
   display: flex;

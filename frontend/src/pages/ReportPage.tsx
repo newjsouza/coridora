@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ReportPage.css";
 import { TopTabs } from "../components/TopTabs";
@@ -6,6 +6,24 @@ import { betCardsToday, tableRows } from "./sharedData";
 
 export const ReportPage: React.FC = () => {
   const navigate = useNavigate();
+  const videoGuardRef = useRef<HTMLDivElement | null>(null);
+  const [isMiniPlayer, setIsMiniPlayer] = useState(false);
+
+  useEffect(() => {
+    const guard = videoGuardRef.current;
+    if (!guard) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const ratio = entry.intersectionRatio;
+        setIsMiniPlayer(ratio < 0.4);
+      },
+      { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] }
+    );
+
+    observer.observe(guard);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="report-root">
@@ -25,14 +43,17 @@ export const ReportPage: React.FC = () => {
           <span className="chip green">Stop-loss 12%</span>
         </div>
 
-        <div className="hero-card hero-video">
-          <div className="video-frame">
-            <iframe
-              title="Union Berlin vs RB Leipzig"
-              src="https://www.youtube.com/embed/1n2v1Y7__-s?autoplay=1&mute=1&loop=1&playlist=1n2v1Y7__-s&controls=1&modestbranding=1&rel=0&playsinline=1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+        <div className="hero-video-wrapper">
+          <div ref={videoGuardRef} className="hero-video-guard" aria-hidden />
+          <div className={`hero-card hero-video ${isMiniPlayer ? "mini" : ""}`}>
+            <div className="video-frame">
+              <iframe
+                title="Union Berlin vs RB Leipzig"
+                src="https://www.youtube.com/embed/1n2v1Y7__-s?autoplay=1&mute=1&loop=1&playlist=1n2v1Y7__-s&controls=1&modestbranding=1&rel=0&playsinline=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
 
