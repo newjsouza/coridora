@@ -26,6 +26,14 @@ export const BetsPage: React.FC = () => {
               </div>
               <div className="bet-match">{bet.match}</div>
               <div className="bet-market">{bet.market}</div>
+              {bet.status && (
+                <div className="status-row">
+                  <span className={`status-pill ${bet.statusTone || "pending"}`}>
+                    {bet.status}
+                  </span>
+                  {bet.score && <span className="status-score">{bet.score}</span>}
+                </div>
+              )}
               <div className="bet-odd-row">
                 <div>
                   <div className="bet-odd">{bet.odd}</div>
