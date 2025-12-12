@@ -6,13 +6,6 @@ import { betCards, tableRows } from "./sharedData";
 
 export const ReportPage: React.FC = () => {
   const navigate = useNavigate();
-  const playlistIds = [
-    "4kPceYYKnTI", // Vasco vs Fluminense
-    "xYxHyImcelc", // Aston Villa 2x1 Basel
-    "7OyuxaSbhdo", // Nottingham Forest 2x1 Utrecht
-    "aBWaHY4Wm7E", // Roma 3x0 Celtic
-    "D2fxiEw9rI0", // Real Betis 3x1 Dinamo Zagreb
-  ];
 
   return (
     <div className="report-root">
@@ -35,8 +28,8 @@ export const ReportPage: React.FC = () => {
         <div className="hero-card hero-video">
           <div className="video-frame">
             <iframe
-              title="Playlist APEX rodadas"
-              src={`https://www.youtube.com/embed/${playlistIds[0]}?autoplay=1&mute=1&loop=1&playlist=${playlistIds.join(",")}&controls=1&modestbranding=1&rel=0&playsinline=1`}
+              title="Vasco vs Fluminense"
+              src="https://www.youtube.com/embed/4kPceYYKnTI?autoplay=1&mute=1&loop=1&playlist=4kPceYYKnTI&controls=1&modestbranding=1&rel=0&playsinline=1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />

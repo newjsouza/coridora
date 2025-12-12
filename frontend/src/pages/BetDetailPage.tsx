@@ -11,14 +11,6 @@ export const BetDetailPage: React.FC = () => {
   const detail = slug ? betDetails[slug] : undefined;
   const videoMap: Record<string, string> = {
     "fluminense-vasco": "4kPceYYKnTI",
-    "aston-villa-basel": "xYxHyImcelc",
-    "nottingham-utrecht": "7OyuxaSbhdo",
-    "celtic-roma-btts": "aBWaHY4Wm7E",
-    "betis-zagreb": "D2fxiEw9rI0",
-    "zagreb-betis-parlay": "D2fxiEw9rI0",
-    "roma-primeiro-tempo": "aBWaHY4Wm7E",
-    "lo-celso-marcador": "aBWaHY4Wm7E",
-    "celtic-roma-escanteios": "aBWaHY4Wm7E",
   };
 
   if (!detail) {
