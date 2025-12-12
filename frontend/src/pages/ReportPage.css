@@ -394,6 +394,13 @@ h3 {
   margin: 4px -2px 4px;
 }
 
+.bets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
 .bets-carousel::-webkit-scrollbar {
   display: none;
 }
@@ -410,6 +417,11 @@ h3 {
   flex-direction: column;
   gap: 5px;
   flex-shrink: 0;
+}
+
+.bets-list .bet-card {
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .bet-header {
@@ -435,12 +447,12 @@ h3 {
 }
 
 .bet-match {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
 }
 
 .bet-market {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-top: 2px;
 }
@@ -504,6 +516,13 @@ h3 {
   color: #fff;
   border: none;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-bet:hover,
+.btn-bet:focus-visible {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.55);
 }
 
 .details {

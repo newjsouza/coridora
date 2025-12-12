@@ -17,7 +17,7 @@ export const BetsPage: React.FC = () => {
           <span className="section-subtitle">Somente os tickets selecionados</span>
         </div>
 
-        <div className="bets-carousel">
+        <div className="bets-list">
           {betCards.map((bet) => (
             <div className="bet-card" key={bet.match}>
               <div className="bet-header">
