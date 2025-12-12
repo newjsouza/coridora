@@ -241,6 +241,13 @@ h3 {
   overflow: hidden;
 }
 
+.bingo-card {
+  padding: 0;
+  overflow: hidden;
+  background: #0d1324;
+  border: 1px solid var(--border-soft);
+}
+
 .video-frame {
   position: relative;
   width: 100%;
@@ -262,6 +269,103 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--border-soft);
   box-shadow: var(--shadow-soft);
+}
+
+.bingo-image {
+  width: 100%;
+  display: block;
+}
+
+.bingo-link-card {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #111a2d, #0b111f);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.bingo-link-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.bingo-link-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.bingo-link-btn {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.bingo-link-btn:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+
+.bingo-analyses {
+  margin-top: 12px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.bingo-line {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1e2638;
+  background: linear-gradient(90deg, rgba(255, 90, 38, 0.06), transparent 60%);
+}
+
+.bingo-line:last-child {
+  border-bottom: none;
+}
+
+.bingo-line-title {
+  font-weight: 800;
+  font-size: 15px;
+  color: #e8ecff;
+  letter-spacing: 0.01em;
+}
+
+.bingo-line-text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.heading-strong {
+  font-size: 18px;
+  gap: 8px;
+}
+
+.heading-strong span:first-child {
+  letter-spacing: 0.02em;
+}
+
+.heading-strong::after {
+  content: "";
+  display: block;
+  width: 62px;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-header {

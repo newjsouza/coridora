@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-type NavTarget = "home" | "apostas" | "graficos" | "avisos";
+type NavTarget = "home" | "apostas" | "bingo" | "avisos";
 
 type Tab = {
   key: NavTarget;
@@ -13,7 +13,7 @@ type Tab = {
 const tabs: Tab[] = [
   { key: "home", label: "Destaque", icon: "⭐", path: "/" },
   { key: "apostas", label: "Apostas", icon: "⚽", path: "/apostas" },
-  { key: "graficos", label: "Gráficos", icon: "📈", path: "/graficos" },
+  { key: "bingo", label: "Bingos", icon: "🎯", path: "/bingo" },
   { key: "avisos", label: "Avisos", icon: "⚠️", path: "/avisos" },
 ];
 

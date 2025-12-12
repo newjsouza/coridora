@@ -4,7 +4,7 @@ import "./ReportPage.css";
 
 export const ChartsPage: React.FC = () => (
   <div className="report-root">
-    <TopTabs active="graficos" />
+    <TopTabs active="bingo" />
 
     <main className="page">
       <div className="section-title">

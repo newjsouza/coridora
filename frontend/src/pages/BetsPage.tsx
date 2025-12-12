@@ -12,7 +12,7 @@ export const BetsPage: React.FC = () => {
       <TopTabs active="apostas" />
 
       <main className="page">
-        <div className="section-title">
+        <div className="section-title heading-strong">
           <span>Apostas de hoje</span>
           <span className="section-subtitle">Sexta · grade curta e seletiva</span>
         </div>
@@ -57,7 +57,7 @@ export const BetsPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="section-title" style={{ marginTop: 16 }}>
+        <div className="section-title heading-strong" style={{ marginTop: 16 }}>
           <span>Apostas de ontem</span>
           <span className="section-subtitle">Resultados e pendentes (referência)</span>
         </div>
