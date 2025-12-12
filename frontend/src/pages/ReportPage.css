@@ -256,6 +256,14 @@ h3 {
   border: 0;
 }
 
+.detail-video {
+  margin: 10px 0 14px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
 .hero-header {
   display: flex;
   justify-content: flex-start;

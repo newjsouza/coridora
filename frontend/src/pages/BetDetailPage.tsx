@@ -9,6 +9,17 @@ export const BetDetailPage: React.FC = () => {
   const navigate = useNavigate();
 
   const detail = slug ? betDetails[slug] : undefined;
+  const videoMap: Record<string, string> = {
+    "fluminense-vasco": "4kPceYYKnTI",
+    "aston-villa-basel": "xYxHyImcelc",
+    "nottingham-utrecht": "7OyuxaSbhdo",
+    "celtic-roma-btts": "aBWaHY4Wm7E",
+    "betis-zagreb": "D2fxiEw9rI0",
+    "zagreb-betis-parlay": "D2fxiEw9rI0",
+    "roma-primeiro-tempo": "aBWaHY4Wm7E",
+    "lo-celso-marcador": "aBWaHY4Wm7E",
+    "celtic-roma-escanteios": "aBWaHY4Wm7E",
+  };
 
   if (!detail) {
     return (
@@ -69,6 +80,24 @@ export const BetDetailPage: React.FC = () => {
             <span>Mercado: {detail.market}</span>
           </div>
         </div>
+
+        {(() => {
+          const videoId = slug ? videoMap[slug] : undefined;
+          const isNotStarted = detail.status?.toLowerCase().includes("não iniciado");
+          if (!videoId || isNotStarted) return null;
+          return (
+            <div className="detail-video">
+              <div className="video-frame">
+                <iframe
+                  title={`Vídeo ${detail.match}`}
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1&modestbranding=1&rel=0&playsinline=1`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          );
+        })()}
 
         {detail.finalScore && (
           <div className="detail-block">
