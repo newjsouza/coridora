@@ -9,9 +9,7 @@ export const BetDetailPage: React.FC = () => {
   const navigate = useNavigate();
 
   const detail = slug ? betDetails[slug] : undefined;
-  const videoMap: Record<string, string> = {
-    "fluminense-vasco": "4kPceYYKnTI",
-  };
+  const videoMap: Record<string, string> = {};
 
   if (!detail) {
     return (

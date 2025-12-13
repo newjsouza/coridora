@@ -8,6 +8,7 @@ export const ReportPage: React.FC = () => {
   const navigate = useNavigate();
   const videoGuardRef = useRef<HTMLDivElement | null>(null);
   const [isMiniPlayer, setIsMiniPlayer] = useState(false);
+  const featuredBet = betCardsToday.find((bet) => bet.slug === "flamengo-pyramids-qualifica");
 
   useEffect(() => {
     const guard = videoGuardRef.current;
@@ -16,9 +17,9 @@ export const ReportPage: React.FC = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const ratio = entry.intersectionRatio;
-        setIsMiniPlayer(ratio < 0.4);
+        setIsMiniPlayer(ratio < 0.9);
       },
-      { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] }
+      { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
     );
 
     observer.observe(guard);
@@ -32,15 +33,16 @@ export const ReportPage: React.FC = () => {
 
       <main className="page">
         <div className="section-title">
-          <span>Relatório APEX Sports Analytics · 12/12/2025</span>
-          <span className="section-subtitle">10 indicações · Bundesliga, Serie A, La Liga e mercados alternativos</span>
+          <span>Relatório APEX Sports Analytics · 13/12/2025</span>
+          <span className="section-subtitle">5 apostas aprovadas · Intercontinental, Premier League, Serie A e Portugal</span>
         </div>
         <div className="chip-row">
-          <span className="chip green">Análise humana</span>
-          <span className="chip green">10 indicações</span>
-          <span className="chip green">Stake total 32%</span>
-          <span className="chip orange">Confiança média 80.1%</span>
+          <span className="chip green">APEX v2.0</span>
+          <span className="chip green">5 apostas aprovadas</span>
+          <span className="chip green">Stake total 14%</span>
+          <span className="chip orange">Confiança média 73.8%</span>
           <span className="chip green">Stop-loss 12%</span>
+          <span className="chip green">Taxa sucesso estimada 72%</span>
         </div>
 
         <div className="hero-video-wrapper">
@@ -48,7 +50,7 @@ export const ReportPage: React.FC = () => {
           <div className={`hero-card hero-video ${isMiniPlayer ? "mini" : ""}`}>
             <div className="video-frame">
               <iframe
-                title="Union Berlin vs RB Leipzig"
+                title="Destaque Flamengo vs Pyramids"
                 src="https://www.youtube.com/embed/1n2v1Y7__-s?autoplay=1&mute=1&loop=1&playlist=1n2v1Y7__-s&controls=1&modestbranding=1&rel=0&playsinline=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -57,38 +59,51 @@ export const ReportPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="hero-card">
-          <div className="hero-header">
-            <span className="status-pill pending">Não iniciado</span>
-            <span className="hero-badge">Confiança 85%</span>
-          </div>
-          <div className="hero-main">
-            <div className="hero-teams hero-teams-3d">
-              Union Berlin vs RB Leipzig
-              <br />
-              <small>An der Alten Försterei · 16h30 BRT</small>
-            </div>
-            <div className="hero-odd">
-              <span className="hero-odd-label">ODD</span>
-              <span className="hero-odd-value">1.70 - 1.95</span>
-            </div>
-          </div>
-          <div className="hero-meta">
-            <span>Stake 4% banca</span>
-            <span>Parlay: Leipzig + Over 2.5</span>
-          </div>
-          <div className="hero-progress">
-            <div className="hero-progress-bar" style={{ width: "85%" }} />
-          </div>
-          <div className="hero-meta" style={{ marginTop: 6 }}>
-            <span>Disparidade técnica + pressão por vice-liderança</span>
-            <span>Stop-loss 12% · Kelly 0.25</span>
-          </div>
+        <div className="section-title">
+          <span>Destaque</span>
+          <span className="section-subtitle">Flamengo qualifica vs Pyramids · Copa Intercontinental</span>
         </div>
 
+        {featuredBet && (
+          <div className="hero-card">
+            <div className="hero-header">
+              <span className="status-pill pending">{featuredBet.status || "Não iniciado"}</span>
+              <span className="hero-badge">Confiança 76% · Stake 3.5%</span>
+            </div>
+            <div className="hero-main">
+              <div className="hero-teams hero-teams-3d">
+                Flamengo vs Pyramids
+                <br />
+                <small>Qualificação · 14h · Ahmad Bin Ali</small>
+              </div>
+              <div className="hero-odd">
+                <span className="hero-odd-label">ODD</span>
+                <span className="hero-odd-value">1.45 - 1.65</span>
+              </div>
+            </div>
+            <div className="hero-meta">
+              <span>Mercado: Flamengo qualifica</span>
+              <span>Índice anomalia 41 · EV 1.6+</span>
+            </div>
+            <div className="hero-progress">
+              <div className="hero-progress-bar" style={{ width: "76%" }} />
+            </div>
+            <div className="hero-meta" style={{ marginTop: 6 }}>
+              <span>Stake máxima 3.5% · proteção on</span>
+              <span>Filtro APEX v2.0 sem overconfidence</span>
+            </div>
+            <div className="bet-footer">
+              <span>Jogo destaque do dia</span>
+              <button className="btn-bet" onClick={() => navigate(`/aposta/${featuredBet.slug}`)}>
+                VER DETALHES
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="section-title">
-          <span>10 apostas do dia</span>
-          <span className="section-subtitle">Bundesliga, Serie A, La Liga e mercados alternativos</span>
+          <span>5 apostas do dia</span>
+          <span className="section-subtitle">Intercontinental, Premier League, Serie A e Primeira Liga</span>
         </div>
 
         <div className="bets-carousel">
@@ -133,18 +148,16 @@ export const ReportPage: React.FC = () => {
 
         <details className="details" open>
           <summary>
-            Resumo executivo <span>validado</span>
+            Resumo executivo <span>APEX v2.0</span>
           </summary>
           <p>
-            Sexta 12/12 tem grade curta; foco em Bundesliga, Serie A, La Liga e mercados alternativos (cartões, escanteios e goleadores).
-            Seletividade máxima: 10 entradas, stake total 32% e confiança média 80.1%.
+            Sábado 13/12 com 5 apostas aprovadas, stake total 14%, confiança média 73.8% e taxa de sucesso estimada 72%. Nenhuma confiança acima de 80% e stake máxima 3.5% por entrada; Flamengo qualifica é o jogo destaque.
           </p>
           <ul>
-            <li>Parlays técnicos: Leipzig + Over 2.5; Real Sociedad + Over 2.5.</li>
-            <li>Mercados alternativos: cartões (Turquia), cantos (Bundesliga/Serie A), goleador (Raphinha).</li>
-            <li>Conservadoras 7/10 com stake 3-5%; arrojadas 3/10 com stake 1-2.5%.</li>
-            <li>Kelly 0.25 e stop-loss diário 12% mantidos.</li>
-            <li>Escalações/árbitros monitorados 1h antes de cada jogo.</li>
+            <li>Filtro APEX v2.0: zero apostas &gt; 80% confiança, stake máx 3.5%, rejeição de clean sheets, anomalia &lt; 46, ajustes de volatilidade.</li>
+            <li>Stake total 14% com stop-loss 12% e Kelly 0.25; Flamengo qualifica leva o máximo (3.5%).</li>
+            <li>Mercados aprovados: Flamengo qualifica; Liverpool ML; Atalanta Over 2.5; Chelsea BTTS; Porto gol 1º tempo.</li>
+            <li>EV médio 1.23; escalações confirmadas via FlashScore 1h antes; principais desfalques já precificados.</li>
           </ul>
         </details>
 
