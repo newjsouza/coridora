@@ -310,8 +310,11 @@ h3 {
 }
 
 .hero-video-guard {
-  height: 0;
-  padding-bottom: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
   pointer-events: none;
 }
 
@@ -333,8 +336,10 @@ h3 {
 
 .hero-card.hero-video.mini {
   position: fixed;
-  top: 12px;
-  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  top: auto;
+  left: auto;
   width: 240px;
   height: 135px;
   z-index: 140;
@@ -352,8 +357,8 @@ h3 {
   .hero-card.hero-video.mini {
     width: 180px;
     height: 101px;
-    top: 10px;
-    left: 10px;
+    bottom: 10px;
+    right: 10px;
   }
 }
 
