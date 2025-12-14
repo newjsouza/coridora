@@ -110,7 +110,7 @@ export const ReportPage: React.FC = () => {
           <span className="section-subtitle">Bundesliga, Premier League, La Liga, Serie A e Copa do Brasil</span>
         </div>
 
-        <div className="bets-carousel">
+        <div className="bets-list">
           {betCardsToday.map((bet) => (
             <div className="bet-card" key={bet.match}>
               <div className="bet-header">
